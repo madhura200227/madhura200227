@@ -1,21 +1,20 @@
-````md
 <!-- ======================================== -->
 <!-- 🚀 MADHURA LAKADE GITHUB PROFILE README -->
 <!-- ======================================== -->
 
-<h1 align="center">✨ Hey, I'm <b>Madhura Lakade</b></h1>
+<h1 align="center">✨ Hey, I'm <b>Madhura Lakade</b> ✨</h1>
 
 <p align="center">
-💻 SYCS Computer Science Student | 🚀 Full Stack Learner | 🤖 AI & Cloud Enthusiast
+💻 SYCS Computer Science Student • 🚀 Full Stack Learner • 🤖 AI & Cloud Enthusiast
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=800&lines=Building+Creative+Tech+Projects+🚀;AI+%7C+Cloud+%7C+Full+Stack+Development;Future+Software+Engineer+💻;Learning+%26+Growing+Everyday+⚡;Dreaming+Big+%26+Building+Bigger+✨" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=900&lines=Building+Creative+Tech+Projects+🚀;AI+%7C+Cloud+%7C+Full+Stack+Development;Future+Software+Engineer+💻;Learning+%26+Growing+Everyday+⚡;Dreaming+Big+%26+Building+Bigger+✨" />
 </p>
 
 ---
 
-# 🧠 About Me
+## 🧠 About Me
 
 - 🎓 SYCS Computer Science Student  
 - 💡 Passionate about Technology & Innovation  
@@ -27,9 +26,9 @@
 
 ---
 
-# ⚡ Current Focus
+## ⚡ Current Focus
 
-```text
+```txt
 🚀 Full Stack Development
 🤖 AI Integrations
 ☁️ Cloud Deployment
@@ -40,10 +39,10 @@
 
 ---
 
-# 🛠️ Skills & Technologies
+## 🛠️ Skills & Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=python,java,c,cpp,js,html,css,react,nodejs,fastapi,flask,mysql,mongodb,postgres,firebase,git,github,vscode,figma,tensorflow,pytorch,gcp" />
+  <img src="https://skillicons.dev/icons?i=python,java,c,cpp,js,html,css,react,nodejs,fastapi,flask,mysql,mongodb,postgres,firebase,git,github,vscode,figma,tensorflow,pytorch,gcp" />
 </p>
 
 ---
@@ -54,14 +53,14 @@
 
 AI-powered nutrition & food analysis system.
 
-### Features
+### ✨ Features
 
 - 🍎 Food Recognition
 - 📊 Nutrition Tracking
 - 🤖 AI-Based Recommendations
 - 📱 User-Friendly Interface
 
-🔗 Repository: https://github.com/YOURUSERNAME/NutriLens-AI
+🔗 Repository: https://github.com/madhura200227/NutriLens-AI
 
 ---
 
@@ -69,14 +68,14 @@ AI-powered nutrition & food analysis system.
 
 Modern chat application with real-time messaging.
 
-### Features
+### ✨ Features
 
 - 🔐 JWT Authentication
 - 💬 Instant Messaging
 - ⚡ Socket.IO Integration
 - 📱 Responsive Design
 
-🔗 Repository: https://github.com/YOURUSERNAME/chat-app
+🔗 Repository: https://github.com/madhura200227/chat-app
 
 ---
 
@@ -84,14 +83,14 @@ Modern chat application with real-time messaging.
 
 Professional responsive portfolio website.
 
-### Features
+### ✨ Features
 
 - 🎨 Elegant UI Design
 - 📱 Fully Responsive
 - ⚡ Smooth Animations
 - 🌌 Modern Layout
 
-🔗 Live Website: https://YOURUSERNAME.github.io/portfolio/
+🔗 Live Website: https://madhura200227.github.io/portfolio/
 
 ---
 
@@ -99,7 +98,7 @@ Professional responsive portfolio website.
 
 Projects focused on deployment & cloud technologies.
 
-### Features
+### ✨ Features
 
 - ☁️ Google Cloud Deployment
 - 🚀 Deployment Pipelines
@@ -112,9 +111,15 @@ Projects focused on deployment & cloud technologies.
 
 <p align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=YOURUSERNAME&show_icons=true&theme=tokyonight&hide_border=true" height="180"/>
+  <img 
+    src="https://github-readme-stats.vercel.app/api?username=madhura200227&show_icons=true&theme=tokyonight&hide_border=true" 
+    height="180"
+  />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOURUSERNAME&layout=compact&theme=tokyonight&hide_border=true" height="180"/>
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=madhura200227&layout=compact&theme=tokyonight&hide_border=true" 
+    height="180"
+  />
 
 </p>
 
@@ -123,7 +128,9 @@ Projects focused on deployment & cloud technologies.
 # 🔥 GitHub Streak
 
 <p align="center">
-<img src="https://streak-stats.demolab.com?user=YOURUSERNAME&theme=tokyonight&hide_border=true"/>
+  <img 
+    src="https://streak-stats.demolab.com?user=madhura200227&theme=tokyonight&hide_border=true" 
+  />
 </p>
 
 ---
@@ -131,7 +138,9 @@ Projects focused on deployment & cloud technologies.
 # 📈 Contribution Graph
 
 <p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=tokyo-night&hide_border=true&area=true"/>
+  <img 
+    src="https://github-readme-activity-graph.vercel.app/graph?username=madhura200227&theme=tokyo-night&hide_border=true&area=true" 
+  />
 </p>
 
 ---
@@ -139,7 +148,9 @@ Projects focused on deployment & cloud technologies.
 # 🏆 GitHub Trophies
 
 <p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=YOURUSERNAME&theme=tokyonight&no-frame=true&row=1&margin-w=15"/>
+  <img 
+    src="https://github-profile-trophy.vercel.app/?username=madhura200227&theme=tokyonight&no-frame=true&row=1&column=7" 
+  />
 </p>
 
 ---
@@ -148,21 +159,21 @@ Projects focused on deployment & cloud technologies.
 
 <p align="center">
 
-<a href="mailto:yourmail@gmail.com">
-<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
+  <a href="mailto:yourmail@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
 
-<a href="https://linkedin.com/in/your-linkedin">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
+  <a href="https://linkedin.com/in/your-linkedin">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
 
-<a href="https://instagram.com/goalsgettergoddess">
-<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-</a>
+  <a href="https://instagram.com/goalsgettergoddess">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
 
-<a href="https://github.com/YOURUSERNAME">
-<img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
+  <a href="https://github.com/madhura200227">
+    <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
 
 </p>
 
@@ -171,7 +182,9 @@ Projects focused on deployment & cloud technologies.
 # 👀 Profile Views
 
 <p align="center">
-<img src="https://komarev.com/ghpvc/?username=YOURUSERNAME&label=Profile%20Views&color=ff69b4&style=flat"/>
+  <img 
+    src="https://komarev.com/ghpvc/?username=madhura200227&label=Profile%20Views&color=ff69b4&style=flat" 
+  />
 </p>
 
 ---
@@ -179,8 +192,7 @@ Projects focused on deployment & cloud technologies.
 # ⚡ Developer Quote
 
 <p align="center">
-<b>"Dream big. Build bigger. Stay unstoppable."</b>
+  <b>"Dream big. Build bigger. Stay unstoppable."</b>
 </p>
 
 ---
-````
