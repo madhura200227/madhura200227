@@ -43,9 +43,7 @@
 # 🛠️ Skills & Technologies
 
 <p align="center">
-
 <img src="https://skillicons.dev/icons?i=python,java,c,cpp,js,html,css,react,nodejs,fastapi,flask,mysql,mongodb,postgres,firebase,git,github,vscode,figma,tensorflow,pytorch,gcp" />
-
 </p>
 
 ---
@@ -110,21 +108,6 @@ Projects focused on deployment & cloud technologies.
 
 ---
 
-## 🧠 AI & ML Mini Projects
-
-Collection of AI & Machine Learning experiments.
-
-### Features
-
-* 🤖 Machine Learning Models
-* 📊 Data Visualization
-* 🧠 Deep Learning Basics
-* ⚡ AI Integrations
-
-🔗 Repository: https://github.com/YOURUSERNAME
-
----
-
 # 📊 GitHub Stats
 
 <p align="center">
@@ -140,9 +123,7 @@ Collection of AI & Machine Learning experiments.
 # 🔥 GitHub Streak
 
 <p align="center">
-
 <img src="https://streak-stats.demolab.com?user=YOURUSERNAME&theme=tokyonight&hide_border=true"/>
-
 </p>
 
 ---
@@ -150,9 +131,7 @@ Collection of AI & Machine Learning experiments.
 # 📈 Contribution Graph
 
 <p align="center">
-
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=tokyo-night&hide_border=true&area=true"/>
-
 </p>
 
 ---
@@ -160,9 +139,7 @@ Collection of AI & Machine Learning experiments.
 # 🏆 GitHub Trophies
 
 <p align="center">
-
 <img src="https://github-profile-trophy.vercel.app/?username=YOURUSERNAME&theme=tokyonight&no-frame=true&row=1&margin-w=15"/>
-
 </p>
 
 ---
@@ -194,9 +171,7 @@ Collection of AI & Machine Learning experiments.
 # 👀 Profile Views
 
 <p align="center">
-
 <img src="https://komarev.com/ghpvc/?username=YOURUSERNAME&label=Profile%20Views&color=ff69b4&style=flat"/>
-
 </p>
 
 ---
@@ -204,9 +179,7 @@ Collection of AI & Machine Learning experiments.
 # ⚡ Developer Quote
 
 <p align="center">
-
 <b>"Dream big. Build bigger. Stay unstoppable."</b>
-
 </p>
 
 ---
