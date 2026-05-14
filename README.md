@@ -36,7 +36,7 @@
 💻 Backend Systems
 📱 UI/UX Improvements
 📊 Scalable Applications
-````
+```
 
 ---
 
@@ -56,10 +56,10 @@ AI-powered nutrition & food analysis system.
 
 ### Features
 
-* 🍎 Food Recognition
-* 📊 Nutrition Tracking
-* 🤖 AI-Based Recommendations
-* 📱 User-Friendly Interface
+- 🍎 Food Recognition
+- 📊 Nutrition Tracking
+- 🤖 AI-Based Recommendations
+- 📱 User-Friendly Interface
 
 🔗 Repository: https://github.com/YOURUSERNAME/NutriLens-AI
 
@@ -71,10 +71,10 @@ Modern chat application with real-time messaging.
 
 ### Features
 
-* 🔐 JWT Authentication
-* 💬 Instant Messaging
-* ⚡ Socket.IO Integration
-* 📱 Responsive Design
+- 🔐 JWT Authentication
+- 💬 Instant Messaging
+- ⚡ Socket.IO Integration
+- 📱 Responsive Design
 
 🔗 Repository: https://github.com/YOURUSERNAME/chat-app
 
@@ -86,10 +86,10 @@ Professional responsive portfolio website.
 
 ### Features
 
-* 🎨 Elegant UI Design
-* 📱 Fully Responsive
-* ⚡ Smooth Animations
-* 🌌 Modern Layout
+- 🎨 Elegant UI Design
+- 📱 Fully Responsive
+- ⚡ Smooth Animations
+- 🌌 Modern Layout
 
 🔗 Live Website: https://YOURUSERNAME.github.io/portfolio/
 
@@ -101,10 +101,10 @@ Projects focused on deployment & cloud technologies.
 
 ### Features
 
-* ☁️ Google Cloud Deployment
-* 🚀 Deployment Pipelines
-* ⚡ Scalable Hosting
-* 🔒 Secure APIs
+- ☁️ Google Cloud Deployment
+- 🚀 Deployment Pipelines
+- ⚡ Scalable Hosting
+- 🔒 Secure APIs
 
 ---
 
@@ -183,6 +183,4 @@ Projects focused on deployment & cloud technologies.
 </p>
 
 ---
-
-```
-```
+````
