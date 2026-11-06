@@ -4,16 +4,30 @@
 <!-- 01. CREATIVE HERO WITH INTEGRATED PORTRAIT ARTWORK       -->
 <!-- ======================================================== -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero/hero-banner.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero/hero-banner-cherry.svg">
-  <img src="assets/hero/hero-banner.svg" width="100%" alt="Madhura Lakade — Developer by passion. Creator by nature." />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero/hero-banner.gif">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero/hero-banner-cherry.gif">
+  <img src="assets/hero/hero-banner.gif" width="100%" alt="Madhura Lakade — Developer by passion. Creator by nature." />
 </picture>
+
+<br/><br/>
+
+<!-- Dynamic Typing Specialty Intro -->
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3000&pause=1000&color=FF2D6F&center=true&vCenter=true&width=640&lines=Computer+Science+Student+%7C+Pune%2C+India;Full-Stack+%26+Systems+Developer;Building+secure+apps+with+PostgreSQL+RLS+%2B+TOTP+MFA;Tracking+satellites+in+3D+with+CesiumJS;Teaching+cybersecurity+to+2%2C000%2B+people" alt="Typing intro"/>
+</a>
+
+<br/><br/>
+
+<!-- Source of Truth Badges -->
+![Location](https://img.shields.io/badge/18.5204°_N,_73.8567°_E-Pune,_India-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
+![CGPA](https://img.shields.io/badge/CGPA-9.2%2B-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
+![Status](https://img.shields.io/badge/Open_to-Part--time_%26_Remote-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
 
 <br/><br/>
 
 <!-- Fast Quick-Connect Identity Strip -->
 <p align="center">
-  <a href="https://www.linkedin.com/in/madhura-lakade/">
+  <a href="https://linkedin.com/in/madhura-lakade-a5b244314">
     <img src="assets/icons/connect-linkedin.svg" height="34" alt="LinkedIn Profile" />
   </a>
   &nbsp;&nbsp;
@@ -30,6 +44,24 @@
 
 <br/>
 
+<!-- Terminal Profile Identity -->
+```text
+$ whoami
+madhura_lakade
+
+$ cat profile.json
+{
+  "role":      "Computer Science Student",
+  "base":      "Pune, India",
+  "cgpa":      "9.2+",
+  "focus":     ["Full-Stack", "Backend & Systems", "Security", "Geospatial 3D"],
+  "mode":      ["She builds", "She thinks", "She creates"],
+  "available": "Part-time · Remote"
+}
+```
+
+<br/>
+
 <p align="center">
   <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
 </p>
@@ -39,45 +71,36 @@
 <!-- ======================================================== -->
 ## ✦ About Madhura
 
-I am a **Third Year B.Sc. Computer Science** student based in **Pune, India**, dedicated to architecting dependable full-stack applications, resilient backend systems, and thoughtful digital interfaces.
+I'm a **Computer Science student** from Pune, India, with a **CGPA of 9.2+**, focused on building dependable full-stack applications, resilient backend systems and thoughtful interfaces.
 
-My engineering philosophy connects technical depth with clear product intuition. Rather than assembling proof-of-concept demos, I focus on building practical, production-minded software—from institutional workflow engines with zero-trust role-level security to 3D orbital trajectory simulation systems. Beyond application development, I conduct academic research, advocate for community cybersecurity awareness, compete in national and international hackathons, and collaborate with peer developers to build software that solves tangible problems.
+I care about the gap between a demo and real software. My work spans an **institutional procurement and approval platform** secured with PostgreSQL Row-Level Security and TOTP-based MFA, and **KesslerX**, an orbital traffic monitoring dashboard with 3D satellite tracking. Beyond code, I present research, teach **cybersecurity awareness** as a Cyber Warrior with Quick Heal Foundation, and compete in hackathons with fellow developers.
 
----
+> *Technical depth, clear communication, and the habit of finishing what I start.*
+
+### By the numbers
+
+| 🎓 CGPA | 🛰️ Projects | 🏆 Hackathons | 🎤 People reached | 🧰 Languages coded | 🗣️ Spoken |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **9.2+** | **6** | **5+** | **2,000+** | **7** | **3** |
+
+<br/>
+
+<p align="center">
+  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+</p>
 
 <!-- ======================================================== -->
 <!-- 03. CURRENT FOCUS                                        -->
 <!-- ======================================================== -->
 ## ✦ Current Focus
 
-Directing engineering efforts toward backend stability, security governance, and spatial analytics:
-
-* **Full-Stack Application Development** — Architecting end-to-end reactive systems combining modular TypeScript frontend state with scalable, asynchronous API backends.
-* **Backend Architecture & Distributed Systems** — Designing structured RESTful endpoints, real-time WebSocket event streaming, and decoupled service layers.
-* **Database Design & Performance** — Relational schema design, index optimization, and modern serverless database workflows using Neon and PostgreSQL.
-* **Application Security & Access Governance** — Implementing defense-in-depth principles, zero-trust PostgreSQL Row-Level Security (RLS), and TOTP-based Multi-Factor Authentication.
-* **Data-Driven Applications & Spatial Visualization** — Spatiotemporal telemetry processing, predictive analytics modeling, and high-performance 3D geospatial rendering using CesiumJS.
-
-<br/>
-
-<p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
-</p>
-
-<!-- ======================================================== -->
-<!-- 04. TECHNOLOGY STACK                                     -->
-<!-- ======================================================== -->
-## ✦ Technology Stack
-
-A restrained, categorized visual overview of verified languages, frameworks, and engineering tools applied across production repositories and research platforms.
-
-| Category | Domain | Technologies |
-| :--- | :--- | :--- |
-| <img src="assets/icons/terminal.svg" width="22" height="22" alt="Languages" /> | **Programming** | `Python` &nbsp;•&nbsp; `JavaScript` &nbsp;•&nbsp; `TypeScript` &nbsp;•&nbsp; `SQL` &nbsp;•&nbsp; `HTML5` &nbsp;•&nbsp; `CSS3` &nbsp;•&nbsp; `C` |
-| <img src="assets/icons/layout.svg" width="22" height="22" alt="Frontend" /> | **Frontend** | `React.js` &nbsp;•&nbsp; `Redux Toolkit` &nbsp;•&nbsp; `React Query` &nbsp;•&nbsp; `React Router` &nbsp;•&nbsp; `React Hook Form` &nbsp;•&nbsp; `Tailwind CSS` &nbsp;•&nbsp; `Vite` &nbsp;•&nbsp; `CesiumJS` |
-| <img src="assets/icons/server.svg" width="22" height="22" alt="Backend" /> | **Backend** | `Node.js` &nbsp;•&nbsp; `Express.js` &nbsp;•&nbsp; `FastAPI` &nbsp;•&nbsp; `REST APIs` &nbsp;•&nbsp; `WebSockets` &nbsp;•&nbsp; `JWT Authentication` |
-| <img src="assets/icons/shield.svg" width="22" height="22" alt="Security" /> | **Databases &amp; Security** | `PostgreSQL` &nbsp;•&nbsp; `Neon` &nbsp;•&nbsp; `PostgreSQL Row-Level Security` &nbsp;•&nbsp; `TOTP-based Multi-Factor Authentication` |
-| <img src="assets/icons/cpu.svg" width="22" height="22" alt="Tools" /> | **Tools &amp; Ecosystem** | `Git` &nbsp;•&nbsp; `GitHub` &nbsp;•&nbsp; `BeautifulSoup` &nbsp;•&nbsp; `Selenium` &nbsp;•&nbsp; `MS Office` &nbsp;•&nbsp; `Google Workspace` |
+| | Area | What I'm doing |
+|:---:|---|---|
+| 🧱 | **Full-Stack Development** | Typed React frontends (TypeScript, Redux Toolkit, React Query) talking to Node.js and FastAPI backends |
+| ⚡ | **Backend & Real-Time Systems** | REST API design, JWT auth, WebSocket event streaming |
+| 🗄️ | **Database Design** | Relational schemas and serverless workflows with PostgreSQL and Neon |
+| 🔐 | **Application Security** | Row-Level Security, TOTP-based MFA, defense-in-depth thinking |
+| 🌍 | **Spatial & Data-Driven Apps** | Satellite tracking, live orbital data and 3D rendering with CesiumJS |
 
 <br/>
 
@@ -86,12 +109,22 @@ A restrained, categorized visual overview of verified languages, frameworks, and
 </p>
 
 <!-- ======================================================== -->
-<!-- 05. FEATURED PROJECTS                                    -->
+<!-- 04. FEATURED WORK                                        -->
 <!-- ======================================================== -->
-## ✦ Featured Projects
+## ✦ Featured Work
+
+| Project | What it is | Stack |
+|---|---|---|
+| **[Procure Flow](https://sp-college-approval-hub.vercel.app)** | Procurement lifecycle and approval workflow platform for S.P. College, Pune | React · Node.js · PostgreSQL · Neon · RLS · MFA |
+| **[KesslerX](https://kessler-x.vercel.app)** | Orbital debris and satellite monitoring for space situational awareness. Presented at Avishkar | React · TypeScript · CesiumJS · FastAPI · WebSockets |
+| **InfraGuard AI** | Failure prediction and alerts for roads, bridges and pipelines | React · Python · REST APIs |
+
+<sub>Also: NutriLens AI · Web Scraper · SkillSwap</sub>
+
+<br/>
 
 ### 01. PROCURE FLOW
-> **Enterprise Procurement &amp; Institutional Workflow Platform**
+> **Procurement lifecycle and approval workflow platform for S.P. College, Pune**
 
 <p align="center">
   <a href="https://sp-college-approval-hub.vercel.app/">
@@ -99,15 +132,15 @@ A restrained, categorized visual overview of verified languages, frameworks, and
   </a>
 </p>
 
-* **Architecture**: Multi-tier institutional approval platform with zero-trust role-based governance.
-* **Key Capabilities**: Fine-grained access control via PostgreSQL Row-Level Security (RLS), TOTP-based Multi-Factor Authentication (MFA), auditable sign-off pipelines, and immutable requisition ledgers.
+* **Architecture**: Institutional multi-tier requisition and sign-off pipeline built for S.P. College, Pune.
+* **Key Capabilities**: Fine-grained access control via PostgreSQL Row-Level Security (RLS), TOTP-based Multi-Factor Authentication (MFA), auditable hierarchical sign-offs, and immutable requisition ledgers.
 * **Technologies**: React, Node.js, PostgreSQL, Neon, Vite, Tailwind CSS, PostgreSQL Row-Level Security, TOTP-based Multi-Factor Authentication.
 * **Deployment**: [Live Application &rarr;](https://sp-college-approval-hub.vercel.app/)
 
 ---
 
 ### 02. KESSLERX
-> **Orbital Traffic Management &amp; Conjunction Assessment Platform**
+> **Orbital debris and satellite monitoring for space situational awareness. Presented at Avishkar**
 
 <p align="center">
   <a href="https://kessler-x.vercel.app/">
@@ -115,7 +148,7 @@ A restrained, categorized visual overview of verified languages, frameworks, and
   </a>
 </p>
 
-* **Architecture**: High-performance aerospace web application providing 3D orbital visualization and conjunction evaluation for Low Earth Orbit (LEO) assets.
+* **Architecture**: High-performance aerospace platform providing 3D orbital visualization and conjunction evaluation for Low Earth Orbit (LEO) assets. Selected and presented at the **Avishkar Research Convention** in Technology and Data.
 * **Key Capabilities**: Real-time event streaming via WebSockets, spatiotemporal query caching using FastAPI and React Query, and interactive 3D geospatial rendering with CesiumJS.
 * **Technologies**: React, TypeScript, Redux Toolkit, React Query, CesiumJS, Tailwind CSS, FastAPI, WebSockets.
 * **Deployment**: [Live Application &rarr;](https://kessler-x.vercel.app/)
@@ -123,7 +156,7 @@ A restrained, categorized visual overview of verified languages, frameworks, and
 ---
 
 ### 03. INFRAGUARD AI
-> **Infrastructure Failure Prediction &amp; Monitoring Platform**
+> **Failure prediction and alerts for roads, bridges and pipelines**
 
 <p align="center">
   <img src="assets/projects/infraguard.svg" width="100%" alt="InfraGuard AI Architecture" />
@@ -150,23 +183,88 @@ A restrained, categorized visual overview of verified languages, frameworks, and
 </p>
 
 <!-- ======================================================== -->
+<!-- 05. TECHNOLOGY STACK                                     -->
+<!-- ======================================================== -->
+## ✦ Technology Stack
+
+<div align="center">
+
+**Languages**<br/>
+![Python](https://img.shields.io/badge/Python-4a0a1f?style=for-the-badge&logo=python&logoColor=ff2d6f)
+![JavaScript](https://img.shields.io/badge/JavaScript-4a0a1f?style=for-the-badge&logo=javascript&logoColor=ff2d6f)
+![TypeScript](https://img.shields.io/badge/TypeScript-4a0a1f?style=for-the-badge&logo=typescript&logoColor=ff2d6f)
+![SQL](https://img.shields.io/badge/SQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f)
+![HTML5](https://img.shields.io/badge/HTML5-4a0a1f?style=for-the-badge&logo=html5&logoColor=ff2d6f)
+![CSS3](https://img.shields.io/badge/CSS3-4a0a1f?style=for-the-badge&logo=css3&logoColor=ff2d6f)
+![C](https://img.shields.io/badge/C-4a0a1f?style=for-the-badge&logo=c&logoColor=ff2d6f)
+
+<br/><br/>
+
+**Frontend**<br/>
+![React](https://img.shields.io/badge/React-4a0a1f?style=for-the-badge&logo=react&logoColor=ff2d6f)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-4a0a1f?style=for-the-badge&logo=redux&logoColor=ff2d6f)
+![React Query](https://img.shields.io/badge/React_Query-4a0a1f?style=for-the-badge&logo=reactquery&logoColor=ff2d6f)
+![React Router](https://img.shields.io/badge/React_Router-4a0a1f?style=for-the-badge&logo=reactrouter&logoColor=ff2d6f)
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form-4a0a1f?style=for-the-badge&logo=reacthookform&logoColor=ff2d6f)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4a0a1f?style=for-the-badge&logo=tailwindcss&logoColor=ff2d6f)
+![Vite](https://img.shields.io/badge/Vite-4a0a1f?style=for-the-badge&logo=vite&logoColor=ff2d6f)
+![CesiumJS](https://img.shields.io/badge/CesiumJS-4a0a1f?style=for-the-badge&logo=cesium&logoColor=ff2d6f)
+
+<br/><br/>
+
+**Backend**<br/>
+![Node.js](https://img.shields.io/badge/Node.js-4a0a1f?style=for-the-badge&logo=nodedotjs&logoColor=ff2d6f)
+![Express](https://img.shields.io/badge/Express-4a0a1f?style=for-the-badge&logo=express&logoColor=ff2d6f)
+![FastAPI](https://img.shields.io/badge/FastAPI-4a0a1f?style=for-the-badge&logo=fastapi&logoColor=ff2d6f)
+![REST](https://img.shields.io/badge/REST_APIs-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+![WebSockets](https://img.shields.io/badge/WebSockets-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+![JWT](https://img.shields.io/badge/JWT_Auth-4a0a1f?style=for-the-badge&logo=jsonwebtokens&logoColor=ff2d6f)
+
+<br/><br/>
+
+**Databases & Security**<br/>
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f)
+![Neon](https://img.shields.io/badge/Neon-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+![RLS](https://img.shields.io/badge/Row--Level_Security-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+![TOTP MFA](https://img.shields.io/badge/TOTP_MFA-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+
+<br/><br/>
+
+**Tools & Ecosystem**<br/>
+![Git](https://img.shields.io/badge/Git-4a0a1f?style=for-the-badge&logo=git&logoColor=ff2d6f)
+![GitHub](https://img.shields.io/badge/GitHub-4a0a1f?style=for-the-badge&logo=github&logoColor=ff2d6f)
+![Selenium](https://img.shields.io/badge/Selenium-4a0a1f?style=for-the-badge&logo=selenium&logoColor=ff2d6f)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
+![Google Workspace](https://img.shields.io/badge/Google_Workspace-4a0a1f?style=for-the-badge&logo=google&logoColor=ff2d6f)
+
+</div>
+
+<br/>
+
+| Category | Domain | Technologies |
+| :--- | :--- | :--- |
+| <img src="assets/icons/terminal.svg" width="22" height="22" alt="Languages" /> | **Programming** | `Python` &nbsp;•&nbsp; `JavaScript` &nbsp;•&nbsp; `TypeScript` &nbsp;•&nbsp; `SQL` &nbsp;•&nbsp; `HTML5` &nbsp;•&nbsp; `CSS3` &nbsp;•&nbsp; `C` |
+| <img src="assets/icons/layout.svg" width="22" height="22" alt="Frontend" /> | **Frontend** | `React` &nbsp;•&nbsp; `Redux Toolkit` &nbsp;•&nbsp; `React Query` &nbsp;•&nbsp; `React Router` &nbsp;•&nbsp; `React Hook Form` &nbsp;•&nbsp; `Tailwind CSS` &nbsp;•&nbsp; `Vite` &nbsp;•&nbsp; `CesiumJS` |
+| <img src="assets/icons/server.svg" width="22" height="22" alt="Backend" /> | **Backend** | `Node.js` &nbsp;•&nbsp; `Express` &nbsp;•&nbsp; `FastAPI` &nbsp;•&nbsp; `REST APIs` &nbsp;•&nbsp; `WebSockets` &nbsp;•&nbsp; `JWT Auth` |
+| <img src="assets/icons/shield.svg" width="22" height="22" alt="Security" /> | **Databases &amp; Security** | `PostgreSQL` &nbsp;•&nbsp; `Neon` &nbsp;•&nbsp; `PostgreSQL Row-Level Security` &nbsp;•&nbsp; `TOTP-based Multi-Factor Authentication` |
+| <img src="assets/icons/cpu.svg" width="22" height="22" alt="Tools" /> | **Tools &amp; Ecosystem** | `Git` &nbsp;•&nbsp; `GitHub` &nbsp;•&nbsp; `BeautifulSoup` &nbsp;•&nbsp; `Selenium` &nbsp;•&nbsp; `Google Workspace` |
+
+<br/>
+
+<p align="center">
+  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+</p>
+
+<!-- ======================================================== -->
 <!-- 06. BEYOND THE CODE                                      -->
 <!-- ======================================================== -->
 ## ✦ Beyond the Code
 
-Engineering excellence extends beyond codebases. I actively engage in cybersecurity education, research conventions, and collaborative problem-solving.
-
-* **Quick Heal Foundation** &nbsp;•&nbsp; *Cyber Warrior (July – November 2025)*  
-  Delivered comprehensive cybersecurity awareness training to over 2,000 individuals across schools and community forums, focusing on digital safety hygiene, online privacy protection, and financial scam mitigation.
-
-* **Avishkar Research Convention** &nbsp;•&nbsp; *College-Level Research Presentation*  
-  Selected to present research in the **Technology and Data** domain, featuring **KesslerX**—addressing orbital debris congestion, collision avoidance algorithms, and aerospace data visualization.
-
-* **Competitive Hackathons** &nbsp;•&nbsp; *5+ Hackathons &amp; Ideathons*  
-  Active participant in fast-paced software development hackathons, including the **FAR AWAY International Hackathon**, **AMD Slingshot Campus Days Ideathon 2026**, and **Hack the Flame**.
-
-* **Sphere Community** &nbsp;•&nbsp; *Collaborative Development*  
-  Engaged in technical knowledge exchanges, team-based open hackathon initiatives, and developer peer mentorship.
+- 🛡️ **Cyber Warrior, Quick Heal Foundation** (Jul–Nov 2025): taught cybersecurity awareness to 2,000+ students and members of the public, and kept contributing past the planned eight weeks
+- 🎤 **Avishkar Research Competition:** presented KesslerX in Technology and Data
+- 🏁 **Hackathons (5+):** FAR AWAY International (team advanced), AMD Slingshot Campus Days Ideathon 2026, Hack the Flame
+- 🧠 **Brain Bytes Tech Quiz:** Certificate of Excellence, SPPU ACM Student Chapter
+- 💻 **Sphere Coding Club:** active member
 
 <br/>
 
@@ -230,7 +328,7 @@ I welcome conversations around full-stack development, software architecture, re
 <div align="center">
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/madhura-lakade/">
+  <a href="https://linkedin.com/in/madhura-lakade-a5b244314">
     <img src="assets/icons/connect-linkedin.svg" height="38" alt="Connect on LinkedIn" />
   </a>
   &nbsp;&nbsp;

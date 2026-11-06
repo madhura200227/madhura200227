@@ -2,7 +2,7 @@ import base64
 import os
 import math
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont
 
 # 1. Master Source Transparent Cutout (Full Portrait with Crossed Arms)
 CUTOUT_PATH = 'assets/portrait/madhura-full-pfp-cutout.png'
@@ -39,98 +39,59 @@ fitted_cutout = hires_cutout.resize((385, 422), Image.Resampling.LANCZOS)
 fitted_cutout.save('assets/portrait/madhura-full-pfp-fitted.png', format='PNG')
 
 # ==============================================================================
-# SVG HERO BANNER COMPOSITION (Espresso, Cherry Red, Light)
-# True-color 32-bit lossless portrait embedding + native 60fps SMIL animations
+# SVG HERO BANNER COMPOSITION (Midnight Éspresso & Cherry Royale)
+# PLAIN theme backgrounds • NO circular glow blobs • NO orbit lines
 # ==============================================================================
 def build_hero_svg(theme="espresso"):
     silver_white = "#F0F4F8"
 
     if theme == "espresso":
-        bg_stops = '''
-          <stop offset="0%" stop-color="#140C0E" />
-          <stop offset="40%" stop-color="#211817" />
-          <stop offset="85%" stop-color="#340D18" />
-          <stop offset="100%" stop-color="#1A0E11" />'''
+        # Mode 01: Midnight Éspresso (The Dark Edition)
+        bg_color = "#211817"
         border_stops = '''
           <stop offset="0%" stop-color="#873D50" stop-opacity="0.9" />
           <stop offset="30%" stop-color="#C1123F" stop-opacity="0.8" />
           <stop offset="70%" stop-color="#650D25" stop-opacity="0.9" />
           <stop offset="100%" stop-color="#B88979" stop-opacity="0.5" />'''
-        atmos_stops = '''
-          <stop offset="0%" stop-color="#C1123F" stop-opacity="0.32" />
-          <stop offset="45%" stop-color="#650D25" stop-opacity="0.18" />
-          <stop offset="80%" stop-color="#211817" stop-opacity="0" />'''
         accent_color = "#C1123F"
-        highlight_color = "#FF3366"
         pill_fill = "#650D25"
         pill_stroke = "#873D50"
         diamond_fill = "#C1123F"
-        orbit_primary = "#B88979"
-        orbit_secondary = "#873D50"
-        badge_bg = "rgba(33, 24, 23, 0.85)"
+        badge_bg = "rgba(33, 24, 23, 0.95)"
         badge_border = "#873D50"
     elif theme == "cherry":
-        bg_stops = '''
-          <stop offset="0%" stop-color="#22050E" />
-          <stop offset="35%" stop-color="#340917" />
-          <stop offset="70%" stop-color="#580C23" />
-          <stop offset="100%" stop-color="#280611" />'''
+        # Mode 02: Cherry Royale (The Signature Edition)
+        bg_color = "#4A0A1D"
         border_stops = '''
           <stop offset="0%" stop-color="#C1123F" stop-opacity="0.9" />
           <stop offset="30%" stop-color="#FF2D60" stop-opacity="0.9" />
           <stop offset="70%" stop-color="#780E2B" stop-opacity="0.9" />
           <stop offset="100%" stop-color="#E8D5C5" stop-opacity="0.6" />'''
-        atmos_stops = '''
-          <stop offset="0%" stop-color="#E61C52" stop-opacity="0.48" />
-          <stop offset="50%" stop-color="#650D25" stop-opacity="0.25" />
-          <stop offset="85%" stop-color="#340917" stop-opacity="0" />'''
         accent_color = "#FF2D60"
-        highlight_color = "#FFA3B8"
         pill_fill = "#6B0C26"
         pill_stroke = "#FF2D60"
         diamond_fill = "#FF2D60"
-        orbit_primary = "#E8D5C5"
-        orbit_secondary = "#C1123F"
-        badge_bg = "rgba(52, 9, 23, 0.85)"
+        badge_bg = "rgba(74, 10, 29, 0.95)"
         badge_border = "#C1123F"
-    else: # light
-        bg_stops = '''
-          <stop offset="0%" stop-color="#FFFDFB" />
-          <stop offset="50%" stop-color="#FFF5ED" />
-          <stop offset="100%" stop-color="#F7E6D8" />'''
+    else: # light fallback
+        bg_color = "#FFF5ED"
         border_stops = '''
           <stop offset="0%" stop-color="#873D50" stop-opacity="0.6" />
           <stop offset="40%" stop-color="#C1123F" stop-opacity="0.7" />
           <stop offset="100%" stop-color="#873D50" stop-opacity="0.6" />'''
-        atmos_stops = '''
-          <stop offset="0%" stop-color="#D99AA7" stop-opacity="0.30" />
-          <stop offset="60%" stop-color="#FFF5ED" stop-opacity="0" />'''
         accent_color = "#C1123F"
-        highlight_color = "#650D25"
         pill_fill = "#650D25"
         pill_stroke = "#873D50"
         diamond_fill = "#C1123F"
-        orbit_primary = "#873D50"
-        orbit_secondary = "#B88979"
-        badge_bg = "rgba(255, 245, 237, 0.9)"
+        badge_bg = "rgba(255, 245, 237, 0.95)"
         badge_border = "#873D50"
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="hbBg_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
-      {bg_stops}
-    </linearGradient>
-
     <!-- Outer Border Gradient -->
     <linearGradient id="hbBorder_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
       {border_stops}
     </linearGradient>
-
-    <!-- Deep Atmospheric Radial Glow behind Subject -->
-    <radialGradient id="hbAtmosphere_{theme}" cx="77%" cy="44%" r="55%">
-      {atmos_stops}
-    </radialGradient>
   </defs>
 
   <style>
@@ -142,22 +103,8 @@ def build_hero_svg(theme="espresso"):
     .hb-meta {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #E8D5C5; letter-spacing: 0.8px; }}
   </style>
 
-  <!-- Base Canvas -->
-  <rect width="1200" height="500" rx="16" fill="url(#hbBg_{theme})" />
-
-  <!-- Subtle Architectural Grid Backdrop -->
-  <g opacity="0.08" stroke="#FFF5ED" stroke-width="0.5">
-    <line x1="80" y1="0" x2="80" y2="500" />
-    <line x1="380" y1="0" x2="380" y2="500" />
-    <line x1="680" y1="0" x2="680" y2="500" />
-    <line x1="980" y1="0" x2="980" y2="500" />
-    <line x1="0" y1="120" x2="1200" y2="120" />
-    <line x1="0" y1="260" x2="1200" y2="260" />
-    <line x1="0" y1="400" x2="1200" y2="400" />
-  </g>
-
-  <!-- Atmospheric Glow behind Subject -->
-  <rect width="1200" height="500" rx="16" fill="url(#hbAtmosphere_{theme})" />
+  <!-- Plain Theme Base Canvas (Zero Glow Blobs, Clean Uniform Surface) -->
+  <rect width="1200" height="500" rx="16" fill="{bg_color}" />
 
   <!-- Outer Architectural Border (Clean 22px frame inset) -->
   <rect x="22" y="22" width="1156" height="456" rx="12" fill="none" stroke="url(#hbBorder_{theme})" stroke-width="1.2" />
@@ -169,64 +116,14 @@ def build_hero_svg(theme="espresso"):
   <path d="M 1178 460 L 1178 478 L 1160 478" fill="none" stroke="{accent_color}" stroke-width="2.5" />
 
   <!-- ========================================================================= -->
-  <!-- DEPTH LAYER 1: CELESTIAL ORBITAL TRAJECTORIES (BEHIND PFP) -->
-  <!-- ========================================================================= -->
-  <g transform="translate(920, 220) rotate(-15)">
-    <!-- Primary Tilted Orbital Ring -->
-    <ellipse cx="0" cy="0" rx="240" ry="80" fill="none" stroke="{orbit_primary}" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.4" />
-
-    <!-- Inner Harmonic Arc -->
-    <ellipse cx="0" cy="0" rx="180" ry="60" fill="none" stroke="{orbit_secondary}" stroke-width="1" stroke-dasharray="8 6" opacity="0.3" />
-
-    <!-- Forward Orbiting Satellite Body -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="14s" repeatCount="indefinite" />
-      <g transform="translate(240, 0)">
-        <circle cx="0" cy="0" r="4.5" fill="{accent_color}">
-          <animate attributeName="r" values="3.5;5.5;3.5" dur="2.4s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="0" cy="0" r="10" fill="none" stroke="#FFF5ED" stroke-width="0.8" opacity="0.7">
-          <animate attributeName="r" values="8;13;8" dur="2.4s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.4s" repeatCount="indefinite" />
-        </circle>
-      </g>
-    </g>
-
-    <!-- Counter-Orbiting Stardust Particle -->
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="180 0 0" to="-180 0 0" dur="20s" repeatCount="indefinite" />
-      <g transform="translate(180, 0)">
-        <circle cx="0" cy="0" r="2.5" fill="#FFF5ED" opacity="0.8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
-        </circle>
-      </g>
-    </g>
-  </g>
-
-  <!-- Ambient Twinkling Stardust Constellations -->
-  <g opacity="0.75">
-    <circle cx="715" cy="85" r="1.8" fill="#FFF5ED">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="1145" cy="115" r="1.5" fill="{accent_color}">
-      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="695" cy="275" r="1.2" fill="#E8D5C5">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite" />
-    </circle>
-    <!-- Geometric Cross Spark -->
-    <g transform="translate(1135, 210) scale(0.8)" stroke="#FFF5ED" stroke-width="0.9" opacity="0.6">
-      <line x1="-6" y1="0" x2="6" y2="0" />
-      <line x1="0" y1="-6" x2="0" y2="6" />
-      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.2s" repeatCount="indefinite" />
-    </g>
-  </g>
-
-  <!-- ========================================================================= -->
   <!-- DEPTH LAYER 2: MASTER FULL PORTRAIT (TRUE COLOR LOSSLESS 32-BIT PNG)     -->
-  <!-- 100% Original Facial Features Preserved • 30px headroom • Flush bottom   -->
+  <!-- Animated celestial float + 100% Original Facial Features • NO orbits     -->
   <!-- ========================================================================= -->
   <g id="portraitGroup" transform="translate(745, 52)">
+    <animateTransform attributeName="transform" type="translate"
+      values="745 52; 745 49; 745 55; 745 52"
+      keyTimes="0; 0.35; 0.75; 1"
+      dur="4.5s" repeatCount="indefinite" />
     <image href="data:image/png;base64,{pfp_png_b64}" x="0" y="0" width="385" height="422" preserveAspectRatio="xMidYMid meet" />
   </g>
 
@@ -300,6 +197,7 @@ def build_hero_svg(theme="espresso"):
 
 # ==============================================================================
 # RENDER STATIC PREVIEW & ANIMATED GIF USING PILLOW
+# Plain solid theme background • ZERO glow blobs • ZERO orbit lines
 # ==============================================================================
 def find_font(font_names, size):
     for fn in font_names:
@@ -309,67 +207,40 @@ def find_font(font_names, size):
             pass
     return ImageFont.load_default()
 
-def render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0, pfp_alpha_mult=1.0, reveal_progress=1.0):
+def render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0):
     """
     Renders a single frame of the editorial hero banner at 1200x500 with full PFP.
-    Properly fitted inside banner: 30px headroom, flush bottom, no border clashes.
+    PLAIN theme background • ZERO glow blobs • ZERO orbit lines • 30px headroom • Flush bottom.
     """
     width, height = 1200, 500
 
     if theme == "espresso":
-        c_bg1 = (20, 12, 14)
-        c_bg3 = (52, 13, 24)
-        c_atmos = (193, 18, 63)
+        # Mode 01: Midnight Éspresso (The Dark Edition) - Clean solid #211817
+        c_bg = (33, 24, 23)
         c_border = (135, 61, 80)
         c_accent = (193, 18, 63)
-        c_orbit = (184, 137, 121)
         c_pill = (101, 13, 37)
         c_pill_border = (135, 61, 80)
         badge_bg = (33, 24, 23, 220)
     else: # cherry
-        c_bg1 = (34, 5, 14)
-        c_bg3 = (88, 12, 35)
-        c_atmos = (230, 28, 82)
+        # Mode 02: Cherry Royale (The Signature Edition) - Clean solid #4A0A1D
+        c_bg = (74, 10, 29)
         c_border = (193, 18, 63)
         c_accent = (255, 45, 96)
-        c_orbit = (232, 213, 197)
         c_pill = (107, 12, 38)
         c_pill_border = (255, 45, 96)
-        badge_bg = (52, 9, 23, 220)
+        badge_bg = (74, 10, 29, 220)
 
     c_ivory = (255, 245, 237)
     c_champagne = (232, 213, 197)
     c_dusty_rose = (217, 154, 167)
     c_silver_white = (240, 244, 248)
 
-    # 1. Base Gradient Canvas
-    im = Image.new('RGBA', (width, height), (0, 0, 0, 255))
-    y_coords = np.linspace(0, 1, height)[:, None]
-    x_coords = np.linspace(0, 1, width)[None, :]
-    diag = 0.5 * x_coords + 0.5 * y_coords
-
-    r_arr = np.clip(c_bg1[0] * (1 - diag) + c_bg3[0] * diag, 0, 255).astype(np.uint8)
-    g_arr = np.clip(c_bg1[1] * (1 - diag) + c_bg3[1] * diag, 0, 255).astype(np.uint8)
-    b_arr = np.clip(c_bg1[2] * (1 - diag) + c_bg3[2] * diag, 0, 255).astype(np.uint8)
-    a_arr = np.full((height, width), 255, dtype=np.uint8)
-
-    bg_img = Image.fromarray(np.dstack([r_arr, g_arr, b_arr, a_arr]), mode='RGBA')
-    im.paste(bg_img, (0, 0))
-
-    # 2. Atmospheric Radial Glow behind Subject (centered at 920, 220)
-    glow_overlay = Image.new('RGBA', (width, height), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow_overlay)
-    cx, cy = 920, 220
-    max_r = 300
-    for r in range(max_r, 0, -15):
-        alpha = int(45 * (1 - (r / max_r) ** 1.5))
-        if theme == "cherry":
-            alpha = int(65 * (1 - (r / max_r) ** 1.5))
-        glow_draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(c_atmos[0], c_atmos[1], c_atmos[2], alpha))
-    im = Image.alpha_composite(im, glow_overlay)
+    # 1. Plain Theme Base Canvas (Zero Glow Blobs, Pure Uniform Solid Surface)
+    im = Image.new('RGBA', (width, height), (c_bg[0], c_bg[1], c_bg[2], 255))
     draw = ImageDraw.Draw(im)
 
-    # 3. Outer Architectural Border (Clean 22px frame inset)
+    # 2. Outer Architectural Border (Clean 22px frame inset)
     draw.rounded_rectangle([22, 22, width - 22, height - 22], radius=12, outline=c_border, width=1)
     # Corner registration marks
     draw.line([(22, 40), (22, 22), (40, 22)], fill=c_accent, width=3)
@@ -377,39 +248,18 @@ def render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0, pfp_alpha_mul
     draw.line([(22, height - 40), (22, height - 22), (40, height - 22)], fill=c_accent, width=3)
     draw.line([(width - 22, height - 40), (width - 22, height - 22), (width - 40, height - 22)], fill=c_accent, width=3)
 
-    # 4. Celestial Orbital Rings (Behind Subject)
-    orbit_im = Image.new('RGBA', (width, height), (0, 0, 0, 0))
-    orbit_draw = ImageDraw.Draw(orbit_im)
-    orbit_draw.ellipse([cx - 240, cy - 80, cx + 240, cy + 80], outline=(c_orbit[0], c_orbit[1], c_orbit[2], 100), width=1)
-    orbit_draw.ellipse([cx - 180, cy - 60, cx + 180, cy + 60], outline=(c_border[0], c_border[1], c_border[2], 80), width=1)
-
-    # Orbiting Satellite at angle t_norm
-    angle = t_norm * 2 * math.pi
-    sat_x = cx + int(240 * math.cos(angle))
-    sat_y = cy + int(80 * math.sin(angle))
-    orbit_draw.ellipse([sat_x - 5, sat_y - 5, sat_x + 5, sat_y + 5], fill=c_accent)
-    orbit_draw.ellipse([sat_x - 11, sat_y - 11, sat_x + 11, sat_y + 11], outline=(255, 245, 237, 180), width=1)
-
-    orbit_rot = orbit_im.rotate(-15, center=(cx, cy), resample=Image.Resampling.BILINEAR)
-    im = Image.alpha_composite(im, orbit_rot)
-
-    # 5. Master Full Portrait (Fitted with 30px headroom and flush bottom, high-res downscaled)
+    # 3. Master Full Portrait (Fitted with 30px headroom and flush bottom, high-res downscaled)
+    # ZERO glow blobs behind portrait • ZERO orbit lines
     target_w, target_h = 385, 422
     cutout_resized = hires_cutout.resize((target_w, target_h), Image.Resampling.LANCZOS)
 
-    reveal_offset = int((1.0 - reveal_progress) * 12)
     pos_x = 745
-    pos_y = 50 + int(float_y) + reveal_offset
-
-    if pfp_alpha_mult < 0.99:
-        r, g, b, a = cutout_resized.split()
-        a_scaled = a.point(lambda p: int(p * pfp_alpha_mult))
-        cutout_resized = Image.merge('RGBA', (r, g, b, a_scaled))
+    pos_y = 50 + int(float_y)
 
     im.paste(cutout_resized, (pos_x, pos_y), cutout_resized)
     draw = ImageDraw.Draw(im)
 
-    # 6. Typography (Left Column)
+    # 4. Typography (Left Column)
     f_mono = find_font(['consolab.ttf', 'consola.ttf', 'cour.ttf'], 11)
     f_name = find_font(['georgiab.ttf', 'georgia.ttf', 'timesbd.ttf'], 44)
     f_italic = find_font(['georgiai.ttf', 'georgia.ttf', 'timesi.ttf'], 20)
@@ -461,32 +311,56 @@ def render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0, pfp_alpha_mul
 
     return im
 
-def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=30, fps=15):
+def get_master_palette(theme, base_frame, hires_cutout):
     """
-    Builds a silky, professional 30-frame animated GIF (~2.0s loop).
-    FastOctree 256 colors for maximum skin tone fidelity.
+    Creates an optimal 256-color master palette on a plain solid background:
+    - 230 colors reserved for the portrait & facial features
+    - 26 colors for plain background, UI text, borders & badges
+    Guarantees zero facial posterization and zero frame-to-frame flickering.
     """
+    # 1. 230 colors dedicated to portrait face & body colors
+    face = hires_cutout.crop((280, 140, 620, 500)).convert('RGB')
+    face_p = face.quantize(colors=230, method=Image.Quantize.FASTOCTREE)
+
+    # 2. 26 colors for plain background & UI text/accents
+    ui_sample = base_frame.crop((20, 20, 600, 460)).convert('RGB')
+    ui_p = ui_sample.quantize(colors=26, method=Image.Quantize.FASTOCTREE)
+
+    master_p = face_p.getpalette()[:230*3] + ui_p.getpalette()[:26*3]
+    master_p = master_p + [0] * (768 - len(master_p))
+
+    pal_img = Image.new('P', (1, 1))
+    pal_img.putpalette(master_p)
+    return pal_img
+
+def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18):
+    """
+    Builds a silky, active 36-frame animated GIF (~2.0s loop).
+    Smooth sinusoidal portrait floating motion • PLAIN theme background • NO glow blobs • NO orbit lines.
+    """
+    base_frame = render_banner_frame(theme=theme, t_norm=0.0, float_y=0.0)
+    master_pal = get_master_palette(theme, base_frame, hires_cutout)
+
     frames = []
 
     for i in range(num_frames):
         t_norm = i / float(num_frames)
 
-        # Gentle floating oscillation (amplitude: 2.0px)
-        float_y = 2.0 * math.sin(t_norm * 2 * math.pi)
+        # Gentle floating oscillation (amplitude: 2.8px)
+        float_y = 2.8 * math.sin(t_norm * 2 * math.pi)
 
         frame_rgba = render_banner_frame(
             theme=theme,
             t_norm=t_norm,
-            float_y=float_y,
-            pfp_alpha_mult=1.0,
-            reveal_progress=1.0
+            float_y=float_y
         )
 
-        frame_rgb = Image.new('RGB', frame_rgba.size, (20, 12, 14) if theme == 'espresso' else (34, 5, 14))
+        bg_rgb_color = (33, 24, 23) if theme == 'espresso' else (74, 10, 29)
+        frame_rgb = Image.new('RGB', frame_rgba.size, bg_rgb_color)
         frame_rgb.paste(frame_rgba, (0, 0), frame_rgba)
 
-        # Full 256-color FastOctree quantization preserving delicate facial features
-        frame_p = frame_rgb.quantize(colors=256, method=Image.Quantize.FASTOCTREE)
+        # Quantize using master palette with Dither.NONE for razor-sharp facial features
+        frame_p = frame_rgb.quantize(palette=master_pal, dither=Image.Dither.NONE)
         frames.append(frame_p)
 
     duration_ms = int(1000 / fps)
@@ -503,7 +377,7 @@ def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gi
 def build_all():
     os.makedirs('assets/hero', exist_ok=True)
 
-    print("1. Generating SVG Hero Banners with True-Color Lossless Full Portrait...")
+    print("1. Generating SVG Hero Banners with Plain Theme Backgrounds (No Glow Blobs, No Orbits)...")
     svg_esp = build_hero_svg("espresso")
     with open('assets/hero/hero-banner.svg', 'w', encoding='utf-8') as f:
         f.write(svg_esp)
@@ -517,7 +391,7 @@ def build_all():
         f.write(svg_light)
     print("   [OK] SVGs generated: hero-banner.svg, hero-banner-cherry.svg, hero-banner-light.svg")
 
-    print("2. Generating Static PNG Previews (True-Color Lossless)...")
+    print("2. Generating Static PNG Previews (True-Color Lossless Plain Background)...")
     preview_esp = render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0)
     preview_esp.save('assets/hero/hero-banner-preview.png', format='PNG', optimize=True)
 
@@ -528,29 +402,29 @@ def build_all():
     print("3. Generating Side-by-Side Comparison Sheet...")
     comp_w = 1200
     comp_h = 500 * 2 + 70
-    comp_img = Image.new('RGB', (comp_w, comp_h), (14, 8, 10))
+    comp_img = Image.new('RGB', (comp_w, comp_h), (18, 12, 14))
     comp_draw = ImageDraw.Draw(comp_img)
 
     f_title = find_font(['georgiab.ttf', 'georgia.ttf'], 22)
     f_sub = find_font(['consolab.ttf', 'consola.ttf'], 12)
 
-    comp_draw.text((30, 16), "BRAND ESPRESSO MODE (Dark Architectural Palette)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((700, 22), "#211817 • #650D25 • #C1123F • #FFF5ED", fill=(217, 154, 167), font=f_sub)
+    comp_draw.text((30, 16), "MODE 01 — MIDNIGHT ÉSPRESSO (The Dark Edition)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((720, 22), "Quiet luxury. Limitless depth. Plain #211817", fill=(217, 154, 167), font=f_sub)
     comp_img.paste(preview_esp, (0, 50))
 
     offset_y = 50 + 500 + 20
-    comp_draw.text((30, offset_y - 28), "BRAND RICH CHERRY RED MODE (Editorial Wine Palette)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((700, offset_y - 22), "#340917 • #FF2D60 • #C1123F • #E8D5C5", fill=(255, 163, 184), font=f_sub)
+    comp_draw.text((30, offset_y - 28), "MODE 02 — CHERRY ROYALE (The Signature Edition)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((720, offset_y - 22), "Bold elegance. Unapologetic expression. Plain #4A0A1D", fill=(255, 163, 184), font=f_sub)
     comp_img.paste(preview_cherry, (0, offset_y))
 
     comp_img.save('assets/hero/hero-comparison.png', format='PNG', optimize=True)
     print("   [OK] Comparison sheet saved: assets/hero/hero-comparison.png")
 
-    print("4. Generating Espresso Mode Animated GIF (256-color FastOctree)...")
-    build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=30, fps=15)
+    print("4. Generating Midnight Éspresso Animated GIF (Plain Theme, No Blobs, No Orbits)...")
+    build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18)
 
-    print("5. Generating Cherry Mode Animated GIF (256-color FastOctree)...")
-    build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cherry.gif", num_frames=30, fps=15)
+    print("5. Generating Cherry Royale Animated GIF (Plain Theme, No Blobs, No Orbits)...")
+    build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cherry.gif", num_frames=36, fps=18)
 
 if __name__ == "__main__":
     build_all()

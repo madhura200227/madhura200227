@@ -13,7 +13,8 @@
 
   <style>
     /* ========================================================== */
-    /* 1. BRAND ESPRESSO MODE (DEFAULT ARCHITECTURAL DARK THEME) */
+    /* 1. MODE 01 — MIDNIGHT ÉSPRESSO (THE DARK EDITION)          */
+    /* Quiet luxury. Limitless depth.                             */
     /* ========================================================== */
     body.mode-espresso {
       --bg-canvas: #140d0e;
@@ -34,7 +35,8 @@
     }
 
     /* ========================================================== */
-    /* 2. BRAND RICH CHERRY RED MODE (BOLD EDITORIAL WINE THEME)  */
+    /* 2. MODE 02 — CHERRY ROYALE (THE SIGNATURE EDITION)         */
+    /* Bold elegance. Unapologetic expression.                    */
     /* ========================================================== */
     body.mode-cherry {
       --bg-canvas: #1e040c;
@@ -387,7 +389,7 @@
       </button>
 
       <button class="action-btn" id="modeToggleBtn" onclick="toggleBrandMode()">
-        <span id="modeBtnText">Switch to Brand Rich Cherry Red Mode</span>
+        <span id="modeBtnText">✦ Switch to Cherry Royale</span>
       </button>
     </div>
   </header>
@@ -402,7 +404,7 @@
           </svg>
           <strong style="font-family:'IBM Plex Mono', monospace;">README.md</strong>
         </div>
-        <span id="modeBadge" style="color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1px;">BRAND ESPRESSO MODE</span>
+        <span id="modeBadge" style="color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1px;">MIDNIGHT ÉSPRESSO</span>
       </div>
 
       <!-- Rendered Markdown Body -->
@@ -439,15 +441,15 @@
         currentMode = 'cherry';
         body.classList.remove('mode-espresso');
         body.classList.add('mode-cherry');
-        btnText.innerText = 'Switch to Brand Espresso Mode';
-        badge.innerText = 'BRAND RICH CHERRY RED MODE';
+        btnText.innerText = '✦ Switch to Midnight Éspresso';
+        badge.innerText = 'CHERRY ROYALE';
         swapThemeAssets('cherry');
       } else {
         currentMode = 'espresso';
         body.classList.remove('mode-cherry');
         body.classList.add('mode-espresso');
-        btnText.innerText = 'Switch to Brand Rich Cherry Red Mode';
-        badge.innerText = 'BRAND ESPRESSO MODE';
+        btnText.innerText = '✦ Switch to Cherry Royale';
+        badge.innerText = 'MIDNIGHT ÉSPRESSO';
         swapThemeAssets('espresso');
       }
 
@@ -483,9 +485,9 @@
 
         if (clean.includes('hero-banner')) {
           if (theme === 'cherry') {
-            source.setAttribute('srcset', 'assets/hero/hero-banner-cherry.svg?v=' + v);
+            source.setAttribute('srcset', 'assets/hero/hero-banner-cherry.gif?v=' + v);
           } else {
-            source.setAttribute('srcset', 'assets/hero/hero-banner.svg?v=' + v);
+            source.setAttribute('srcset', 'assets/hero/hero-banner.gif?v=' + v);
           }
         }
 
