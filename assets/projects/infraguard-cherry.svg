@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 370" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="igBg_cherry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c0612" />
+      <stop offset="50%" stop-color="#3a0818" />
+      <stop offset="100%" stop-color="#4e0b20" />
+    </linearGradient>
+
+    <linearGradient id="igWave_cherry" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF2D60" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#FF2D60" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .ig-meta { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; fill: #D99AA7; }
+    .ig-title { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.5px; }
+    .ig-desc { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; fill: #E8D5C5; }
+    .ig-card-title { font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.3px; }
+    .ig-card-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; fill: #D99AA7; letter-spacing: 1px; }
+    .ig-card-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; fill: #E8D5C5; }
+    .ig-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; fill: #FFF5ED; }
+  </style>
+
+  <rect width="840" height="370" rx="12" fill="url(#igBg_cherry)" stroke="#C1123F" stroke-width="1.3" />
+  <rect x="0" y="0" width="840" height="3.5" rx="1.5" fill="#FF2D60" />
+
+  <!-- Corner Brackets -->
+  <path d="M 16 28 L 16 16 L 28 16" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 824 28 L 824 16 L 812 16" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 16 342 L 16 354 L 28 354" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 824 342 L 824 354 L 812 354" fill="none" stroke="#FF2D60" stroke-width="2" />
+
+  <!-- Clean Header -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="-8" width="6" height="6" fill="#FF2D60" />
+    <text x="14" y="-2" class="ig-meta">PROJECT 03 // PREDICTIVE RESILIENCE</text>
+    <text x="0" y="30" class="ig-title">INFRAGUARD AI</text>
+    <g transform="translate(528, 6)">
+      <rect x="0" y="0" width="240" height="26" rx="13" fill="#6b0c26" stroke="#FF2D60" stroke-width="1.2" />
+      <circle cx="16" cy="13" r="4" fill="#FF2D60" />
+      <text x="28" y="17" class="ig-meta" fill="#FFF5ED">RESILIENCE PLATFORM</text>
+    </g>
+    <text x="0" y="60" class="ig-desc">Infrastructure failure prediction platform focusing on structural monitoring &amp; maintenance dispatch.</text>
+  </g>
+
+  <!-- Dual Display Panels -->
+  <g transform="translate(36, 126)">
+    <!-- Left Display: Sensor Waveform -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="430" height="126" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1.2" />
+      <text x="18" y="22" class="ig-card-sub">STRUCTURAL VIBRATION TELEMETRY</text>
+      <line x1="18" y1="46" x2="412" y2="46" stroke="#C1123F" stroke-width="1" stroke-dasharray="3 3" />
+      <text x="412" y="42" text-anchor="end" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#D99AA7">ANOMALY THRESHOLD</text>
+      <line x1="18" y1="80" x2="412" y2="80" stroke="#C1123F" stroke-width="1" stroke-opacity="0.3" />
+
+      <path d="M 18 100 Q 60 98 100 84 T 180 90 T 260 70 T 310 36 T 350 64 T 412 50 L 412 114 L 18 114 Z" fill="url(#igWave_cherry)" />
+      <path d="M 18 100 Q 60 98 100 84 T 180 90 T 260 70 T 310 36 T 350 64 T 412 50" fill="none" stroke="#FF2D60" stroke-width="2" stroke-linecap="round" />
+      <circle cx="310" cy="36" r="4.5" fill="#FFF5ED" stroke="#FF2D60" stroke-width="2" />
+      <text x="310" y="24" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#FFF5ED">SPIKE DETECTED</text>
+    </g>
+
+    <!-- Right Display: Analytical Core -->
+    <g transform="translate(448, 0)">
+      <rect x="0" y="0" width="320" height="126" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1.2" />
+      <circle cx="28" cy="28" r="14" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED">AI</text>
+      <text x="52" y="32" class="ig-card-title">Diagnostic Engine</text>
+      <text x="20" y="60" class="ig-card-sub">PREDICTIVE CAPABILITIES</text>
+      <text x="20" y="82" class="ig-card-text">• Sensor Telemetry Ingestion</text>
+      <text x="20" y="99" class="ig-card-text">• Degradation Trend Modeling</text>
+      <text x="20" y="116" class="ig-card-text">• Automated Maintenance Alerts</text>
+    </g>
+  </g>
+
+  <!-- Bottom Stack Strip: Perfectly Fitted (Total width: 598px inside 768px box - ZERO Overflow) -->
+  <g transform="translate(36, 282)">
+    <rect x="0" y="0" width="768" height="52" rx="8" fill="#340816" stroke="#C1123F" stroke-width="1.2" />
+    <text x="18" y="31" class="ig-meta" fill="#D99AA7">STACK</text>
+    <g transform="translate(75, 12)">
+      <rect x="0" y="0" width="54" height="28" rx="5" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="27" y="19" class="ig-tag" text-anchor="middle">React</text>
+
+      <rect x="62" y="0" width="58" height="28" rx="5" fill="#6b0c26" stroke="#FF2D60" stroke-width="1.2" />
+      <text x="91" y="19" class="ig-tag" fill="#FFF5ED" text-anchor="middle">Python</text>
+
+      <rect x="128" y="0" width="80" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="168" y="19" class="ig-tag" text-anchor="middle">REST APIs</text>
+
+      <rect x="216" y="0" width="128" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="280" y="19" class="ig-tag" text-anchor="middle">Failure Prediction</text>
+
+      <rect x="352" y="0" width="140" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="422" y="19" class="ig-tag" text-anchor="middle">Structural Monitoring</text>
+
+      <rect x="500" y="0" width="98" height="28" rx="5" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="549" y="19" class="ig-tag" text-anchor="middle">Alert Dispatch</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 370" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="kxBg_cherry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c0612" />
+      <stop offset="50%" stop-color="#3a0818" />
+      <stop offset="100%" stop-color="#4e0b20" />
+    </linearGradient>
+
+    <radialGradient id="kxGlobe_cherry" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#780e2b" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#450a1c" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#2c0612" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    .kx-meta { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; fill: #D99AA7; }
+    .kx-title { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.5px; }
+    .kx-desc { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; fill: #E8D5C5; }
+    .kx-card-title { font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.3px; }
+    .kx-card-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; fill: #D99AA7; letter-spacing: 1px; }
+    .kx-card-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; fill: #E8D5C5; }
+    .kx-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; fill: #FFF5ED; }
+  </style>
+
+  <rect width="840" height="370" rx="12" fill="url(#kxBg_cherry)" stroke="#C1123F" stroke-width="1.3" />
+  <rect x="0" y="0" width="840" height="3.5" rx="1.5" fill="#FF2D60" />
+
+  <!-- Corner Brackets -->
+  <path d="M 16 28 L 16 16 L 28 16" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 824 28 L 824 16 L 812 16" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 16 342 L 16 354 L 28 354" fill="none" stroke="#FF2D60" stroke-width="2" />
+  <path d="M 824 342 L 824 354 L 812 354" fill="none" stroke="#FF2D60" stroke-width="2" />
+
+  <!-- Clean Header with Zero Overlap: Overline contains 'PROJECT 02 //', Title is pure 'KESSLERX' -->
+  <g transform="translate(36, 36)">
+    <rect x="0" y="-8" width="6" height="6" fill="#FF2D60" />
+    <text x="14" y="-2" class="kx-meta">PROJECT 02 // ORBITAL INTELLIGENCE</text>
+    <text x="0" y="30" class="kx-title">KESSLERX</text>
+    <g transform="translate(538, 6)">
+      <rect x="0" y="0" width="230" height="26" rx="13" fill="#6b0c26" stroke="#FF2D60" stroke-width="1.2" />
+      <circle cx="16" cy="13" r="4" fill="#FF2D60" />
+      <text x="28" y="17" class="kx-meta" fill="#FFF5ED">AEROSPACE WEB APP</text>
+    </g>
+    <text x="0" y="60" class="kx-desc">Orbital traffic management platform for Low Earth Orbit visualization &amp; conjunction evaluation.</text>
+  </g>
+
+  <!-- 3 Interactive Panels -->
+  <g transform="translate(36, 126)">
+    <!-- Panel 1: Data Ingestion -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="234" height="126" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1.2" />
+      <circle cx="28" cy="28" r="14" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED">01</text>
+      <text x="52" y="32" class="kx-card-title">Data Ingestion</text>
+      <text x="20" y="62" class="kx-card-sub">SPATIOTEMPORAL QUERY</text>
+      <text x="20" y="86" class="kx-card-text">• FastAPI REST endpoints</text>
+      <text x="20" y="104" class="kx-card-text">• React Query caching layer</text>
+    </g>
+
+    <!-- Panel 2: CesiumJS 3D Orbital Engine -->
+    <g transform="translate(254, 0)">
+      <rect x="0" y="0" width="260" height="126" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1.2" />
+      <circle cx="130" cy="54" r="30" fill="url(#kxGlobe_cherry)" stroke="#C1123F" stroke-width="1.2" />
+      <ellipse cx="130" cy="54" rx="84" ry="24" fill="none" stroke="#FF2D60" stroke-width="1.3" stroke-dasharray="4 3" transform="rotate(-15 130 54)" />
+      <circle cx="195" cy="42" r="3.2" fill="#FFF5ED" />
+      <ellipse cx="130" cy="54" rx="76" ry="32" fill="none" stroke="#B88979" stroke-width="1.1" transform="rotate(35 130 54)" />
+      <circle cx="85" cy="36" r="2.8" fill="#D99AA7" />
+      <text x="130" y="106" text-anchor="middle" class="kx-card-sub" fill="#FFF5ED">CESIUMJS 3D ENGINE</text>
+    </g>
+
+    <!-- Panel 3: Event Streaming -->
+    <g transform="translate(534, 0)">
+      <rect x="0" y="0" width="234" height="126" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1.2" />
+      <circle cx="28" cy="28" r="14" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="28" y="32" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED">03</text>
+      <text x="52" y="32" class="kx-card-title">Event Streaming</text>
+      <text x="20" y="62" class="kx-card-sub">WEBSOCKETS PIPELINE</text>
+      <text x="20" y="86" class="kx-card-text">• Live orbital state delivery</text>
+      <text x="20" y="104" class="kx-card-text">• Redux Toolkit state sync</text>
+    </g>
+  </g>
+
+  <!-- Bottom Stack Strip: Perfectly Fitted (Total width: 610px inside 768px box) -->
+  <g transform="translate(36, 282)">
+    <rect x="0" y="0" width="768" height="52" rx="8" fill="#340816" stroke="#C1123F" stroke-width="1.2" />
+    <text x="18" y="31" class="kx-meta" fill="#D99AA7">STACK</text>
+    <g transform="translate(75, 12)">
+      <rect x="0" y="0" width="54" height="28" rx="5" fill="#6b0c26" stroke="#C1123F" stroke-width="1" />
+      <text x="27" y="19" class="kx-tag" text-anchor="middle">React</text>
+
+      <rect x="62" y="0" width="82" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="103" y="19" class="kx-tag" text-anchor="middle">TypeScript</text>
+
+      <rect x="152" y="0" width="102" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="203" y="19" class="kx-tag" text-anchor="middle">Redux Toolkit</text>
+
+      <rect x="262" y="0" width="92" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="308" y="19" class="kx-tag" text-anchor="middle">React Query</text>
+
+      <rect x="362" y="0" width="76" height="28" rx="5" fill="#6b0c26" stroke="#FF2D60" stroke-width="1.2" />
+      <text x="400" y="19" class="kx-tag" fill="#FFF5ED" text-anchor="middle">CesiumJS</text>
+
+      <rect x="446" y="0" width="66" height="28" rx="5" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
+      <text x="479" y="19" class="kx-tag" text-anchor="middle">FastAPI</text>
+
+      <rect x="520" y="0" width="90" height="28" rx="5" fill="#6b0c26" stroke="#FF2D60" stroke-width="1.2" />
+      <text x="565" y="19" class="kx-tag" fill="#FFF5ED" text-anchor="middle">WebSockets</text>
+    </g>
+  </g>
+</svg>

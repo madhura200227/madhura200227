@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 280" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="stBg_espresso" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1214" />
+      <stop offset="60%" stop-color="#211817" />
+      <stop offset="100%" stop-color="#2e111a" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .st-meta { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; fill: #D99AA7; }
+    .st-title { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.5px; }
+    .st-val { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; fill: #FFF5ED; }
+    .st-sub { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; fill: #E8D5C5; }
+  </style>
+
+  <rect width="840" height="280" rx="12" fill="url(#stBg_espresso)" stroke="#873D50" stroke-width="1.3" />
+  <rect x="0" y="0" width="840" height="3.5" rx="1.5" fill="#C1123F" />
+
+  <path d="M 16 28 L 16 16 L 28 16" fill="none" stroke="#C1123F" stroke-width="2" />
+  <path d="M 824 28 L 824 16 L 812 16" fill="none" stroke="#C1123F" stroke-width="2" />
+  <path d="M 16 252 L 16 264 L 28 264" fill="none" stroke="#C1123F" stroke-width="2" />
+  <path d="M 824 252 L 824 264 L 812 264" fill="none" stroke="#C1123F" stroke-width="2" />
+
+  <g transform="translate(36, 36)">
+    <rect x="0" y="-8" width="6" height="6" fill="#C1123F">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+    </rect>
+    <text x="14" y="-2" class="st-meta">PORTFOLIO METRICS // REAL-TIME GITHUB TELEMETRY</text>
+    <text x="0" y="28" class="st-title">Engineering Overview</text>
+  </g>
+
+  <!-- Metric 1: Public Repositories -->
+  <g transform="translate(36, 115)">
+    <rect x="0" y="0" width="236" height="115" rx="8" fill="#2a141a" stroke="#873D50" stroke-width="1" />
+    <circle cx="28" cy="28" r="14" fill="#650D25" />
+    <path d="M 23 28 L 27 32 L 34 24" fill="none" stroke="#FFF5ED" stroke-width="2" />
+    <text x="52" y="32" class="st-val">11</text>
+    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Repositories</text>
+    <text x="20" y="92" class="st-sub">Active public codebases</text>
+  </g>
+
+  <!-- Metric 2: Followers -->
+  <g transform="translate(302, 115)">
+    <rect x="0" y="0" width="236" height="115" rx="8" fill="#2a141a" stroke="#873D50" stroke-width="1" />
+    <circle cx="28" cy="28" r="14" fill="#650D25" />
+    <circle cx="28" cy="25" r="5" fill="#FFF5ED" />
+    <path d="M 20 34 C 20 31, 24 30, 28 30 C 32 30, 36 31, 36 34" fill="none" stroke="#FFF5ED" stroke-width="1.8" />
+    <text x="52" y="32" class="st-val">4</text>
+    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Community</text>
+    <text x="20" y="92" class="st-sub">Followers &amp; collaborators</text>
+  </g>
+
+  <!-- Metric 3: Stars & Verification -->
+  <g transform="translate(568, 115)">
+    <rect x="0" y="0" width="236" height="115" rx="8" fill="#2a141a" stroke="#873D50" stroke-width="1" />
+    <circle cx="28" cy="28" r="14" fill="#650D25" />
+    <polygon points="28,21 30,26 35,26 31,29 33,34 28,31 23,34 25,29 21,26 26,26" fill="#FFF5ED" />
+    <text x="52" y="32" class="st-val">0</text>
+    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Stargazers</text>
+    <text x="20" y="92" class="st-sub">Earned repository stars</text>
+  </g>
+</svg>

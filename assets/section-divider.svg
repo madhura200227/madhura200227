@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 24" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="divFadeLeft_es" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C1123F" stop-opacity="0" />
+      <stop offset="60%" stop-color="#873D50" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C1123F" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="divFadeRight_es" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C1123F" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#873D50" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C1123F" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Tapered Line -->
+  <line x1="60" y1="12" x2="420" y2="12" stroke="url(#divFadeLeft_es)" stroke-width="1.2" />
+
+  <!-- Right Tapered Line -->
+  <line x1="480" y1="12" x2="840" y2="12" stroke="url(#divFadeRight_es)" stroke-width="1.2" />
+
+  <!-- Flanking Rose Gold Accent Dots -->
+  <circle cx="410" cy="12" r="1.8" fill="#B88979" />
+  <circle cx="490" cy="12" r="1.8" fill="#B88979" />
+
+  <!-- Center Decorative Diamond Emblem with Transparent Adaptive Backing -->
+  <circle cx="450" cy="12" r="9" fill="#650D25" fill-opacity="0.5" stroke="#873D50" stroke-width="1.2" />
+  <polygon points="450,5 456,12 450,19 444,12" fill="#C1123F" />
+  <polygon points="450,8 453,12 450,16 447,12" fill="#FFF5ED" />
+</svg>
