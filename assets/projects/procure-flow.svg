@@ -36,7 +36,7 @@
       <circle cx="16" cy="13" r="4" fill="#C1123F" />
       <text x="28" y="17" class="pf-meta" fill="#FFF5ED">INSTITUTIONAL PLATFORM</text>
     </g>
-    <text x="0" y="60" class="pf-desc">Enterprise procurement &amp; workflow governance with zero-trust role separation.</text>
+    <text x="0" y="60" class="pf-desc">Procurement lifecycle &amp; approval platform for S.P. College with PostgreSQL RLS &amp; MFA.</text>
   </g>
 
   <!-- 3 Workflow Stages -->

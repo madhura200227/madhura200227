@@ -41,7 +41,7 @@
       <circle cx="16" cy="13" r="4" fill="#FF2D60" />
       <text x="28" y="17" class="ig-meta" fill="#FFF5ED">RESILIENCE PLATFORM</text>
     </g>
-    <text x="0" y="60" class="ig-desc">Infrastructure failure prediction platform focusing on structural monitoring &amp; maintenance dispatch.</text>
+    <text x="0" y="60" class="ig-desc">Failure prediction &amp; structural monitoring alerts for roads, bridges and pipelines.</text>
   </g>
 
   <!-- Dual Display Panels -->

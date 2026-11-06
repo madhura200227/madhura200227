@@ -24,27 +24,27 @@ PROJECTS_DATA = [
     {
         "id": "procure-flow",
         "title": "Procure Flow",
-        "category": "Enterprise Procurement & Workflow Platform",
+        "category": "Procurement Lifecycle Platform (S.P. College, Pune)",
         "technologies": ["React", "Node.js", "PostgreSQL", "Neon", "Tailwind CSS", "TOTP MFA", "PostgreSQL RLS"],
-        "architecture": "Multi-tier institutional approval platform with zero-trust role-based governance.",
+        "architecture": "Procurement lifecycle and approval workflow platform for S.P. College, Pune with zero-trust role-based governance.",
         "deployment": "https://sp-college-approval-hub.vercel.app/",
         "status": "Production"
     },
     {
         "id": "kesslerx",
         "title": "KesslerX",
-        "category": "Orbital Traffic Management & Conjunction Assessment",
+        "category": "Orbital Debris & Satellite Monitoring (Presented at Avishkar)",
         "technologies": ["React", "TypeScript", "Redux Toolkit", "React Query", "CesiumJS", "FastAPI", "WebSockets"],
-        "architecture": "High-performance aerospace web application providing 3D orbital visualization and conjunction assessment.",
+        "architecture": "Orbital debris and satellite monitoring for space situational awareness. Presented at Avishkar Research Convention.",
         "deployment": "https://kessler-x.vercel.app/",
         "status": "Live Research"
     },
     {
         "id": "infraguard",
         "title": "InfraGuard AI",
-        "category": "Infrastructure Failure Prediction & Monitoring",
+        "category": "Failure Prediction & Monitoring for Infrastructure",
         "technologies": ["React", "Python", "REST APIs", "Failure Prediction", "Structural Monitoring"],
-        "architecture": "Structural health monitoring and predictive failure intelligence system.",
+        "architecture": "Failure prediction and alerts for roads, bridges and pipelines.",
         "status": "Active Development"
     }
 ]

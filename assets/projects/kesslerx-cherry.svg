@@ -42,7 +42,7 @@
       <circle cx="16" cy="13" r="4" fill="#FF2D60" />
       <text x="28" y="17" class="kx-meta" fill="#FFF5ED">AEROSPACE WEB APP</text>
     </g>
-    <text x="0" y="60" class="kx-desc">Orbital traffic management platform for Low Earth Orbit visualization &amp; conjunction evaluation.</text>
+    <text x="0" y="60" class="kx-desc">Orbital debris &amp; satellite monitoring for space situational awareness. Presented at Avishkar.</text>
   </g>
 
   <!-- 3 Interactive Panels -->

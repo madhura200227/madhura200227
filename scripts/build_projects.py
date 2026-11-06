@@ -65,7 +65,7 @@ def get_procure_flow(theme="espresso"):
       <circle cx="16" cy="13" r="4" fill="{accent_bright}" />
       <text x="28" y="17" class="pf-meta" fill="#FFF5ED">INSTITUTIONAL PLATFORM</text>
     </g>
-    <text x="0" y="60" class="pf-desc">Enterprise procurement &amp; workflow governance with zero-trust role separation.</text>
+    <text x="0" y="60" class="pf-desc">Procurement lifecycle &amp; approval platform for S.P. College with PostgreSQL RLS &amp; MFA.</text>
   </g>
 
   <!-- 3 Workflow Stages -->
@@ -222,7 +222,7 @@ def get_kesslerx(theme="espresso"):
       <circle cx="16" cy="13" r="4" fill="{accent_bright}" />
       <text x="28" y="17" class="kx-meta" fill="#FFF5ED">AEROSPACE WEB APP</text>
     </g>
-    <text x="0" y="60" class="kx-desc">Orbital traffic management platform for Low Earth Orbit visualization &amp; conjunction evaluation.</text>
+    <text x="0" y="60" class="kx-desc">Orbital debris &amp; satellite monitoring for space situational awareness. Presented at Avishkar.</text>
   </g>
 
   <!-- 3 Interactive Panels -->
@@ -361,7 +361,7 @@ def get_infraguard(theme="espresso"):
       <circle cx="16" cy="13" r="4" fill="{accent_bright}" />
       <text x="28" y="17" class="ig-meta" fill="#FFF5ED">RESILIENCE PLATFORM</text>
     </g>
-    <text x="0" y="60" class="ig-desc">Infrastructure failure prediction platform focusing on structural monitoring &amp; maintenance dispatch.</text>
+    <text x="0" y="60" class="ig-desc">Failure prediction &amp; structural monitoring alerts for roads, bridges and pipelines.</text>
   </g>
 
   <!-- Dual Display Panels -->

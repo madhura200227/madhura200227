@@ -27,7 +27,7 @@
 
 <!-- Fast Quick-Connect Identity Strip -->
 <p align="center">
-  <a href="https://linkedin.com/in/madhura-lakade-a5b244314">
+  <a href="https://www.linkedin.com/in/madhura-lakade/">
     <img src="assets/icons/connect-linkedin.svg" height="34" alt="LinkedIn Profile" />
   </a>
   &nbsp;&nbsp;
@@ -260,11 +260,19 @@ I care about the gap between a demo and real software. My work spans an **instit
 <!-- ======================================================== -->
 ## ✦ Beyond the Code
 
-- 🛡️ **Cyber Warrior, Quick Heal Foundation** (Jul–Nov 2025): taught cybersecurity awareness to 2,000+ students and members of the public, and kept contributing past the planned eight weeks
-- 🎤 **Avishkar Research Competition:** presented KesslerX in Technology and Data
-- 🏁 **Hackathons (5+):** FAR AWAY International (team advanced), AMD Slingshot Campus Days Ideathon 2026, Hack the Flame
-- 🧠 **Brain Bytes Tech Quiz:** Certificate of Excellence, SPPU ACM Student Chapter
-- 💻 **Sphere Coding Club:** active member
+Engineering excellence extends beyond codebases. I actively engage in cybersecurity education, research conventions, and collaborative problem-solving.
+
+* **Quick Heal Foundation** &nbsp;•&nbsp; *Cyber Warrior (July – November 2025)*  
+  Delivered comprehensive cybersecurity awareness training to over 2,000 individuals across schools and community forums, focusing on digital safety hygiene, online privacy protection, and financial scam mitigation.
+
+* **Avishkar Research Convention** &nbsp;•&nbsp; *College-Level Research Presentation*  
+  Selected to present research in the **Technology and Data** domain, featuring **KesslerX**—addressing orbital debris congestion, collision avoidance algorithms, and aerospace data visualization.
+
+* **Competitive Hackathons** &nbsp;•&nbsp; *5+ Hackathons &amp; Ideathons*  
+  Active participant in fast-paced software development hackathons, including the **FAR AWAY International Hackathon**, **AMD Slingshot Campus Days Ideathon 2026**, and **Hack the Flame**.
+
+* **Sphere Community** &nbsp;•&nbsp; *Collaborative Development*  
+  Engaged in technical knowledge exchanges, team-based open hackathon initiatives, and developer peer mentorship.
 
 <br/>
 
@@ -328,7 +336,7 @@ I welcome conversations around full-stack development, software architecture, re
 <div align="center">
 
 <p align="center">
-  <a href="https://linkedin.com/in/madhura-lakade-a5b244314">
+  <a href="https://www.linkedin.com/in/madhura-lakade/">
     <img src="assets/icons/connect-linkedin.svg" height="38" alt="Connect on LinkedIn" />
   </a>
   &nbsp;&nbsp;
