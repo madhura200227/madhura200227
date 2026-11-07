@@ -11,6 +11,15 @@
 
 <br/><br/>
 
+<!-- Option 1: Live Interactive Portfolio Engine on GitHub Pages -->
+<p align="center">
+  <a href="https://madhura200227.github.io/madhura200227/">
+    <img src="assets/icons/live-portfolio-badge-cherry.svg" height="38" alt="Launch Live Portfolio Engine" />
+  </a>
+</p>
+
+<br/>
+
 <!-- Fast Quick-Connect Identity Strip -->
 <p align="center">
   <a href="https://www.linkedin.com/in/madhura-lakade/">

@@ -546,7 +546,8 @@
         'connect-email',
         'connect-github',
         'signature',
-        'snake'
+        'snake',
+        'live-portfolio-badge'
       ];
 
       // 1. Process all <source> elements inside <picture> tags
@@ -654,7 +655,7 @@
           document.getElementById('backendStatusText').innerText = `BACKEND API: ${data.status.toUpperCase()} (${data.port})`;
         })
         .catch(() => {
-          document.getElementById('backendStatusText').innerText = `BACKEND API: LOCAL FILE SERVER`;
+          document.getElementById('backendStatusText').innerText = (window.location.hostname && window.location.hostname.includes('github.io')) ? 'ENGINE: LIVE (GITHUB PAGES)' : 'BACKEND: LOCAL ENGINE';
         });
     }, 5000);
   </script>

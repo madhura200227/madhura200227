@@ -21,11 +21,38 @@ fitted_cutout = hires_cutout.resize((385, 422), Image.Resampling.LANCZOS)
 fitted_cutout.save('assets/portrait/madhura-full-pfp-fitted.png', format='PNG')
 
 # ==============================================================================
+# EDGE BLENDED BASE CANVAS (SEAMLESS GITHUB INTEGRATION)
+# Fades outer perimeter to GitHub's #0d1117 so cards never look like raw cutouts
+# ==============================================================================
+def create_edge_blended_canvas(width, height, c_inner, c_outer, inset=24):
+    arr = np.zeros((height, width, 3), dtype=float)
+    y_coords = np.arange(height)
+    x_coords = np.arange(width)
+    
+    dist_top = y_coords[:, None]
+    dist_bottom = (height - 1 - y_coords)[:, None]
+    dist_left = x_coords[None, :]
+    dist_right = (width - 1 - x_coords)[None, :]
+    
+    min_dist_y = np.minimum(dist_top, dist_bottom)
+    min_dist_x = np.minimum(dist_left, dist_right)
+    edge_dist = np.minimum(min_dist_x, min_dist_y)
+    
+    t = np.clip(edge_dist / float(inset), 0.0, 1.0)
+    smooth = t * t * (3.0 - 2.0 * t)
+    
+    for ch in range(3):
+        arr[:, :, ch] = c_outer[ch] * (1.0 - smooth) + c_inner[ch] * smooth
+        
+    return Image.fromarray(np.uint8(arr), mode='RGB').convert('RGBA')
+
+# ==============================================================================
 # SVG HERO BANNER COMPOSITION (Midnight Éspresso & Cherry Royale)
 # PLAIN theme backgrounds • Clean, short, uncluttered layout • NO orbits
 # ==============================================================================
 def build_hero_svg(theme="cherry"):
     silver_white = "#F0F4F8"
+    github_dark = "#0d1117"
 
     if theme == "cherry":
         # Mode 02: Cherry Royale (The Signature Edition - DEFAULT)
@@ -59,6 +86,10 @@ def build_hero_svg(theme="cherry"):
     <linearGradient id="hbBorder_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
       {border_stops}
     </linearGradient>
+    <radialGradient id="hbBlend_{theme}" cx="50%" cy="50%" r="50%">
+      <stop offset="85%" stop-color="{bg_color}" />
+      <stop offset="100%" stop-color="{github_dark}" />
+    </radialGradient>
   </defs>
 
   <style>
@@ -71,11 +102,11 @@ def build_hero_svg(theme="cherry"):
     .hb-status {{ font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; font-weight: 500; fill: {silver_white}; letter-spacing: 0.6px; }}
   </style>
 
-  <!-- Plain Theme Base Canvas (Zero Glow Blobs, Clean Uniform Surface) -->
-  <rect width="1200" height="500" rx="16" fill="{bg_color}" />
+  <!-- Edge-Blended Canvas (Seamless Dissolve into GitHub #0d1117) -->
+  <rect width="1200" height="500" rx="16" fill="url(#hbBlend_{theme})" />
 
   <!-- Outer Architectural Border (Clean 22px frame inset) -->
-  <rect x="22" y="22" width="1156" height="456" rx="12" fill="none" stroke="url(#hbBorder_{theme})" stroke-width="1.2" />
+  <rect x="22" y="22" width="1156" height="456" rx="12" fill="{bg_color}" stroke="url(#hbBorder_{theme})" stroke-width="1.2" />
 
   <!-- Corner Flourish Registration Marks -->
   <path d="M 22 40 L 22 22 L 40 22" fill="none" stroke="{accent_color}" stroke-width="2.5" />
@@ -154,7 +185,7 @@ def build_hero_svg(theme="cherry"):
 
 # ==============================================================================
 # RENDER STATIC PREVIEW & ANIMATED GIF USING PILLOW
-# Plain solid theme background • ZERO glow blobs • ZERO orbit lines
+# Plain solid theme background with GitHub edge-blend • ZERO glow blobs • ZERO orbits
 # ==============================================================================
 def find_font(font_names, size):
     for fn in font_names:
@@ -166,6 +197,7 @@ def find_font(font_names, size):
 
 def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
     width, height = 1200, 500
+    c_github = (13, 17, 23) # #0d1117 (GitHub Dark Background)
 
     if theme == "cherry":
         # Mode 02: Cherry Royale (The Signature Edition - DEFAULT)
@@ -191,17 +223,18 @@ def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
     c_silver_white = (240, 244, 248)
     c_emerald = (74, 222, 128)
 
-    im = Image.new('RGBA', (width, height), (c_bg[0], c_bg[1], c_bg[2], 255))
+    # 1. Edge-Blended Base Canvas (Seamless transition to GitHub #0d1117)
+    im = create_edge_blended_canvas(width, height, c_bg, c_github, inset=24)
     draw = ImageDraw.Draw(im)
 
-    # 1. Outer Frame (Clean 22px frame inset)
-    draw.rounded_rectangle([22, 22, width - 22, height - 22], radius=12, outline=c_border, width=1)
+    # 2. Outer Architectural Border (Clean 22px frame inset)
+    draw.rounded_rectangle([22, 22, width - 22, height - 22], radius=12, fill=c_bg, outline=c_border, width=1)
     draw.line([(22, 40), (22, 22), (40, 22)], fill=c_accent, width=3)
     draw.line([(width - 22, 40), (width - 22, 22), (width - 40, 22)], fill=c_accent, width=3)
     draw.line([(22, height - 40), (22, height - 22), (40, height - 22)], fill=c_accent, width=3)
     draw.line([(width - 22, height - 40), (width - 22, height - 22), (width - 40, height - 22)], fill=c_accent, width=3)
 
-    # 2. Master Full Portrait (Fitted with gentle floating motion)
+    # 3. Master Full Portrait (Fitted with gentle floating motion)
     target_w, target_h = 385, 422
     cutout_resized = hires_cutout.resize((target_w, target_h), Image.Resampling.LANCZOS)
     pos_x = 745
@@ -269,12 +302,12 @@ def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
 
 def get_master_palette(theme, base_frame, hires_cutout):
     face = hires_cutout.crop((280, 140, 620, 500)).convert('RGB')
-    face_p = face.quantize(colors=230, method=Image.Quantize.FASTOCTREE)
+    face_p = face.quantize(colors=225, method=Image.Quantize.FASTOCTREE)
 
     ui_sample = base_frame.crop((20, 20, 700, 470)).convert('RGB')
-    ui_p = ui_sample.quantize(colors=26, method=Image.Quantize.FASTOCTREE)
+    ui_p = ui_sample.quantize(colors=31, method=Image.Quantize.FASTOCTREE)
 
-    master_p = face_p.getpalette()[:230*3] + ui_p.getpalette()[:26*3]
+    master_p = face_p.getpalette()[:225*3] + ui_p.getpalette()[:31*3]
     master_p = master_p + [0] * (768 - len(master_p))
 
     pal_img = Image.new('P', (1, 1))
@@ -297,7 +330,7 @@ def build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cher
             float_y=float_y
         )
 
-        bg_rgb_color = (74, 10, 29) if theme == 'cherry' else (33, 24, 23)
+        bg_rgb_color = (13, 17, 23) # Seamless outer blend on GitHub
         frame_rgb = Image.new('RGB', frame_rgba.size, bg_rgb_color)
         frame_rgb.paste(frame_rgba, (0, 0), frame_rgba)
 
@@ -318,7 +351,7 @@ def build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cher
 def build_all():
     os.makedirs('assets/hero', exist_ok=True)
 
-    print("1. Generating Clean SVG Hero Banners...")
+    print("1. Generating Clean SVG Hero Banners with GitHub Edge Blending...")
     svg_cherry = build_hero_svg("cherry")
     with open('assets/hero/hero-banner-cherry.svg', 'w', encoding='utf-8') as f:
         f.write(svg_cherry)
@@ -332,7 +365,7 @@ def build_all():
         f.write(svg_light)
     print("   [OK] SVGs generated: hero-banner-cherry.svg, hero-banner.svg, hero-banner-light.svg")
 
-    print("2. Generating Static PNG Previews...")
+    print("2. Generating Static PNG Previews with GitHub Edge Blending...")
     preview_cherry = render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0)
     preview_cherry.save('assets/hero/hero-banner-cherry-preview.png', format='PNG', optimize=True)
 
@@ -343,28 +376,28 @@ def build_all():
     print("3. Generating Side-by-Side Comparison Sheet...")
     comp_w = 1200
     comp_h = 500 * 2 + 70
-    comp_img = Image.new('RGB', (comp_w, comp_h), (18, 12, 14))
+    comp_img = Image.new('RGB', (comp_w, comp_h), (13, 17, 23)) # GitHub dark
     comp_draw = ImageDraw.Draw(comp_img)
 
     f_title = find_font(['georgiab.ttf', 'georgia.ttf'], 22)
     f_sub = find_font(['consolab.ttf', 'consola.ttf'], 12)
 
-    comp_draw.text((30, 16), "MODE 02 — CHERRY ROYALE (The Signature Edition - DEFAULT)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((700, 22), "Bold elegance. Unapologetic expression. Plain #4A0A1D", fill=(255, 163, 184), font=f_sub)
+    comp_draw.text((30, 16), "MODE 02 — CHERRY ROYALE (Seamless GitHub Edge Blend)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((700, 22), "Bold elegance. Unapologetic expression. Dissolves into #0d1117", fill=(255, 163, 184), font=f_sub)
     comp_img.paste(preview_cherry, (0, 50))
 
     offset_y = 50 + 500 + 20
-    comp_draw.text((30, offset_y - 28), "MODE 01 — MIDNIGHT ÉSPRESSO (The Dark Edition)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((700, offset_y - 22), "Quiet luxury. Limitless depth. Plain #211817", fill=(217, 154, 167), font=f_sub)
+    comp_draw.text((30, offset_y - 28), "MODE 01 — MIDNIGHT ÉSPRESSO (Seamless GitHub Edge Blend)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((700, offset_y - 22), "Quiet luxury. Limitless depth. Dissolves into #0d1117", fill=(217, 154, 167), font=f_sub)
     comp_img.paste(preview_esp, (0, offset_y))
 
     comp_img.save('assets/hero/hero-comparison.png', format='PNG', optimize=True)
     print("   [OK] Comparison sheet saved: assets/hero/hero-comparison.png")
 
-    print("4. Generating Cherry Royale Animated GIF (DEFAULT)...")
+    print("4. Generating Cherry Royale Animated GIF (DEFAULT with GitHub Edge Blend)...")
     build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cherry.gif", num_frames=36, fps=18)
 
-    print("5. Generating Midnight Éspresso Animated GIF...")
+    print("5. Generating Midnight Éspresso Animated GIF (with GitHub Edge Blend)...")
     build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18)
 
 if __name__ == "__main__":

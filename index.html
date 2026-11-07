@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhura Lakade — GitHub Profile Architecture & Live Backend Engine</title>
+  
+  <!-- GitHub Markdown Base Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css">
+  
+  <!-- Marked.js Markdown Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* ========================================================== */
+    /* 1. MODE 01 — MIDNIGHT ÉSPRESSO (THE DARK EDITION)          */
+    /* Quiet luxury. Limitless depth.                             */
+    /* ========================================================== */
+    body.mode-espresso {
+      --bg-canvas: #140d0e;
+      --card-bg: #211817;
+      --surface-elevated: #2b1218;
+      --surface-card: #2a141a;
+      --border-accent: #873D50;
+      --border-strong: #C1123F;
+      --text-heading: #FFF5ED;
+      --text-body: #E8D5C5;
+      --text-muted: #D99AA7;
+      --accent-cherry: #C1123F;
+      --accent-bright: #C1123F;
+      --pill-bg: #650D25;
+      --pill-border: #873D50;
+      --glow: rgba(193, 18, 63, 0.22);
+      --badge-bg: rgba(101, 13, 37, 0.6);
+    }
+
+    /* ========================================================== */
+    /* 2. MODE 02 — CHERRY ROYALE (THE SIGNATURE EDITION)         */
+    /* Bold elegance. Unapologetic expression.                    */
+    /* ========================================================== */
+    body.mode-cherry {
+      --bg-canvas: #1e040c;
+      --card-bg: #2c0612;
+      --surface-elevated: #3a0818;
+      --surface-card: #450a1c;
+      --border-accent: #C1123F;
+      --border-strong: #FF2D60;
+      --text-heading: #FFF5ED;
+      --text-body: #E8D5C5;
+      --text-muted: #D99AA7;
+      --accent-cherry: #FF2D60;
+      --accent-bright: #FF2D60;
+      --pill-bg: #6b0c26;
+      --pill-border: #FF2D60;
+      --glow: rgba(255, 45, 96, 0.35);
+      --badge-bg: rgba(193, 18, 63, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-bottom: 90px;
+    }
+
+    /* Top Sticky Navigation Toolbar */
+    .top-toolbar {
+      background: var(--card-bg);
+      border-bottom: 1.2px solid var(--border-accent);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .brand-id {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-heading);
+    }
+
+    .brand-id svg {
+      fill: var(--text-heading);
+    }
+
+    .controls-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .backend-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-strong);
+      color: #FFF5ED;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.8px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .action-btn {
+      background: var(--surface-elevated);
+      border: 1.2px solid var(--border-strong);
+      color: #FFF5ED;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .action-btn:hover {
+      background: var(--accent-cherry);
+      border-color: #FFF5ED;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px var(--glow);
+    }
+
+    .action-btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Main Container */
+    .profile-wrap {
+      max-width: 1040px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .readme-card {
+      background: var(--card-bg);
+      border: 1.2px solid var(--border-accent);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.65);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .readme-bar {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 12px 24px;
+      border-bottom: 1.2px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-heading);
+    }
+
+    .markdown-body {
+      padding: 40px 48px;
+      background: transparent !important;
+      color: var(--text-body) !important;
+      font-family: inherit;
+    }
+
+    .markdown-body img {
+      background-color: transparent !important;
+      background: transparent !important;
+      border-style: none !important;
+      box-shadow: none !important;
+    }
+
+    .markdown-body p {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+
+    .markdown-body p img[src*="section-divider"] {
+      display: block;
+      margin: 0 auto;
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+
+    .markdown-body h1, .markdown-body h2 {
+      border-bottom: 1.2px solid var(--border-accent) !important;
+      color: var(--text-heading) !important;
+      padding-bottom: 12px;
+      margin-top: 36px;
+      margin-bottom: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: 0.4px;
+    }
+
+    .markdown-body h3 {
+      color: var(--text-heading) !important;
+      margin-top: 28px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+    }
+
+    .markdown-body p, .markdown-body li {
+      color: var(--text-body) !important;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .markdown-body strong {
+      color: var(--text-heading) !important;
+    }
+
+    .markdown-body em {
+      color: var(--text-muted) !important;
+    }
+
+    .markdown-body a {
+      color: var(--accent-cherry) !important;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .markdown-body a:hover {
+      text-decoration: underline;
+    }
+
+    .markdown-body hr {
+      border: 0;
+      height: 1px;
+      background: var(--border-accent) !important;
+      margin: 32px 0;
+    }
+
+    .markdown-body table {
+      display: table !important;
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin: 22px 0 !important;
+    }
+
+    .markdown-body table tr {
+      background-color: transparent !important;
+      border-top: 1px solid var(--border-accent) !important;
+    }
+
+    .markdown-body table th {
+      background-color: var(--surface-elevated) !important;
+      color: var(--text-heading) !important;
+      border: 1px solid var(--border-accent) !important;
+      padding: 12px 16px !important;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .markdown-body table td {
+      border: 1px solid var(--border-accent) !important;
+      padding: 14px 18px !important;
+      color: var(--text-body) !important;
+      vertical-align: middle !important;
+    }
+
+    .markdown-body table td img {
+      margin: 3px 2px !important;
+      vertical-align: middle !important;
+      display: inline-block !important;
+    }
+
+    .markdown-body code {
+      background: var(--surface-elevated) !important;
+      border: 1px solid var(--border-accent) !important;
+      color: #FFF5ED !important;
+      padding: 3px 8px !important;
+      border-radius: 5px !important;
+      font-family: 'IBM Plex Mono', 'SF Mono', monospace !important;
+      font-size: 12.5px !important;
+    }
+
+    .markdown-body pre {
+      background: var(--surface-elevated) !important;
+      border: 1.2px solid var(--border-accent) !important;
+      border-radius: 10px !important;
+      padding: 18px 24px !important;
+      overflow-x: auto;
+      margin: 22px 0 !important;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .markdown-body pre code {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      font-size: 13px !important;
+      color: var(--text-heading) !important;
+      line-height: 1.6 !important;
+    }
+
+    .markdown-body blockquote {
+      border-left: 3.5px solid var(--border-strong) !important;
+      color: var(--text-heading) !important;
+      background: var(--surface-elevated) !important;
+      padding: 12px 20px !important;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0 !important;
+      font-style: normal;
+    }
+
+
+
+    /* Fixed Floating Status Dock */
+    .status-dock {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card-bg);
+      border: 1.2px solid var(--border-accent);
+      border-radius: 24px;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12.5px;
+      color: var(--text-body);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-cherry);
+      box-shadow: 0 0 10px var(--accent-cherry);
+    }
+
+    /* Toast notification */
+    /* Floating Mode Toggle Pill */
+    .floating-theme-switch {
+      position: fixed;
+      bottom: 46px;
+      right: 28px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-strong);
+      color: var(--text-heading);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 16px var(--glow);
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .floating-theme-switch:hover {
+      transform: translateY(-2px) scale(1.03);
+      border-color: #FFF5ED;
+      box-shadow: 0 12px 36px var(--glow);
+    }
+
+    #toast {
+      position: fixed;
+      top: 75px;
+      right: 24px;
+      background: var(--card-bg);
+      border: 1.2px solid var(--accent-cherry);
+      color: #FFF5ED;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 2000;
+    }
+
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="mode-cherry">
+
+  <!-- Top Navigation & Live Backend Command Toolbar -->
+  <header class="top-toolbar">
+    <div class="brand-id">
+      <svg height="22" viewBox="0 0 16 16" width="22">
+        <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+      </svg>
+      <span>madhura200227 / README.md</span>
+    </div>
+
+    <div class="controls-cluster">
+      <div class="backend-pill">
+        <div class="live-dot"></div>
+        <span id="backendStatusText">BACKEND API: ONLINE (8080)</span>
+      </div>
+
+      <button class="action-btn" id="syncStatsBtn" onclick="triggerBackendSync()">
+        <span>⟳ Sync Live Stats</span>
+      </button>
+
+      <button class="action-btn" id="modeToggleBtn" onclick="toggleBrandMode()">
+        <span id="modeBtnText">✦ Switch to Midnight Éspresso</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Replicated Profile Card -->
+  <main class="profile-wrap">
+    <div class="readme-card">
+      <div class="readme-bar">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688Z"></path>
+          </svg>
+          <strong style="font-family:'IBM Plex Mono', monospace;">README.md</strong>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <button class="action-btn" id="cardModeToggleBtn" onclick="toggleBrandMode()" style="padding: 4px 14px; font-size: 11px;">
+            <span id="cardModeBtnText">✦ Switch to Midnight Éspresso</span>
+          </button>
+          <span id="modeBadge" style="color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1px;">CHERRY ROYALE</span>
+        </div>
+      </div>
+
+      <!-- Rendered Markdown Body -->
+      <article id="content" class="markdown-body">
+        Loading profile README...
+      </article>
+    </div>
+  </main>
+
+  <!-- Floating Mode Toggle Pill (Accessible Anywhere On Page) -->
+  <div class="floating-theme-switch" id="floatingThemeSwitch" onclick="toggleBrandMode()">
+    <span style="color:var(--accent-cherry); font-size:15px;">✦</span>
+    <span id="floatingToggleText">Switch to Midnight Éspresso</span>
+  </div>
+
+  <!-- Fixed Bottom Status Dock -->
+  <div class="status-dock">
+    <div class="status-dot"></div>
+    <span>Full-Stack Profile Engine &nbsp;•&nbsp; <strong>Madhura Lakade</strong> &nbsp;•&nbsp; <span id="dockAnimationStatus" style="color:var(--accent-cherry);">60 FPS LIVE ANIMATIONS ACTIVE</span></span>
+  </div>
+
+  <div id="toast">Live GitHub Stats Synced via Backend!</div>
+
+  <script>
+    let currentMode = 'cherry';
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function toggleBrandMode() {
+      const body = document.body;
+      const btnText = document.getElementById('modeBtnText');
+      const cardBtnText = document.getElementById('cardModeBtnText');
+      const floatingText = document.getElementById('floatingToggleText');
+      const badge = document.getElementById('modeBadge');
+
+      if (currentMode === 'espresso') {
+        currentMode = 'cherry';
+        body.classList.remove('mode-espresso');
+        body.classList.add('mode-cherry');
+        btnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (floatingText) floatingText.innerText = 'Switch to Midnight Éspresso';
+        badge.innerText = 'CHERRY ROYALE';
+        swapThemeAssets('cherry');
+      } else {
+        currentMode = 'espresso';
+        body.classList.remove('mode-cherry');
+        body.classList.add('mode-espresso');
+        btnText.innerText = '✦ Switch to Cherry Royale';
+        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Cherry Royale';
+        if (floatingText) floatingText.innerText = 'Switch to Cherry Royale';
+        badge.innerText = 'MIDNIGHT ÉSPRESSO';
+        swapThemeAssets('espresso');
+      }
+
+      // Notify backend of mode change
+      fetch('/api/mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode: currentMode })
+      }).catch(() => {});
+    }
+
+    function swapThemeAssets(theme) {
+      const v = Date.now();
+      const assetNames = [
+        'hero-banner',
+        'section-divider',
+        'procure-flow',
+        'kesslerx',
+        'infraguard',
+        'github-stats',
+        'languages',
+        'connect-linkedin',
+        'connect-email',
+        'connect-github',
+        'signature',
+        'snake',
+        'live-portfolio-badge'
+      ];
+
+      // 1. Process all <source> elements inside <picture> tags
+      document.querySelectorAll('#content picture source').forEach(source => {
+        let srcset = source.getAttribute('srcset') || '';
+        let clean = srcset.split('?')[0];
+
+        if (clean.includes('hero-banner')) {
+          if (theme === 'cherry') {
+            source.setAttribute('srcset', 'assets/hero/hero-banner-cherry.gif?v=' + v);
+          } else {
+            source.setAttribute('srcset', 'assets/hero/hero-banner.gif?v=' + v);
+          }
+        }
+
+        if (clean.includes('snake')) {
+          if (theme === 'cherry') {
+            source.setAttribute('srcset', 'assets/stats/snake-cherry.svg?v=' + v);
+          } else {
+            source.setAttribute('srcset', 'assets/stats/snake.svg?v=' + v);
+          }
+        }
+      });
+
+      // 2. Process all <img> elements
+      document.querySelectorAll('#content img').forEach(img => {
+        let rawSrc = img.getAttribute('src') || '';
+        let cleanSrc = rawSrc.split('?')[0];
+
+        for (const name of assetNames) {
+          if (theme === 'cherry') {
+            if (cleanSrc.includes(name + '.svg') && !cleanSrc.includes(name + '-cherry.svg')) {
+              cleanSrc = cleanSrc.replace(name + '.svg', name + '-cherry.svg');
+              break;
+            } else if (cleanSrc.includes(name + '.gif') && !cleanSrc.includes(name + '-cherry.gif')) {
+              cleanSrc = cleanSrc.replace(name + '.gif', name + '-cherry.gif');
+              break;
+            }
+          } else {
+            if (cleanSrc.includes(name + '-cherry.svg')) {
+              cleanSrc = cleanSrc.replace(name + '-cherry.svg', name + '.svg');
+              break;
+            } else if (cleanSrc.includes(name + '-cherry.gif')) {
+              cleanSrc = cleanSrc.replace(name + '-cherry.gif', name + '.gif');
+              break;
+            }
+          }
+        }
+
+        const finalUrl = cleanSrc + '?v=' + v;
+        img.src = finalUrl;
+        img.setAttribute('src', finalUrl);
+      });
+    }
+
+    // Backend Trigger Synchronization
+    function triggerBackendSync() {
+      const btn = document.getElementById('syncStatsBtn');
+      btn.innerHTML = '<span>⟳ Regenerating...</span>';
+      btn.style.opacity = '0.6';
+
+      fetch('/api/regenerate', { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+          showToast('Live GitHub Stats & Animated Assets Synced!');
+          btn.innerHTML = '<span>⟳ Sync Live Stats</span>';
+          btn.style.opacity = '1';
+          // Reload assets
+          swapThemeAssets(currentMode);
+        })
+        .catch(err => {
+          console.error('Backend regeneration error:', err);
+          showToast('Triggered local asset refresh');
+          btn.innerHTML = '<span>⟳ Sync Live Stats</span>';
+          btn.style.opacity = '1';
+          swapThemeAssets(currentMode);
+        });
+    }
+
+    // Fetch and render README.md with no-cache and instant mode sync
+    fetch('README.md?v=' + Date.now(), { cache: 'no-cache' })
+      .then(response => {
+        if (!response.ok) throw new Error('Could not fetch README.md');
+        return response.text();
+      })
+      .then(markdown => {
+        marked.setOptions({
+          gfm: true,
+          breaks: true
+        });
+        document.getElementById('content').innerHTML = marked.parse(markdown);
+        // Force asset calibration immediately upon render
+        swapThemeAssets(currentMode);
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('content').innerHTML = '<p style="color:#C1123F;">Error loading README.md: ' + err.message + '</p>';
+      });
+
+    // Check backend health periodically
+    setInterval(() => {
+      fetch('/api/status')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('backendStatusText').innerText = `BACKEND API: ${data.status.toUpperCase()} (${data.port})`;
+        })
+        .catch(() => {
+          document.getElementById('backendStatusText').innerText = (window.location.hostname && window.location.hostname.includes('github.io')) ? 'ENGINE: LIVE (GITHUB PAGES)' : 'BACKEND: LOCAL ENGINE';
+        });
+    }, 5000);
+  </script>
+</body>
+</html>
