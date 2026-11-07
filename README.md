@@ -1,6 +1,19 @@
 <div align="center">
 
 <!-- ======================================================== -->
+<!-- 00. GITHUB THEME SELECTOR & MODE TOGGLE                   -->
+<!-- ======================================================== -->
+<p align="center">
+  <a href="README.md" title="Cherry Royale Mode (Active)"><img src="assets/icons/theme-cherry-active.svg" height="30" alt="Cherry Royale Mode (Active)" /></a>
+  &nbsp;
+  <a href="README-espresso.md" title="Switch to Midnight Éspresso Mode"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso" /></a>
+  &nbsp;
+  <a href="https://madhura200227.github.io/madhura200227/" title="Launch Interactive Live Web Engine"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Web Engine" /></a>
+</p>
+
+<br/>
+
+<!-- ======================================================== -->
 <!-- 01. CREATIVE HERO WITH INTEGRATED PORTRAIT ARTWORK       -->
 <!-- ======================================================== -->
 <picture>

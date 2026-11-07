@@ -488,7 +488,9 @@
   <div id="toast">Live GitHub Stats Synced via Backend!</div>
 
   <script>
-    let currentMode = 'cherry';
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialTheme = urlParams.get('theme');
+    let currentMode = (initialTheme === 'espresso') ? 'espresso' : 'cherry';
 
     function showToast(msg) {
       const toast = document.getElementById('toast');
@@ -497,7 +499,8 @@
       setTimeout(() => toast.classList.remove('show'), 2500);
     }
 
-    function toggleBrandMode() {
+    function setBrandMode(mode) {
+      currentMode = mode;
       const body = document.body;
       const btnText = document.getElementById('modeBtnText');
       const cardBtnText = document.getElementById('cardModeBtnText');
@@ -505,25 +508,26 @@
       const badge = document.getElementById('modeBadge');
 
       if (currentMode === 'espresso') {
-        currentMode = 'cherry';
-        body.classList.remove('mode-espresso');
-        body.classList.add('mode-cherry');
-        btnText.innerText = '✦ Switch to Midnight Éspresso';
-        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Midnight Éspresso';
-        if (floatingText) floatingText.innerText = 'Switch to Midnight Éspresso';
-        badge.innerText = 'CHERRY ROYALE';
-        swapThemeAssets('cherry');
-      } else {
-        currentMode = 'espresso';
         body.classList.remove('mode-cherry');
         body.classList.add('mode-espresso');
-        btnText.innerText = '✦ Switch to Cherry Royale';
+        if (btnText) btnText.innerText = '✦ Switch to Cherry Royale';
         if (cardBtnText) cardBtnText.innerText = '✦ Switch to Cherry Royale';
         if (floatingText) floatingText.innerText = 'Switch to Cherry Royale';
-        badge.innerText = 'MIDNIGHT ÉSPRESSO';
+        if (badge) badge.innerText = 'MIDNIGHT ÉSPRESSO';
         swapThemeAssets('espresso');
+      } else {
+        body.classList.remove('mode-espresso');
+        body.classList.add('mode-cherry');
+        if (btnText) btnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (floatingText) floatingText.innerText = 'Switch to Midnight Éspresso';
+        if (badge) badge.innerText = 'CHERRY ROYALE';
+        swapThemeAssets('cherry');
       }
+    }
 
+    function toggleBrandMode() {
+      setBrandMode(currentMode === 'espresso' ? 'cherry' : 'espresso');
       // Notify backend of mode change
       fetch('/api/mode', {
         method: 'POST',
@@ -577,6 +581,16 @@
         let rawSrc = img.getAttribute('src') || '';
         let cleanSrc = rawSrc.split('?')[0];
 
+        if (cleanSrc.includes('theme-cherry') || cleanSrc.includes('theme-espresso')) {
+          if (theme === 'cherry') {
+            if (cleanSrc.includes('theme-cherry')) cleanSrc = 'assets/icons/theme-cherry-active.svg';
+            if (cleanSrc.includes('theme-espresso')) cleanSrc = 'assets/icons/theme-espresso-inactive.svg';
+          } else {
+            if (cleanSrc.includes('theme-cherry')) cleanSrc = 'assets/icons/theme-cherry-inactive.svg';
+            if (cleanSrc.includes('theme-espresso')) cleanSrc = 'assets/icons/theme-espresso-active.svg';
+          }
+        }
+
         for (const name of assetNames) {
           if (theme === 'cherry') {
             if (cleanSrc.includes(name + '.svg') && !cleanSrc.includes(name + '-cherry.svg')) {
@@ -616,14 +630,14 @@
           btn.innerHTML = '<span>⟳ Sync Live Stats</span>';
           btn.style.opacity = '1';
           // Reload assets
-          swapThemeAssets(currentMode);
+          setBrandMode(currentMode);
         })
         .catch(err => {
           console.error('Backend regeneration error:', err);
           showToast('Triggered local asset refresh');
           btn.innerHTML = '<span>⟳ Sync Live Stats</span>';
           btn.style.opacity = '1';
-          swapThemeAssets(currentMode);
+          setBrandMode(currentMode);
         });
     }
 
@@ -640,7 +654,20 @@
         });
         document.getElementById('content').innerHTML = marked.parse(markdown);
         // Force asset calibration immediately upon render
-        swapThemeAssets(currentMode);
+        setBrandMode(currentMode);
+
+        // Bind in-page clicks on README links to instant client mode toggles
+        document.querySelectorAll('#content a[href*="README"]').forEach(a => {
+          a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = a.getAttribute('href') || '';
+            if (href.includes('README-espresso')) {
+              setBrandMode('espresso');
+            } else {
+              setBrandMode('cherry');
+            }
+          });
+        });
       })
       .catch(err => {
         console.error(err);
