@@ -4,39 +4,25 @@
 <!-- 01. CREATIVE HERO WITH INTEGRATED PORTRAIT ARTWORK       -->
 <!-- ======================================================== -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero/hero-banner.gif">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero/hero-banner-cherry.gif">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero/hero-banner-cherry.gif">
-  <img src="assets/hero/hero-banner.gif" width="100%" alt="Madhura Lakade — Developer by passion. Creator by nature." />
+  <img src="assets/hero/hero-banner-cherry.gif" width="100%" alt="Madhura Lakade — Developer by passion. Creator by nature." />
 </picture>
-
-<br/><br/>
-
-<!-- Dynamic Typing Specialty Intro -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3000&pause=1000&color=FF2D6F&center=true&vCenter=true&width=640&lines=Computer+Science+Student+%7C+Pune%2C+India;Full-Stack+%26+Systems+Developer;Building+secure+apps+with+PostgreSQL+RLS+%2B+TOTP+MFA;Tracking+satellites+in+3D+with+CesiumJS;Teaching+cybersecurity+to+2%2C000%2B+people" alt="Typing intro"/>
-</a>
-
-<br/><br/>
-
-<!-- Source of Truth Badges -->
-![Location](https://img.shields.io/badge/18.5204°_N,_73.8567°_E-Pune,_India-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
-![CGPA](https://img.shields.io/badge/CGPA-9.2%2B-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
-![Status](https://img.shields.io/badge/Open_to-Part--time_%26_Remote-ff2d6f?style=for-the-badge&labelColor=4a0a1f)
 
 <br/><br/>
 
 <!-- Fast Quick-Connect Identity Strip -->
 <p align="center">
   <a href="https://www.linkedin.com/in/madhura-lakade/">
-    <img src="assets/icons/connect-linkedin.svg" height="34" alt="LinkedIn Profile" />
+    <img src="assets/icons/connect-linkedin-cherry.svg" height="34" alt="LinkedIn Profile" />
   </a>
   &nbsp;&nbsp;
   <a href="mailto:madhuralakade20@gmail.com">
-    <img src="assets/icons/connect-email.svg" height="34" alt="Direct Email" />
+    <img src="assets/icons/connect-email-cherry.svg" height="34" alt="Direct Email" />
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/madhura200227">
-    <img src="assets/icons/connect-github.svg" height="34" alt="GitHub Archive" />
+    <img src="assets/icons/connect-github-cherry.svg" height="34" alt="GitHub Archive" />
   </a>
 </p>
 
@@ -44,26 +30,8 @@
 
 <br/>
 
-<!-- Terminal Profile Identity -->
-```text
-$ whoami
-madhura_lakade
-
-$ cat profile.json
-{
-  "role":      "Computer Science Student",
-  "base":      "Pune, India",
-  "cgpa":      "9.2+",
-  "focus":     ["Full-Stack", "Backend & Systems", "Security", "Geospatial 3D"],
-  "mode":      ["She builds", "She thinks", "She creates"],
-  "available": "Part-time · Remote"
-}
-```
-
-<br/>
-
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -81,12 +49,12 @@ I care about the gap between a demo and real software. My work spans an **instit
 
 | 🎓 CGPA | 🛰️ Projects | 🏆 Hackathons | 🎤 People reached | 🧰 Languages coded | 🗣️ Spoken |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **9.2+** | **6** | **5+** | **2,000+** | **7** | **3** |
+| **9.2+** | **6** | **5+** | **2,000+** | **8** | **3** |
 
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -105,7 +73,7 @@ I care about the gap between a demo and real software. My work spans an **instit
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -128,7 +96,7 @@ I care about the gap between a demo and real software. My work spans an **instit
 
 <p align="center">
   <a href="https://sp-college-approval-hub.vercel.app/">
-    <img src="assets/projects/procure-flow.svg" width="100%" alt="Procure Flow Architecture" />
+    <img src="assets/projects/procure-flow-cherry.svg" width="100%" alt="Procure Flow Architecture" />
   </a>
 </p>
 
@@ -144,7 +112,7 @@ I care about the gap between a demo and real software. My work spans an **instit
 
 <p align="center">
   <a href="https://kessler-x.vercel.app/">
-    <img src="assets/projects/kesslerx.svg" width="100%" alt="KesslerX Architecture" />
+    <img src="assets/projects/kesslerx-cherry.svg" width="100%" alt="KesslerX Architecture" />
   </a>
 </p>
 
@@ -159,7 +127,7 @@ I care about the gap between a demo and real software. My work spans an **instit
 > **Failure prediction and alerts for roads, bridges and pipelines**
 
 <p align="center">
-  <img src="assets/projects/infraguard.svg" width="100%" alt="InfraGuard AI Architecture" />
+  <img src="assets/projects/infraguard-cherry.svg" width="100%" alt="InfraGuard AI Architecture" />
 </p>
 
 * **Architecture**: Structural health monitoring and predictive failure intelligence system.
@@ -179,7 +147,7 @@ I care about the gap between a demo and real software. My work spans an **instit
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -187,72 +155,18 @@ I care about the gap between a demo and real software. My work spans an **instit
 <!-- ======================================================== -->
 ## ✦ Technology Stack
 
-<div align="center">
-
-**Languages**<br/>
-![Python](https://img.shields.io/badge/Python-4a0a1f?style=for-the-badge&logo=python&logoColor=ff2d6f)
-![JavaScript](https://img.shields.io/badge/JavaScript-4a0a1f?style=for-the-badge&logo=javascript&logoColor=ff2d6f)
-![TypeScript](https://img.shields.io/badge/TypeScript-4a0a1f?style=for-the-badge&logo=typescript&logoColor=ff2d6f)
-![SQL](https://img.shields.io/badge/SQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f)
-![HTML5](https://img.shields.io/badge/HTML5-4a0a1f?style=for-the-badge&logo=html5&logoColor=ff2d6f)
-![CSS3](https://img.shields.io/badge/CSS3-4a0a1f?style=for-the-badge&logo=css3&logoColor=ff2d6f)
-![C](https://img.shields.io/badge/C-4a0a1f?style=for-the-badge&logo=c&logoColor=ff2d6f)
-
-<br/><br/>
-
-**Frontend**<br/>
-![React](https://img.shields.io/badge/React-4a0a1f?style=for-the-badge&logo=react&logoColor=ff2d6f)
-![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-4a0a1f?style=for-the-badge&logo=redux&logoColor=ff2d6f)
-![React Query](https://img.shields.io/badge/React_Query-4a0a1f?style=for-the-badge&logo=reactquery&logoColor=ff2d6f)
-![React Router](https://img.shields.io/badge/React_Router-4a0a1f?style=for-the-badge&logo=reactrouter&logoColor=ff2d6f)
-![React Hook Form](https://img.shields.io/badge/React_Hook_Form-4a0a1f?style=for-the-badge&logo=reacthookform&logoColor=ff2d6f)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4a0a1f?style=for-the-badge&logo=tailwindcss&logoColor=ff2d6f)
-![Vite](https://img.shields.io/badge/Vite-4a0a1f?style=for-the-badge&logo=vite&logoColor=ff2d6f)
-![CesiumJS](https://img.shields.io/badge/CesiumJS-4a0a1f?style=for-the-badge&logo=cesium&logoColor=ff2d6f)
-
-<br/><br/>
-
-**Backend**<br/>
-![Node.js](https://img.shields.io/badge/Node.js-4a0a1f?style=for-the-badge&logo=nodedotjs&logoColor=ff2d6f)
-![Express](https://img.shields.io/badge/Express-4a0a1f?style=for-the-badge&logo=express&logoColor=ff2d6f)
-![FastAPI](https://img.shields.io/badge/FastAPI-4a0a1f?style=for-the-badge&logo=fastapi&logoColor=ff2d6f)
-![REST](https://img.shields.io/badge/REST_APIs-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-![WebSockets](https://img.shields.io/badge/WebSockets-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-![JWT](https://img.shields.io/badge/JWT_Auth-4a0a1f?style=for-the-badge&logo=jsonwebtokens&logoColor=ff2d6f)
-
-<br/><br/>
-
-**Databases & Security**<br/>
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f)
-![Neon](https://img.shields.io/badge/Neon-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-![RLS](https://img.shields.io/badge/Row--Level_Security-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-![TOTP MFA](https://img.shields.io/badge/TOTP_MFA-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-
-<br/><br/>
-
-**Tools & Ecosystem**<br/>
-![Git](https://img.shields.io/badge/Git-4a0a1f?style=for-the-badge&logo=git&logoColor=ff2d6f)
-![GitHub](https://img.shields.io/badge/GitHub-4a0a1f?style=for-the-badge&logo=github&logoColor=ff2d6f)
-![Selenium](https://img.shields.io/badge/Selenium-4a0a1f?style=for-the-badge&logo=selenium&logoColor=ff2d6f)
-![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4a0a1f?style=for-the-badge&logoColor=ff2d6f)
-![Google Workspace](https://img.shields.io/badge/Google_Workspace-4a0a1f?style=for-the-badge&logo=google&logoColor=ff2d6f)
-
-</div>
-
-<br/>
-
-| Category | Domain | Technologies |
-| :--- | :--- | :--- |
-| <img src="assets/icons/terminal.svg" width="22" height="22" alt="Languages" /> | **Programming** | `Python` &nbsp;•&nbsp; `JavaScript` &nbsp;•&nbsp; `TypeScript` &nbsp;•&nbsp; `SQL` &nbsp;•&nbsp; `HTML5` &nbsp;•&nbsp; `CSS3` &nbsp;•&nbsp; `C` |
-| <img src="assets/icons/layout.svg" width="22" height="22" alt="Frontend" /> | **Frontend** | `React` &nbsp;•&nbsp; `Redux Toolkit` &nbsp;•&nbsp; `React Query` &nbsp;•&nbsp; `React Router` &nbsp;•&nbsp; `React Hook Form` &nbsp;•&nbsp; `Tailwind CSS` &nbsp;•&nbsp; `Vite` &nbsp;•&nbsp; `CesiumJS` |
-| <img src="assets/icons/server.svg" width="22" height="22" alt="Backend" /> | **Backend** | `Node.js` &nbsp;•&nbsp; `Express` &nbsp;•&nbsp; `FastAPI` &nbsp;•&nbsp; `REST APIs` &nbsp;•&nbsp; `WebSockets` &nbsp;•&nbsp; `JWT Auth` |
-| <img src="assets/icons/shield.svg" width="22" height="22" alt="Security" /> | **Databases &amp; Security** | `PostgreSQL` &nbsp;•&nbsp; `Neon` &nbsp;•&nbsp; `PostgreSQL Row-Level Security` &nbsp;•&nbsp; `TOTP-based Multi-Factor Authentication` |
-| <img src="assets/icons/cpu.svg" width="22" height="22" alt="Tools" /> | **Tools &amp; Ecosystem** | `Git` &nbsp;•&nbsp; `GitHub` &nbsp;•&nbsp; `BeautifulSoup` &nbsp;•&nbsp; `Selenium` &nbsp;•&nbsp; `Google Workspace` |
+| Category | Domain Focus | Technologies &amp; Production Stack |
+| :---: | :--- | :--- |
+| <img src="assets/icons/terminal.svg" width="22" height="22" alt="Languages" /><br/>**Languages** | Core Programming | ![Python](https://img.shields.io/badge/Python-4a0a1f?style=for-the-badge&logo=python&logoColor=ff2d6f) ![Java](https://img.shields.io/badge/Java-4a0a1f?style=for-the-badge&logo=openjdk&logoColor=ff2d6f) ![JavaScript](https://img.shields.io/badge/JavaScript-4a0a1f?style=for-the-badge&logo=javascript&logoColor=ff2d6f) ![TypeScript](https://img.shields.io/badge/TypeScript-4a0a1f?style=for-the-badge&logo=typescript&logoColor=ff2d6f) ![SQL](https://img.shields.io/badge/SQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f) ![C](https://img.shields.io/badge/C-4a0a1f?style=for-the-badge&logo=c&logoColor=ff2d6f) ![HTML5](https://img.shields.io/badge/HTML5-4a0a1f?style=for-the-badge&logo=html5&logoColor=ff2d6f) ![CSS3](https://img.shields.io/badge/CSS3-4a0a1f?style=for-the-badge&logo=css3&logoColor=ff2d6f) |
+| <img src="assets/icons/layout.svg" width="22" height="22" alt="Frontend" /><br/>**Frontend** | Reactive &amp; 3D Geospatial UI | ![React](https://img.shields.io/badge/React-4a0a1f?style=for-the-badge&logo=react&logoColor=ff2d6f) ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-4a0a1f?style=for-the-badge&logo=redux&logoColor=ff2d6f) ![React Query](https://img.shields.io/badge/React_Query-4a0a1f?style=for-the-badge&logo=reactquery&logoColor=ff2d6f) ![React Router](https://img.shields.io/badge/React_Router-4a0a1f?style=for-the-badge&logo=reactrouter&logoColor=ff2d6f) ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-4a0a1f?style=for-the-badge&logo=reacthookform&logoColor=ff2d6f) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4a0a1f?style=for-the-badge&logo=tailwindcss&logoColor=ff2d6f) ![Vite](https://img.shields.io/badge/Vite-4a0a1f?style=for-the-badge&logo=vite&logoColor=ff2d6f) ![CesiumJS](https://img.shields.io/badge/CesiumJS-4a0a1f?style=for-the-badge&logo=cesium&logoColor=ff2d6f) |
+| <img src="assets/icons/server.svg" width="22" height="22" alt="Backend" /><br/>**Backend** | High-Throughput Services | ![Node.js](https://img.shields.io/badge/Node.js-4a0a1f?style=for-the-badge&logo=nodedotjs&logoColor=ff2d6f) ![Express](https://img.shields.io/badge/Express-4a0a1f?style=for-the-badge&logo=express&logoColor=ff2d6f) ![FastAPI](https://img.shields.io/badge/FastAPI-4a0a1f?style=for-the-badge&logo=fastapi&logoColor=ff2d6f) ![REST APIs](https://img.shields.io/badge/REST_APIs-4a0a1f?style=for-the-badge&logoColor=ff2d6f) ![WebSockets](https://img.shields.io/badge/WebSockets-4a0a1f?style=for-the-badge&logoColor=ff2d6f) ![JWT Auth](https://img.shields.io/badge/JWT_Auth-4a0a1f?style=for-the-badge&logo=jsonwebtokens&logoColor=ff2d6f) |
+| <img src="assets/icons/shield.svg" width="22" height="22" alt="Databases" /><br/>**Databases &amp; Security** | Relational, Cloud Realtime &amp; Security | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f) ![MySQL](https://img.shields.io/badge/MySQL-4a0a1f?style=for-the-badge&logo=mysql&logoColor=ff2d6f) ![SQL](https://img.shields.io/badge/SQL-4a0a1f?style=for-the-badge&logo=postgresql&logoColor=ff2d6f) ![Neon](https://img.shields.io/badge/Neon-4a0a1f?style=for-the-badge&logoColor=ff2d6f) ![Supabase](https://img.shields.io/badge/Supabase-4a0a1f?style=for-the-badge&logo=supabase&logoColor=ff2d6f) ![Firebase](https://img.shields.io/badge/Firebase-4a0a1f?style=for-the-badge&logo=firebase&logoColor=ff2d6f) ![Row-Level Security](https://img.shields.io/badge/Row--Level_Security-4a0a1f?style=for-the-badge&logoColor=ff2d6f) ![TOTP MFA](https://img.shields.io/badge/TOTP_MFA-4a0a1f?style=for-the-badge&logoColor=ff2d6f) |
+| <img src="assets/icons/cpu.svg" width="22" height="22" alt="Tools" /><br/>**Tools &amp; Ecosystem** | Workflows &amp; Automation | ![Git](https://img.shields.io/badge/Git-4a0a1f?style=for-the-badge&logo=git&logoColor=ff2d6f) ![GitHub](https://img.shields.io/badge/GitHub-4a0a1f?style=for-the-badge&logo=github&logoColor=ff2d6f) ![Selenium](https://img.shields.io/badge/Selenium-4a0a1f?style=for-the-badge&logo=selenium&logoColor=ff2d6f) ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4a0a1f?style=for-the-badge&logoColor=ff2d6f) ![Google Workspace](https://img.shields.io/badge/Google_Workspace-4a0a1f?style=for-the-badge&logo=google&logoColor=ff2d6f) |
 
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -277,7 +191,7 @@ Engineering excellence extends beyond codebases. I actively engage in cybersecur
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -289,20 +203,20 @@ Live metrics generated daily via automated GitHub Actions and official GitHub AP
 
 <p align="center">
   <a href="https://github.com/madhura200227?tab=repositories">
-    <img src="assets/stats/github-stats.svg" width="100%" alt="Madhura Lakade — Verified Profile Statistics" />
+    <img src="assets/stats/github-stats-cherry.svg" width="100%" alt="Madhura Lakade — Verified Profile Statistics" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/madhura200227?tab=repositories">
-    <img src="assets/stats/languages.svg" width="100%" alt="Madhura Lakade — Codebase Language Breakdown" />
+    <img src="assets/stats/languages-cherry.svg" width="100%" alt="Madhura Lakade — Codebase Language Breakdown" />
   </a>
 </p>
 
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -312,9 +226,9 @@ Live metrics generated daily via automated GitHub Actions and official GitHub AP
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/stats/snake.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats/snake-cherry.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/stats/snake-cherry.svg">
-    <img src="assets/stats/snake.svg" width="100%" alt="Contribution Snake Stream" />
+    <img src="assets/stats/snake-cherry.svg" width="100%" alt="Contribution Snake Stream" />
   </picture>
 </p>
 
@@ -323,7 +237,7 @@ Live metrics generated daily via automated GitHub Actions and official GitHub AP
 <br/>
 
 <p align="center">
-  <img src="assets/section-divider.svg" width="100%" alt="Section Divider" />
+  <img src="assets/section-divider-cherry.svg" width="100%" alt="Section Divider" />
 </p>
 
 <!-- ======================================================== -->
@@ -337,15 +251,15 @@ I welcome conversations around full-stack development, software architecture, re
 
 <p align="center">
   <a href="https://www.linkedin.com/in/madhura-lakade/">
-    <img src="assets/icons/connect-linkedin.svg" height="38" alt="Connect on LinkedIn" />
+    <img src="assets/icons/connect-linkedin-cherry.svg" height="38" alt="Connect on LinkedIn" />
   </a>
   &nbsp;&nbsp;
   <a href="mailto:madhuralakade20@gmail.com">
-    <img src="assets/icons/connect-email.svg" height="38" alt="Send an Email" />
+    <img src="assets/icons/connect-email-cherry.svg" height="38" alt="Send an Email" />
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/madhura200227">
-    <img src="assets/icons/connect-github.svg" height="38" alt="View GitHub Profile" />
+    <img src="assets/icons/connect-github-cherry.svg" height="38" alt="View GitHub Profile" />
   </a>
 </p>
 
@@ -354,7 +268,7 @@ I welcome conversations around full-stack development, software architecture, re
 <!-- ======================================================== -->
 <!-- 10. PERSONAL SIGNATURE FOOTER                            -->
 <!-- ======================================================== -->
-<img src="assets/identity/signature.svg" width="380" alt="Madhura Lakade — Developer × Creator" />
+<img src="assets/identity/signature-cherry.svg" width="380" alt="Madhura Lakade — Developer × Creator" />
 
 <br/><br/>
 

@@ -5,47 +5,42 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 # 1. Master Source Transparent Cutout (Full Portrait with Crossed Arms)
-CUTOUT_PATH = 'assets/portrait/madhura-full-pfp-cutout.png'
+CUTOUT_PATH = 'assets/portrait/madhura-full-pfp-hires.png'
+if not os.path.exists(CUTOUT_PATH):
+    CUTOUT_PATH = 'assets/portrait/madhura-full-pfp-cutout.png'
 if not os.path.exists(CUTOUT_PATH):
     CUTOUT_PATH = 'assets/portrait/madhura-pfp.png'
 
-# Create high-res prepared cutout with soft bottom fade (full 935x1024 master resolution)
-def get_hires_prepared_cutout():
-    raw_cutout = Image.open(CUTOUT_PATH).convert('RGBA')
-    arr = np.array(raw_cutout)
-    alpha = arr[:, :, 3].astype(float)
-    
-    # Smooth Hermite feather over bottom 44 rows (out of 1024)
-    H = raw_cutout.size[1]
-    fade_h = 44
-    for i in range(fade_h):
-        row = H - fade_h + i
-        t = (fade_h - 1 - i) / float(fade_h)
-        smooth = t * t * (3.0 - 2.0 * t)
-        alpha[row, :] = alpha[row, :] * smooth
-    arr[:, :, 3] = np.clip(alpha, 0, 255).astype(np.uint8)
-    return Image.fromarray(arr, mode='RGBA')
+hires_cutout = Image.open(CUTOUT_PATH).convert('RGBA')
 
-# Pre-generate high-res prepared cutout and base64 string for SVG (100% untouched face pixels)
-hires_cutout = get_hires_prepared_cutout()
-hires_cutout_path = 'assets/portrait/madhura-full-pfp-hires.png'
-hires_cutout.save(hires_cutout_path, format='PNG')
-
-with open(hires_cutout_path, 'rb') as f:
+with open(CUTOUT_PATH, 'rb') as f:
     pfp_png_b64 = base64.b64encode(f.read()).decode('utf-8')
 
-# Also prepare scaled fitted version for preview rendering
+# Scaled fitted version
 fitted_cutout = hires_cutout.resize((385, 422), Image.Resampling.LANCZOS)
 fitted_cutout.save('assets/portrait/madhura-full-pfp-fitted.png', format='PNG')
 
 # ==============================================================================
 # SVG HERO BANNER COMPOSITION (Midnight Éspresso & Cherry Royale)
-# PLAIN theme backgrounds • NO circular glow blobs • NO orbit lines
+# PLAIN theme backgrounds • Clean, short, uncluttered layout • NO orbits
 # ==============================================================================
-def build_hero_svg(theme="espresso"):
+def build_hero_svg(theme="cherry"):
     silver_white = "#F0F4F8"
 
-    if theme == "espresso":
+    if theme == "cherry":
+        # Mode 02: Cherry Royale (The Signature Edition - DEFAULT)
+        bg_color = "#4A0A1D"
+        border_stops = '''
+          <stop offset="0%" stop-color="#C1123F" stop-opacity="0.9" />
+          <stop offset="30%" stop-color="#FF2D60" stop-opacity="0.9" />
+          <stop offset="70%" stop-color="#780E2B" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#E8D5C5" stop-opacity="0.6" />'''
+        accent_color = "#FF2D60"
+        pill_fill = "#6B0C26"
+        pill_stroke = "#FF2D60"
+        diamond_fill = "#FF2D60"
+        dot_sep = "#C1123F"
+    else:
         # Mode 01: Midnight Éspresso (The Dark Edition)
         bg_color = "#211817"
         border_stops = '''
@@ -57,50 +52,23 @@ def build_hero_svg(theme="espresso"):
         pill_fill = "#650D25"
         pill_stroke = "#873D50"
         diamond_fill = "#C1123F"
-        badge_bg = "rgba(33, 24, 23, 0.95)"
-        badge_border = "#873D50"
-    elif theme == "cherry":
-        # Mode 02: Cherry Royale (The Signature Edition)
-        bg_color = "#4A0A1D"
-        border_stops = '''
-          <stop offset="0%" stop-color="#C1123F" stop-opacity="0.9" />
-          <stop offset="30%" stop-color="#FF2D60" stop-opacity="0.9" />
-          <stop offset="70%" stop-color="#780E2B" stop-opacity="0.9" />
-          <stop offset="100%" stop-color="#E8D5C5" stop-opacity="0.6" />'''
-        accent_color = "#FF2D60"
-        pill_fill = "#6B0C26"
-        pill_stroke = "#FF2D60"
-        diamond_fill = "#FF2D60"
-        badge_bg = "rgba(74, 10, 29, 0.95)"
-        badge_border = "#C1123F"
-    else: # light fallback
-        bg_color = "#FFF5ED"
-        border_stops = '''
-          <stop offset="0%" stop-color="#873D50" stop-opacity="0.6" />
-          <stop offset="40%" stop-color="#C1123F" stop-opacity="0.7" />
-          <stop offset="100%" stop-color="#873D50" stop-opacity="0.6" />'''
-        accent_color = "#C1123F"
-        pill_fill = "#650D25"
-        pill_stroke = "#873D50"
-        diamond_fill = "#C1123F"
-        badge_bg = "rgba(255, 245, 237, 0.95)"
-        badge_border = "#873D50"
+        dot_sep = "#873D50"
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <!-- Outer Border Gradient -->
     <linearGradient id="hbBorder_{theme}" x1="0%" y1="0%" x2="100%" y2="100%">
       {border_stops}
     </linearGradient>
   </defs>
 
   <style>
-    .hb-mono {{ font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.6px; fill: #D99AA7; }}
-    .hb-name {{ font-family: 'Georgia', 'Playfair Display', serif; font-size: 44px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.2px; }}
-    .hb-headline {{ font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-style: italic; fill: #E8D5C5; }}
+    .hb-name {{ font-family: 'Georgia', 'Playfair Display', serif; font-size: 46px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.2px; }}
+    .hb-headline {{ font-family: 'Playfair Display', Georgia, serif; font-size: 21px; font-style: italic; fill: #E8D5C5; }}
     .hb-desc {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; fill: #E8D5C5; letter-spacing: 0.2px; }}
-    .hb-pill-text, .hb-pillar-text {{ font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 1.8px; fill: {silver_white}; }}
-    .hb-meta {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #E8D5C5; letter-spacing: 0.8px; }}
+    .hb-pillar-text {{ font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 1.6px; fill: {silver_white}; }}
+    .hb-info-bold {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 700; fill: #FFF5ED; }}
+    .hb-info-reg {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 400; fill: #E8D5C5; }}
+    .hb-status {{ font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; font-weight: 500; fill: {silver_white}; letter-spacing: 0.6px; }}
   </style>
 
   <!-- Plain Theme Base Canvas (Zero Glow Blobs, Clean Uniform Surface) -->
@@ -119,79 +87,68 @@ def build_hero_svg(theme="espresso"):
   <!-- DEPTH LAYER 2: MASTER FULL PORTRAIT (TRUE COLOR LOSSLESS 32-BIT PNG)     -->
   <!-- Animated celestial float + 100% Original Facial Features • NO orbits     -->
   <!-- ========================================================================= -->
-  <g id="portraitGroup" transform="translate(745, 52)">
+  <g id="portraitGroup" transform="translate(745, 50)">
     <animateTransform attributeName="transform" type="translate"
-      values="745 52; 745 49; 745 55; 745 52"
+      values="745 50; 745 47; 745 53; 745 50"
       keyTimes="0; 0.35; 0.75; 1"
       dur="4.5s" repeatCount="indefinite" />
     <image href="data:image/png;base64,{pfp_png_b64}" x="0" y="0" width="385" height="422" preserveAspectRatio="xMidYMid meet" />
   </g>
 
   <!-- ========================================================================= -->
-  <!-- EDITORIAL TYPOGRAPHY & NARRATIVE (LEFT COLUMN) -->
+  <!-- CLEAN EDITORIAL TYPOGRAPHY & MANIFESTO STRIP (LEFT COLUMN)                -->
+  <!-- Simple, readable, elegant, no repetitive text, no nested boxes            -->
   <!-- ========================================================================= -->
-  <g transform="translate(68, 42)">
-    <!-- Telemetry Coordinates Badge (Cleanly Aligned at Top-Left) -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="180" height="24" rx="12" fill="{badge_bg}" stroke="{badge_border}" stroke-width="1" />
-      <circle cx="12" cy="12" r="3.5" fill="{accent_color}">
-        <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <text x="24" y="16" font-family="'IBM Plex Mono', Consolas, monospace" font-size="10.5" fill="#E8D5C5" letter-spacing="1.2">18.5204° N, 73.8567° E</text>
-    </g>
+  <!-- 1. Name -->
+  <text x="75" y="106" class="hb-name">Madhura Lakade</text>
 
-    <!-- Overline -->
-    <g transform="translate(0, 42)">
-      <rect x="0" y="-10" width="8" height="8" fill="{accent_color}" />
-      <text x="18" y="-2" class="hb-mono">MADHURA LAKADE // PORTFOLIO ARCHIVE</text>
-    </g>
+  <!-- 2. Headline -->
+  <text x="75" y="148" class="hb-headline">Developer by passion. Creator by nature.</text>
 
-    <!-- Main Title in Georgia Bold -->
-    <text x="0" y="86" class="hb-name">Madhura Lakade</text>
+  <!-- 3. Description -->
+  <text x="75" y="184" class="hb-desc">Building thoughtful digital experiences through technology,</text>
+  <text x="75" y="208" class="hb-desc">creativity and curiosity.</text>
 
-    <!-- Headline -->
-    <text x="0" y="128" class="hb-headline">Developer by passion. Creator by nature.</text>
+  <!-- 4. Tabular Manifesto Strip (SHE BUILDS · SHE THINKS · SHE CREATES) -->
+  <g transform="translate(75, 246)">
+    <rect x="0" y="0" width="142" height="32" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.2" />
+    <text x="71" y="21" class="hb-pillar-text" text-anchor="middle">SHE BUILDS</text>
 
-    <!-- Description -->
-    <text x="0" y="168" class="hb-desc">Building thoughtful digital experiences through technology,</text>
-    <text x="0" y="190" class="hb-desc">creativity and curiosity.</text>
+    <polygon points="151,16 155,12 159,16 155,20" fill="{diamond_fill}" />
 
-    <!-- Manifesto Strip: SHE BUILDS · SHE THINKS · SHE CREATES -->
-    <g transform="translate(0, 226)">
-      <!-- Pill 1: SHE BUILDS -->
-      <rect x="0" y="0" width="146" height="34" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.3" />
-      <text x="73" y="22" class="hb-pillar-text" fill="{silver_white}" text-anchor="middle">SHE BUILDS</text>
+    <rect x="168" y="0" width="142" height="32" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.2" />
+    <text x="239" y="21" class="hb-pillar-text" text-anchor="middle">SHE THINKS</text>
 
-      <!-- Diamond separator -->
-      <polygon points="160,17 164,13 168,17 164,21" fill="{diamond_fill}" />
+    <polygon points="319,16 323,12 327,16 323,20" fill="{diamond_fill}" />
 
-      <!-- Pill 2: SHE THINKS -->
-      <rect x="180" y="0" width="146" height="34" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.3" />
-      <text x="253" y="22" class="hb-pillar-text" fill="{silver_white}" text-anchor="middle">SHE THINKS</text>
+    <rect x="336" y="0" width="154" height="32" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.2" />
+    <text x="413" y="21" class="hb-pillar-text" text-anchor="middle">SHE CREATES</text>
+  </g>
 
-      <!-- Diamond separator -->
-      <polygon points="340,17 344,13 348,17 344,21" fill="{diamond_fill}" />
+  <!-- 5. Clean Profile Details -->
+  <!-- Line 1: Computer Science Student • Savitribai Phule Pune University -->
+  <g transform="translate(75, 320)">
+    <circle cx="3" cy="5" r="3.5" fill="{accent_color}" />
+    <text x="16" y="10" class="hb-info-bold">Computer Science Student</text>
+    <text x="218" y="10" class="hb-info-bold" fill="{dot_sep}">•</text>
+    <text x="235" y="10" class="hb-info-reg">Savitribai Phule Pune University</text>
+  </g>
 
-      <!-- Pill 3: SHE CREATES -->
-      <rect x="360" y="0" width="156" height="34" rx="6" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="1.3" />
-      <text x="438" y="22" class="hb-pillar-text" fill="{silver_white}" text-anchor="middle">SHE CREATES</text>
-    </g>
+  <!-- Line 2: 9.2+ CGPA • Pune, Maharashtra -->
+  <g transform="translate(75, 356)">
+    <circle cx="3" cy="5" r="3.5" fill="{accent_color}" />
+    <text x="16" y="10" class="hb-info-bold">9.2+ CGPA</text>
+    <text x="100" y="10" class="hb-info-bold" fill="{dot_sep}">•</text>
+    <text x="116" y="10" class="hb-info-reg">Pune, Maharashtra</text>
+  </g>
 
-    <!-- Supporting Details Metadata Row -->
-    <g transform="translate(0, 298)">
-      <circle cx="5" cy="-4" r="4" fill="{accent_color}" />
-      <text x="18" y="0" class="hb-meta">TY B.Sc. COMPUTER SCIENCE</text>
-      <text x="236" y="0" class="hb-meta" fill="#873D50">•</text>
-      <text x="252" y="0" class="hb-meta">PUNE, INDIA</text>
-      <text x="362" y="0" class="hb-meta" fill="#873D50">•</text>
-      <text x="378" y="0" class="hb-meta">FULL-STACK &amp; SYSTEMS</text>
-    </g>
-
-    <!-- Graphic Accent Line -->
-    <g transform="translate(0, 336)">
-      <path d="M 0 10 Q 80 -2 140 12 T 260 8" fill="none" stroke="#873D50" stroke-width="1.2" opacity="0.6" />
-      <circle cx="265" cy="8" r="2.5" fill="{accent_color}" />
-    </g>
+  <!-- Line 3: Available for Part-time & Remote Engineering -->
+  <g transform="translate(75, 396)">
+    <circle cx="4" cy="6" r="4.5" fill="#4ADE80">
+      <animate attributeName="r" values="4;5.2;4" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="18" y="11" class="hb-status">Available for Part-time &amp; Remote Engineering</text>
   </g>
 </svg>'''
 
@@ -207,123 +164,114 @@ def find_font(font_names, size):
             pass
     return ImageFont.load_default()
 
-def render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0):
-    """
-    Renders a single frame of the editorial hero banner at 1200x500 with full PFP.
-    PLAIN theme background • ZERO glow blobs • ZERO orbit lines • 30px headroom • Flush bottom.
-    """
+def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
     width, height = 1200, 500
 
-    if theme == "espresso":
-        # Mode 01: Midnight Éspresso (The Dark Edition) - Clean solid #211817
-        c_bg = (33, 24, 23)
-        c_border = (135, 61, 80)
-        c_accent = (193, 18, 63)
-        c_pill = (101, 13, 37)
-        c_pill_border = (135, 61, 80)
-        badge_bg = (33, 24, 23, 220)
-    else: # cherry
-        # Mode 02: Cherry Royale (The Signature Edition) - Clean solid #4A0A1D
-        c_bg = (74, 10, 29)
-        c_border = (193, 18, 63)
-        c_accent = (255, 45, 96)
-        c_pill = (107, 12, 38)
+    if theme == "cherry":
+        # Mode 02: Cherry Royale (The Signature Edition - DEFAULT)
+        c_bg = (74, 10, 29)            # Solid #4A0A1D
+        c_border = (193, 18, 63)        # #C1123F
+        c_accent = (255, 45, 96)        # #FF2D60
+        c_pill = (107, 12, 38)          # #6B0C26
         c_pill_border = (255, 45, 96)
-        badge_bg = (74, 10, 29, 220)
+        c_diamond = (255, 45, 96)
+        c_dot_sep = (193, 18, 63)
+    else: # espresso
+        # Mode 01: Midnight Éspresso (The Dark Edition)
+        c_bg = (33, 24, 23)            # Solid #211817
+        c_border = (135, 61, 80)        # #873D50
+        c_accent = (193, 18, 63)        # #C1123F
+        c_pill = (101, 13, 37)          # #650D25
+        c_pill_border = (135, 61, 80)
+        c_diamond = (193, 18, 63)
+        c_dot_sep = (135, 61, 80)
 
     c_ivory = (255, 245, 237)
     c_champagne = (232, 213, 197)
-    c_dusty_rose = (217, 154, 167)
     c_silver_white = (240, 244, 248)
+    c_emerald = (74, 222, 128)
 
-    # 1. Plain Theme Base Canvas (Zero Glow Blobs, Pure Uniform Solid Surface)
     im = Image.new('RGBA', (width, height), (c_bg[0], c_bg[1], c_bg[2], 255))
     draw = ImageDraw.Draw(im)
 
-    # 2. Outer Architectural Border (Clean 22px frame inset)
+    # 1. Outer Frame (Clean 22px frame inset)
     draw.rounded_rectangle([22, 22, width - 22, height - 22], radius=12, outline=c_border, width=1)
-    # Corner registration marks
     draw.line([(22, 40), (22, 22), (40, 22)], fill=c_accent, width=3)
     draw.line([(width - 22, 40), (width - 22, 22), (width - 40, 22)], fill=c_accent, width=3)
     draw.line([(22, height - 40), (22, height - 22), (40, height - 22)], fill=c_accent, width=3)
     draw.line([(width - 22, height - 40), (width - 22, height - 22), (width - 40, height - 22)], fill=c_accent, width=3)
 
-    # 3. Master Full Portrait (Fitted with 30px headroom and flush bottom, high-res downscaled)
-    # ZERO glow blobs behind portrait • ZERO orbit lines
+    # 2. Master Full Portrait (Fitted with gentle floating motion)
     target_w, target_h = 385, 422
     cutout_resized = hires_cutout.resize((target_w, target_h), Image.Resampling.LANCZOS)
-
     pos_x = 745
     pos_y = 50 + int(float_y)
-
     im.paste(cutout_resized, (pos_x, pos_y), cutout_resized)
     draw = ImageDraw.Draw(im)
 
-    # 4. Typography (Left Column)
-    f_mono = find_font(['consolab.ttf', 'consola.ttf', 'cour.ttf'], 11)
-    f_name = find_font(['georgiab.ttf', 'georgia.ttf', 'timesbd.ttf'], 44)
-    f_italic = find_font(['georgiai.ttf', 'georgia.ttf', 'timesi.ttf'], 20)
-    f_desc = find_font(['segoeui.ttf', 'arial.ttf'], 15)
+    # Fonts
+    f_name = find_font(['georgiab.ttf', 'georgia.ttf'], 48)
+    f_italic = find_font(['georgiai.ttf', 'georgia.ttf'], 21)
+    f_desc = find_font(['segoeui.ttf', 'arial.ttf'], 16)
     f_pill = find_font(['consolab.ttf', 'consola.ttf'], 12)
-    f_meta = find_font(['segoeuib.ttf', 'arialbd.ttf'], 13)
+    f_info_bold = find_font(['segoeuib.ttf', 'arialbd.ttf'], 15)
+    f_info_reg = find_font(['segoeui.ttf', 'arial.ttf'], 15)
+    f_mono_status = find_font(['consolab.ttf', 'consola.ttf'], 13)
 
-    # Telemetry Badge (Top Left, aligned and clean)
-    badge_x, badge_y = 68, 42
-    draw.rounded_rectangle([badge_x, badge_y, badge_x + 180, badge_y + 24], radius=12, fill=badge_bg[:3], outline=c_border, width=1)
-    draw.ellipse([badge_x + 10, badge_y + 8, badge_x + 18, badge_y + 16], fill=c_accent)
-    draw.text((badge_x + 24, badge_y + 6), '18.5204° N, 73.8567° E', fill=c_champagne, font=f_mono)
+    lx = 75
 
-    # Overline
-    draw.rectangle([68, 80, 76, 88], fill=c_accent)
-    draw.text((86, 78), "MADHURA LAKADE // PORTFOLIO ARCHIVE", fill=c_dusty_rose, font=f_mono)
+    # 1. Name
+    draw.text((lx, 60), "Madhura Lakade", fill=c_ivory, font=f_name)
 
-    # Name in Georgia Bold
-    draw.text((68, 108), "Madhura Lakade", fill=c_ivory, font=f_name)
+    # 2. Headline
+    draw.text((lx, 126), "Developer by passion. Creator by nature.", fill=c_champagne, font=f_italic)
 
-    # Headline
-    draw.text((68, 168), "Developer by passion. Creator by nature.", fill=c_champagne, font=f_italic)
+    # 3. Description
+    draw.text((lx, 168), "Building thoughtful digital experiences through technology,", fill=c_champagne, font=f_desc)
+    draw.text((lx, 194), "creativity and curiosity.", fill=c_champagne, font=f_desc)
 
-    # Description
-    draw.text((68, 206), "Building thoughtful digital experiences through technology,", fill=c_champagne, font=f_desc)
-    draw.text((68, 228), "creativity and curiosity.", fill=c_champagne, font=f_desc)
-
-    # Manifesto Strip (SHE BUILDS · SHE THINKS · SHE CREATES)
+    # 4. Tabular Manifesto Strip (SHE BUILDS · SHE THINKS · SHE CREATES)
     pills = [
-        ("SHE BUILDS", 68, 268, 146),
-        ("SHE THINKS", 238, 268, 146),
-        ("SHE CREATES", 408, 268, 156)
+        ("SHE BUILDS", lx, 242, 142),
+        ("SHE THINKS", lx + 164, 242, 142),
+        ("SHE CREATES", lx + 328, 242, 154)
     ]
     for text, px, py, pw in pills:
-        draw.rounded_rectangle([px, py, px + pw, py + 34], radius=6, fill=c_pill, outline=c_pill_border, width=1)
-        draw.text((px + pw // 2, py + 9), text, fill=c_silver_white, font=f_pill, anchor="mt")
+        draw.rounded_rectangle([px, py, px + pw, py + 32], radius=6, fill=c_pill, outline=c_pill_border, width=1)
+        draw.text((px + pw // 2, py + 8), text, fill=c_silver_white, font=f_pill, anchor="mt")
 
-    # Diamond separators
-    draw.polygon([(223, 285), (227, 281), (231, 285), (227, 289)], fill=c_accent)
-    draw.polygon([(393, 285), (397, 281), (401, 285), (397, 289)], fill=c_accent)
+    draw.polygon([(lx + 150, 258), (lx + 154, 254), (lx + 158, 258), (lx + 154, 262)], fill=c_diamond)
+    draw.polygon([(lx + 314, 258), (lx + 318, 254), (lx + 322, 258), (lx + 318, 262)], fill=c_diamond)
 
-    # Supporting Details Metadata Row
-    draw.ellipse([68, 338, 76, 346], fill=c_accent)
-    draw.text((86, 336), "TY B.Sc. COMPUTER SCIENCE", fill=c_champagne, font=f_meta)
-    draw.text((298, 336), "•", fill=c_border, font=f_meta)
-    draw.text((314, 336), "PUNE, INDIA", fill=c_champagne, font=f_meta)
-    draw.text((420, 336), "•", fill=c_border, font=f_meta)
-    draw.text((436, 336), "FULL-STACK & SYSTEMS", fill=c_champagne, font=f_meta)
+    # 5. Clean Profile Details
+    # Line 1: Computer Science Student • Savitribai Phule Pune University
+    y_info1 = 312
+    draw.ellipse([lx, y_info1 + 6, lx + 6, y_info1 + 12], fill=c_accent)
+    draw.text((lx + 16, y_info1), "Computer Science Student", fill=c_ivory, font=f_info_bold)
+    w1 = int(draw.textlength("Computer Science Student", font=f_info_bold))
+    draw.text((lx + 16 + w1 + 12, y_info1), "•", fill=c_dot_sep, font=f_info_bold)
+    draw.text((lx + 16 + w1 + 26, y_info1), "Savitribai Phule Pune University", fill=c_champagne, font=f_info_reg)
+
+    # Line 2: 9.2+ CGPA • Pune, Maharashtra
+    y_info2 = 348
+    draw.ellipse([lx, y_info2 + 6, lx + 6, y_info2 + 12], fill=c_accent)
+    draw.text((lx + 16, y_info2), "9.2+ CGPA", fill=c_ivory, font=f_info_bold)
+    w2 = int(draw.textlength("9.2+ CGPA", font=f_info_bold))
+    draw.text((lx + 16 + w2 + 12, y_info2), "•", fill=c_dot_sep, font=f_info_bold)
+    draw.text((lx + 16 + w2 + 26, y_info2), "Pune, Maharashtra", fill=c_champagne, font=f_info_reg)
+
+    # Line 3: Available for Part-time & Remote Engineering
+    y_info3 = 392
+    draw.ellipse([lx, y_info3 + 4, lx + 10, y_info3 + 14], fill=c_emerald)
+    draw.text((lx + 20, y_info3), "Available for Part-time & Remote Engineering", fill=c_silver_white, font=f_mono_status)
 
     return im
 
 def get_master_palette(theme, base_frame, hires_cutout):
-    """
-    Creates an optimal 256-color master palette on a plain solid background:
-    - 230 colors reserved for the portrait & facial features
-    - 26 colors for plain background, UI text, borders & badges
-    Guarantees zero facial posterization and zero frame-to-frame flickering.
-    """
-    # 1. 230 colors dedicated to portrait face & body colors
     face = hires_cutout.crop((280, 140, 620, 500)).convert('RGB')
     face_p = face.quantize(colors=230, method=Image.Quantize.FASTOCTREE)
 
-    # 2. 26 colors for plain background & UI text/accents
-    ui_sample = base_frame.crop((20, 20, 600, 460)).convert('RGB')
+    ui_sample = base_frame.crop((20, 20, 700, 470)).convert('RGB')
     ui_p = ui_sample.quantize(colors=26, method=Image.Quantize.FASTOCTREE)
 
     master_p = face_p.getpalette()[:230*3] + ui_p.getpalette()[:26*3]
@@ -333,11 +281,7 @@ def get_master_palette(theme, base_frame, hires_cutout):
     pal_img.putpalette(master_p)
     return pal_img
 
-def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18):
-    """
-    Builds a silky, active 36-frame animated GIF (~2.0s loop).
-    Smooth sinusoidal portrait floating motion • PLAIN theme background • NO glow blobs • NO orbit lines.
-    """
+def build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cherry.gif", num_frames=36, fps=18):
     base_frame = render_banner_frame(theme=theme, t_norm=0.0, float_y=0.0)
     master_pal = get_master_palette(theme, base_frame, hires_cutout)
 
@@ -345,8 +289,6 @@ def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gi
 
     for i in range(num_frames):
         t_norm = i / float(num_frames)
-
-        # Gentle floating oscillation (amplitude: 2.8px)
         float_y = 2.8 * math.sin(t_norm * 2 * math.pi)
 
         frame_rgba = render_banner_frame(
@@ -355,11 +297,10 @@ def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gi
             float_y=float_y
         )
 
-        bg_rgb_color = (33, 24, 23) if theme == 'espresso' else (74, 10, 29)
+        bg_rgb_color = (74, 10, 29) if theme == 'cherry' else (33, 24, 23)
         frame_rgb = Image.new('RGB', frame_rgba.size, bg_rgb_color)
         frame_rgb.paste(frame_rgba, (0, 0), frame_rgba)
 
-        # Quantize using master palette with Dither.NONE for razor-sharp facial features
         frame_p = frame_rgb.quantize(palette=master_pal, dither=Image.Dither.NONE)
         frames.append(frame_p)
 
@@ -377,27 +318,27 @@ def build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gi
 def build_all():
     os.makedirs('assets/hero', exist_ok=True)
 
-    print("1. Generating SVG Hero Banners with Plain Theme Backgrounds (No Glow Blobs, No Orbits)...")
-    svg_esp = build_hero_svg("espresso")
-    with open('assets/hero/hero-banner.svg', 'w', encoding='utf-8') as f:
-        f.write(svg_esp)
-
+    print("1. Generating Clean SVG Hero Banners...")
     svg_cherry = build_hero_svg("cherry")
     with open('assets/hero/hero-banner-cherry.svg', 'w', encoding='utf-8') as f:
         f.write(svg_cherry)
 
+    svg_esp = build_hero_svg("espresso")
+    with open('assets/hero/hero-banner.svg', 'w', encoding='utf-8') as f:
+        f.write(svg_esp)
+
     svg_light = build_hero_svg("light")
     with open('assets/hero/hero-banner-light.svg', 'w', encoding='utf-8') as f:
         f.write(svg_light)
-    print("   [OK] SVGs generated: hero-banner.svg, hero-banner-cherry.svg, hero-banner-light.svg")
+    print("   [OK] SVGs generated: hero-banner-cherry.svg, hero-banner.svg, hero-banner-light.svg")
 
-    print("2. Generating Static PNG Previews (True-Color Lossless Plain Background)...")
-    preview_esp = render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0)
-    preview_esp.save('assets/hero/hero-banner-preview.png', format='PNG', optimize=True)
-
+    print("2. Generating Static PNG Previews...")
     preview_cherry = render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0)
     preview_cherry.save('assets/hero/hero-banner-cherry-preview.png', format='PNG', optimize=True)
-    print("   [OK] PNG previews saved: hero-banner-preview.png, hero-banner-cherry-preview.png")
+
+    preview_esp = render_banner_frame(theme="espresso", t_norm=0.0, float_y=0.0)
+    preview_esp.save('assets/hero/hero-banner-preview.png', format='PNG', optimize=True)
+    print("   [OK] PNG previews saved: hero-banner-cherry-preview.png, hero-banner-preview.png")
 
     print("3. Generating Side-by-Side Comparison Sheet...")
     comp_w = 1200
@@ -408,23 +349,23 @@ def build_all():
     f_title = find_font(['georgiab.ttf', 'georgia.ttf'], 22)
     f_sub = find_font(['consolab.ttf', 'consola.ttf'], 12)
 
-    comp_draw.text((30, 16), "MODE 01 — MIDNIGHT ÉSPRESSO (The Dark Edition)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((720, 22), "Quiet luxury. Limitless depth. Plain #211817", fill=(217, 154, 167), font=f_sub)
-    comp_img.paste(preview_esp, (0, 50))
+    comp_draw.text((30, 16), "MODE 02 — CHERRY ROYALE (The Signature Edition - DEFAULT)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((700, 22), "Bold elegance. Unapologetic expression. Plain #4A0A1D", fill=(255, 163, 184), font=f_sub)
+    comp_img.paste(preview_cherry, (0, 50))
 
     offset_y = 50 + 500 + 20
-    comp_draw.text((30, offset_y - 28), "MODE 02 — CHERRY ROYALE (The Signature Edition)", fill=(255, 245, 237), font=f_title)
-    comp_draw.text((720, offset_y - 22), "Bold elegance. Unapologetic expression. Plain #4A0A1D", fill=(255, 163, 184), font=f_sub)
-    comp_img.paste(preview_cherry, (0, offset_y))
+    comp_draw.text((30, offset_y - 28), "MODE 01 — MIDNIGHT ÉSPRESSO (The Dark Edition)", fill=(255, 245, 237), font=f_title)
+    comp_draw.text((700, offset_y - 22), "Quiet luxury. Limitless depth. Plain #211817", fill=(217, 154, 167), font=f_sub)
+    comp_img.paste(preview_esp, (0, offset_y))
 
     comp_img.save('assets/hero/hero-comparison.png', format='PNG', optimize=True)
     print("   [OK] Comparison sheet saved: assets/hero/hero-comparison.png")
 
-    print("4. Generating Midnight Éspresso Animated GIF (Plain Theme, No Blobs, No Orbits)...")
-    build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18)
-
-    print("5. Generating Cherry Royale Animated GIF (Plain Theme, No Blobs, No Orbits)...")
+    print("4. Generating Cherry Royale Animated GIF (DEFAULT)...")
     build_animated_gif(theme="cherry", output_path="assets/hero/hero-banner-cherry.gif", num_frames=36, fps=18)
+
+    print("5. Generating Midnight Éspresso Animated GIF...")
+    build_animated_gif(theme="espresso", output_path="assets/hero/hero-banner.gif", num_frames=36, fps=18)
 
 if __name__ == "__main__":
     build_all()

@@ -287,8 +287,15 @@
 
     .markdown-body table td {
       border: 1px solid var(--border-accent) !important;
-      padding: 12px 16px !important;
+      padding: 14px 18px !important;
       color: var(--text-body) !important;
+      vertical-align: middle !important;
+    }
+
+    .markdown-body table td img {
+      margin: 3px 2px !important;
+      vertical-align: middle !important;
+      display: inline-block !important;
     }
 
     .markdown-body code {
@@ -361,6 +368,34 @@
     }
 
     /* Toast notification */
+    /* Floating Mode Toggle Pill */
+    .floating-theme-switch {
+      position: fixed;
+      bottom: 46px;
+      right: 28px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-strong);
+      color: var(--text-heading);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 16px var(--glow);
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .floating-theme-switch:hover {
+      transform: translateY(-2px) scale(1.03);
+      border-color: #FFF5ED;
+      box-shadow: 0 12px 36px var(--glow);
+    }
+
     #toast {
       position: fixed;
       top: 75px;
@@ -386,7 +421,7 @@
     }
   </style>
 </head>
-<body class="mode-espresso">
+<body class="mode-cherry">
 
   <!-- Top Navigation & Live Backend Command Toolbar -->
   <header class="top-toolbar">
@@ -408,7 +443,7 @@
       </button>
 
       <button class="action-btn" id="modeToggleBtn" onclick="toggleBrandMode()">
-        <span id="modeBtnText">✦ Switch to Cherry Royale</span>
+        <span id="modeBtnText">✦ Switch to Midnight Éspresso</span>
       </button>
     </div>
   </header>
@@ -423,7 +458,12 @@
           </svg>
           <strong style="font-family:'IBM Plex Mono', monospace;">README.md</strong>
         </div>
-        <span id="modeBadge" style="color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1px;">MIDNIGHT ÉSPRESSO</span>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <button class="action-btn" id="cardModeToggleBtn" onclick="toggleBrandMode()" style="padding: 4px 14px; font-size: 11px;">
+            <span id="cardModeBtnText">✦ Switch to Midnight Éspresso</span>
+          </button>
+          <span id="modeBadge" style="color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:1px;">CHERRY ROYALE</span>
+        </div>
       </div>
 
       <!-- Rendered Markdown Body -->
@@ -432,6 +472,12 @@
       </article>
     </div>
   </main>
+
+  <!-- Floating Mode Toggle Pill (Accessible Anywhere On Page) -->
+  <div class="floating-theme-switch" id="floatingThemeSwitch" onclick="toggleBrandMode()">
+    <span style="color:var(--accent-cherry); font-size:15px;">✦</span>
+    <span id="floatingToggleText">Switch to Midnight Éspresso</span>
+  </div>
 
   <!-- Fixed Bottom Status Dock -->
   <div class="status-dock">
@@ -442,7 +488,7 @@
   <div id="toast">Live GitHub Stats Synced via Backend!</div>
 
   <script>
-    let currentMode = 'espresso';
+    let currentMode = 'cherry';
 
     function showToast(msg) {
       const toast = document.getElementById('toast');
@@ -454,6 +500,8 @@
     function toggleBrandMode() {
       const body = document.body;
       const btnText = document.getElementById('modeBtnText');
+      const cardBtnText = document.getElementById('cardModeBtnText');
+      const floatingText = document.getElementById('floatingToggleText');
       const badge = document.getElementById('modeBadge');
 
       if (currentMode === 'espresso') {
@@ -461,6 +509,8 @@
         body.classList.remove('mode-espresso');
         body.classList.add('mode-cherry');
         btnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Midnight Éspresso';
+        if (floatingText) floatingText.innerText = 'Switch to Midnight Éspresso';
         badge.innerText = 'CHERRY ROYALE';
         swapThemeAssets('cherry');
       } else {
@@ -468,6 +518,8 @@
         body.classList.remove('mode-cherry');
         body.classList.add('mode-espresso');
         btnText.innerText = '✦ Switch to Cherry Royale';
+        if (cardBtnText) cardBtnText.innerText = '✦ Switch to Cherry Royale';
+        if (floatingText) floatingText.innerText = 'Switch to Cherry Royale';
         badge.innerText = 'MIDNIGHT ÉSPRESSO';
         swapThemeAssets('espresso');
       }
