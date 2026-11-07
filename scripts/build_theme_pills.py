@@ -49,11 +49,11 @@ def create_theme_pills():
   <text x="168" y="19.5" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="700" fill="#FFF5ED" letter-spacing="0.5">ACTIVE</text>
 </svg>'''
 
-    # 5. Live Web Engine Pill
-    svg_live_engine = '''<svg xmlns="http://www.w3.org/2000/svg" width="190" height="32" viewBox="0 0 190 32">
-  <rect x="1" y="1" width="188" height="30" rx="15" fill="#1b1215" stroke="#FF2D60" stroke-width="1.2" stroke-dasharray="3 2" />
-  <text x="16" y="20" font-family="'IBM Plex Mono', monospace" font-size="10.5" font-weight="700" fill="#FF809B" letter-spacing="0.8">⚡ LIVE WEB ENGINE</text>
-  <path d="M 170 13 L 175 16 L 170 19" fill="none" stroke="#FF2D60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    # 5. Live Showcase Pill (Renamed from Live Web Engine)
+    svg_live_engine = '''<svg xmlns="http://www.w3.org/2000/svg" width="180" height="32" viewBox="0 0 180 32">
+  <rect x="1" y="1" width="178" height="30" rx="15" fill="#1b1215" stroke="#FF2D60" stroke-width="1.2" stroke-dasharray="3 2" />
+  <text x="16" y="20" font-family="'IBM Plex Mono', monospace" font-size="10.5" font-weight="700" fill="#FF809B" letter-spacing="0.8">✦ LIVE SHOWCASE</text>
+  <path d="M 160 13 L 165 16 L 160 19" fill="none" stroke="#FF2D60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 </svg>'''
 
     files = {
@@ -68,8 +68,7 @@ def create_theme_pills():
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
 
-    print('Generated theme pills successfully!')
+    print('Generated updated theme pills successfully!')
 
 if __name__ == '__main__':
     create_theme_pills()
-

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madhura Lakade — GitHub Profile Architecture & Live Backend Engine</title>
+  <title>Madhura Lakade — Interactive Portfolio Studio & Architecture</title>
   
   <!-- GitHub Markdown Base Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css">
@@ -482,7 +482,7 @@
   <!-- Fixed Bottom Status Dock -->
   <div class="status-dock">
     <div class="status-dot"></div>
-    <span>Full-Stack Profile Engine &nbsp;•&nbsp; <strong>Madhura Lakade</strong> &nbsp;•&nbsp; <span id="dockAnimationStatus" style="color:var(--accent-cherry);">60 FPS LIVE ANIMATIONS ACTIVE</span></span>
+    <span>Interactive Portfolio Studio &nbsp;•&nbsp; <strong>Madhura Lakade</strong> &nbsp;•&nbsp; <strong style="font-family:'Century Gothic', 'Outfit', 'Poppins', sans-serif; letter-spacing:0.5px;">@goalsgettergoddess_</strong> &nbsp;•&nbsp; <span id="dockAnimationStatus" style="color:var(--accent-cherry);">60 FPS LIVE ANIMATIONS ACTIVE</span></span>
   </div>
 
   <div id="toast">Live GitHub Stats Synced via Backend!</div>
@@ -682,7 +682,7 @@
           document.getElementById('backendStatusText').innerText = `BACKEND API: ${data.status.toUpperCase()} (${data.port})`;
         })
         .catch(() => {
-          document.getElementById('backendStatusText').innerText = (window.location.hostname && window.location.hostname.includes('github.io')) ? 'ENGINE: LIVE (GITHUB PAGES)' : 'BACKEND: LOCAL ENGINE';
+          document.getElementById('backendStatusText').innerText = (window.location.hostname && window.location.hostname.includes('github.io')) ? 'STUDIO: LIVE (GITHUB PAGES)' : 'BACKEND: LOCAL ENGINE';
         });
     }, 5000);
   </script>

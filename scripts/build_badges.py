@@ -4,7 +4,7 @@ def generate_live_badges():
     os.makedirs('assets/icons', exist_ok=True)
     
     # 1. Cherry Royale Badge
-    svg_cherry = '''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="42" viewBox="0 0 560 42">
+    svg_cherry = '''<svg xmlns="http://www.w3.org/2000/svg" width="580" height="42" viewBox="0 0 580 42">
   <defs>
     <linearGradient id="bgCherry" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#4A0A1D" />
@@ -23,7 +23,7 @@ def generate_live_badges():
   </defs>
 
   <!-- Capsule Frame -->
-  <rect x="1" y="1" width="558" height="40" rx="20" fill="url(#bgCherry)" stroke="url(#strokeCherry)" stroke-width="1.4" />
+  <rect x="1" y="1" width="578" height="40" rx="20" fill="url(#bgCherry)" stroke="url(#strokeCherry)" stroke-width="1.4" />
 
   <!-- Live Pulsing Status Indicator -->
   <g transform="translate(24, 21)">
@@ -37,17 +37,17 @@ def generate_live_badges():
     </circle>
   </g>
 
-  <!-- Main Action & Label -->
-  <text x="44" y="26" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED" letter-spacing="1.2">LIVE PORTFOLIO ENGINE</text>
+  <!-- Main Action & Label (IMMERSIVE PORTFOLIO STUDIO) -->
+  <text x="44" y="26" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED" letter-spacing="1.2">IMMERSIVE PORTFOLIO STUDIO</text>
 
   <!-- Divider diamond -->
-  <text x="238" y="26" font-family="sans-serif" font-size="11" fill="#FF809B">✦</text>
+  <text x="264" y="26" font-family="sans-serif" font-size="11" fill="#FF809B">✦</text>
 
   <!-- Secondary Description -->
-  <text x="256" y="25.5" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" font-weight="500" fill="#E8D5C5" letter-spacing="0.3">Full-Screen Theme Experience</text>
+  <text x="282" y="25.5" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" font-weight="500" fill="#E8D5C5" letter-spacing="0.3">Interactive Live Showcase</text>
 
   <!-- Arrow Indicator Pill -->
-  <g transform="translate(518, 21)">
+  <g transform="translate(538, 21)">
     <circle cx="0" cy="0" r="11" fill="#FF2D60" />
     <path d="M -3 -4 L 2 0 L -3 4" fill="none" stroke="#FFF5ED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
   </g>
@@ -57,7 +57,7 @@ def generate_live_badges():
         f.write(svg_cherry)
 
     # 2. Midnight Éspresso Badge
-    svg_espresso = '''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="42" viewBox="0 0 560 42">
+    svg_espresso = '''<svg xmlns="http://www.w3.org/2000/svg" width="580" height="42" viewBox="0 0 580 42">
   <defs>
     <linearGradient id="bgEspresso" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#211817" />
@@ -76,7 +76,7 @@ def generate_live_badges():
   </defs>
 
   <!-- Capsule Frame -->
-  <rect x="1" y="1" width="558" height="40" rx="20" fill="url(#bgEspresso)" stroke="url(#strokeEspresso)" stroke-width="1.4" />
+  <rect x="1" y="1" width="578" height="40" rx="20" fill="url(#bgEspresso)" stroke="url(#strokeEspresso)" stroke-width="1.4" />
 
   <!-- Live Pulsing Status Indicator -->
   <g transform="translate(24, 21)">
@@ -90,17 +90,17 @@ def generate_live_badges():
     </circle>
   </g>
 
-  <!-- Main Action & Label -->
-  <text x="44" y="26" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED" letter-spacing="1.2">LIVE PORTFOLIO ENGINE</text>
+  <!-- Main Action & Label (IMMERSIVE PORTFOLIO STUDIO) -->
+  <text x="44" y="26" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="12" font-weight="700" fill="#FFF5ED" letter-spacing="1.2">IMMERSIVE PORTFOLIO STUDIO</text>
 
   <!-- Divider diamond -->
-  <text x="238" y="26" font-family="sans-serif" font-size="11" fill="#C1123F">✦</text>
+  <text x="264" y="26" font-family="sans-serif" font-size="11" fill="#C1123F">✦</text>
 
   <!-- Secondary Description -->
-  <text x="256" y="25.5" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" font-weight="500" fill="#E8D5C5" letter-spacing="0.3">Full-Screen Theme Experience</text>
+  <text x="282" y="25.5" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" font-weight="500" fill="#E8D5C5" letter-spacing="0.3">Interactive Live Showcase</text>
 
   <!-- Arrow Indicator Pill -->
-  <g transform="translate(518, 21)">
+  <g transform="translate(538, 21)">
     <circle cx="0" cy="0" r="11" fill="#C1123F" />
     <path d="M -3 -4 L 2 0 L -3 4" fill="none" stroke="#FFF5ED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
   </g>
@@ -109,8 +109,7 @@ def generate_live_badges():
     with open('assets/icons/live-portfolio-badge.svg', 'w', encoding='utf-8') as f:
         f.write(svg_espresso)
 
-    print('Generated live portfolio badges!')
+    print('Generated updated portfolio badges!')
 
 if __name__ == '__main__':
     generate_live_badges()
-

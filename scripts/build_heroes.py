@@ -100,6 +100,7 @@ def build_hero_svg(theme="cherry"):
     .hb-info-bold {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 700; fill: #FFF5ED; }}
     .hb-info-reg {{ font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 400; fill: #E8D5C5; }}
     .hb-status {{ font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; font-weight: 500; fill: {silver_white}; letter-spacing: 0.6px; }}
+    .hb-goals {{ font-family: 'Century Gothic', 'Outfit', 'Poppins', 'Montserrat', -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.4px; }}
   </style>
 
   <!-- Edge-Blended Canvas (Seamless Dissolve into GitHub #0d1117) -->
@@ -181,6 +182,12 @@ def build_hero_svg(theme="cherry"):
     </circle>
     <text x="18" y="11" class="hb-status">Available for Part-time &amp; Remote Engineering</text>
   </g>
+
+  <!-- Line 4: @goalsgettergoddess_ (Geometric Bold in Century Gothic format) -->
+  <g transform="translate(75, 432)">
+    <circle cx="4" cy="6" r="3.5" fill="{accent_color}" />
+    <text x="18" y="11" class="hb-goals">@goalsgettergoddess_</text>
+  </g>
 </svg>'''
 
 # ==============================================================================
@@ -250,6 +257,7 @@ def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
     f_info_bold = find_font(['segoeuib.ttf', 'arialbd.ttf'], 15)
     f_info_reg = find_font(['segoeui.ttf', 'arial.ttf'], 15)
     f_mono_status = find_font(['consolab.ttf', 'consola.ttf'], 13)
+    f_goals = find_font([r'C:\Windows\Fonts\GOTHICB.TTF', 'GOTHICB.TTF', 'gothicb.ttf', 'segoeuib.ttf', 'arialbd.ttf'], 18)
 
     lx = 75
 
@@ -297,6 +305,11 @@ def render_banner_frame(theme="cherry", t_norm=0.0, float_y=0.0):
     y_info3 = 392
     draw.ellipse([lx, y_info3 + 4, lx + 10, y_info3 + 14], fill=c_emerald)
     draw.text((lx + 20, y_info3), "Available for Part-time & Remote Engineering", fill=c_silver_white, font=f_mono_status)
+
+    # Line 4: @goalsgettergoddess_ (Geometric Bold in Century Gothic format)
+    y_info4 = 430
+    draw.ellipse([lx + 2, y_info4 + 5, lx + 8, y_info4 + 11], fill=c_accent)
+    draw.text((lx + 20, y_info4), "@goalsgettergoddess_", fill=c_ivory, font=f_goals)
 
     return im
 

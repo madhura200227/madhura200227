@@ -8,7 +8,7 @@
   &nbsp;
   <a href="README-espresso.md" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Web Engine"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Web Engine" /></a>
+  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>
 
 <br/>
@@ -24,10 +24,10 @@
 
 <br/><br/>
 
-<!-- Option 1: Live Interactive Portfolio Engine on GitHub Pages -->
+<!-- Interactive Live Portfolio Studio on GitHub Pages -->
 <p align="center">
   <a href="https://madhura200227.github.io/madhura200227/">
-    <img src="assets/icons/live-portfolio-badge.svg" height="38" alt="Launch Live Portfolio Engine" />
+    <img src="assets/icons/live-portfolio-badge.svg" height="38" alt="Launch Immersive Portfolio Studio" />
   </a>
 </p>
 

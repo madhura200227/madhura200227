@@ -8,7 +8,7 @@ def generate_readme_espresso():
   &nbsp;
   <a href="README-espresso.md" title="Switch to Midnight Éspresso Mode"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/" title="Launch Interactive Live Web Engine"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Web Engine" /></a>
+  <a href="https://madhura200227.github.io/madhura200227/" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>'''
 
     new_toggle = '''<p align="center">
@@ -16,7 +16,7 @@ def generate_readme_espresso():
   &nbsp;
   <a href="README-espresso.md" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Web Engine"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Web Engine" /></a>
+  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>'''
 
     espresso_content = content.replace(old_toggle, new_toggle)
@@ -79,8 +79,7 @@ def generate_readme_espresso():
     with open('README-espresso.md', 'w', encoding='utf-8') as f:
         f.write(espresso_content)
 
-    print('Generated README-espresso.md successfully!')
+    print('Regenerated README-espresso.md successfully!')
 
 if __name__ == '__main__':
     generate_readme_espresso()
-
