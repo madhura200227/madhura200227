@@ -124,8 +124,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 8px #4ade80;
+      background: var(--accent-cherry);
+      box-shadow: 0 0 8px var(--accent-cherry);
       animation: pulse-dot 2s infinite ease-in-out;
     }
 
@@ -554,25 +554,21 @@
         'live-portfolio-badge'
       ];
 
-      // 1. Process all <source> elements inside <picture> tags
-      document.querySelectorAll('#content picture source').forEach(source => {
-        let srcset = source.getAttribute('srcset') || '';
-        let clean = srcset.split('?')[0];
-
-        if (clean.includes('hero-banner')) {
-          if (theme === 'cherry') {
-            source.setAttribute('srcset', 'assets/hero/hero-banner-cherry.gif?v=' + v);
-          } else {
-            source.setAttribute('srcset', 'assets/hero/hero-banner.gif?v=' + v);
-          }
+      // 1. Process all <picture> elements and inner <source> & <img>
+      document.querySelectorAll('#content picture').forEach(pic => {
+        const sources = pic.querySelectorAll('source');
+        const img = pic.querySelector('img');
+        const isHero = (img && img.src.includes('hero-banner')) || Array.from(sources).some(s => s.srcset.includes('hero-banner'));
+        if (isHero) {
+          const newSrc = theme === 'cherry' ? 'assets/hero/hero-banner-cherry.gif?v=' + v : 'assets/hero/hero-banner.gif?v=' + v;
+          sources.forEach(s => s.setAttribute('srcset', newSrc));
+          if (img) img.setAttribute('src', newSrc);
         }
-
-        if (clean.includes('snake')) {
-          if (theme === 'cherry') {
-            source.setAttribute('srcset', 'assets/stats/snake-cherry.svg?v=' + v);
-          } else {
-            source.setAttribute('srcset', 'assets/stats/snake.svg?v=' + v);
-          }
+        const isSnake = (img && img.src.includes('snake')) || Array.from(sources).some(s => s.srcset.includes('snake'));
+        if (isSnake) {
+          const newSrc = theme === 'cherry' ? 'assets/stats/snake-cherry.svg?v=' + v : 'assets/stats/snake.svg?v=' + v;
+          sources.forEach(s => s.setAttribute('srcset', newSrc));
+          if (img) img.setAttribute('src', newSrc);
         }
       });
 
@@ -656,17 +652,20 @@
         // Force asset calibration immediately upon render
         setBrandMode(currentMode);
 
-        // Bind in-page clicks on README links to instant client mode toggles
-        document.querySelectorAll('#content a[href*="README"]').forEach(a => {
-          a.addEventListener('click', (e) => {
-            e.preventDefault();
-            const href = a.getAttribute('href') || '';
-            if (href.includes('README-espresso')) {
+        // Bind in-page clicks on ANY theme toggle link to instant client mode toggles
+        document.querySelectorAll('#content a').forEach(a => {
+          const href = a.getAttribute('href') || '';
+          if (href.includes('espresso')) {
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
               setBrandMode('espresso');
-            } else {
+            });
+          } else if (href.includes('cherry')) {
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
               setBrandMode('cherry');
-            }
-          });
+            });
+          }
         });
       })
       .catch(err => {

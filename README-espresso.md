@@ -4,9 +4,9 @@
 <!-- 00. GITHUB THEME SELECTOR & MODE TOGGLE                   -->
 <!-- ======================================================== -->
 <p align="center">
-  <a href="README.md" title="Switch to Cherry Royale Mode"><img src="assets/icons/theme-cherry-inactive.svg" height="30" alt="Switch to Cherry Royale" /></a>
+  <a href="https://madhura200227.github.io/madhura200227/?theme=cherry" title="Switch to Cherry Royale Mode"><img src="assets/icons/theme-cherry-inactive.svg" height="30" alt="Switch to Cherry Royale" /></a>
   &nbsp;
-  <a href="README-espresso.md" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
+  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
   &nbsp;
   <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>
@@ -105,58 +105,13 @@ I care about the gap between a demo and real software. My work spans an **instit
 
 | Project | What it is | Stack |
 |---|---|---|
-| **[Procure Flow](https://sp-college-approval-hub.vercel.app)** | Procurement lifecycle and approval workflow platform for S.P. College, Pune | React · Node.js · PostgreSQL · Neon · RLS · MFA |
+| **Procure Flow** | Procurement lifecycle and approval workflow platform for S.P. College, Pune | React · Node.js · PostgreSQL · Neon · RLS · MFA |
 | **[KesslerX](https://kessler-x.vercel.app)** | Orbital debris and satellite monitoring for space situational awareness. Presented at Avishkar | React · TypeScript · CesiumJS · FastAPI · WebSockets |
 | **InfraGuard AI** | Failure prediction and alerts for roads, bridges and pipelines | React · Python · REST APIs |
 
 <sub>Also: NutriLens AI · Web Scraper · SkillSwap</sub>
 
 <br/>
-
-### 01. PROCURE FLOW
-> **Procurement lifecycle and approval workflow platform for S.P. College, Pune**
-
-<p align="center">
-  <a href="https://sp-college-approval-hub.vercel.app/">
-    <img src="assets/projects/procure-flow.svg" width="100%" alt="Procure Flow Architecture" />
-  </a>
-</p>
-
-* **Architecture**: Institutional multi-tier requisition and sign-off pipeline built for S.P. College, Pune.
-* **Key Capabilities**: Fine-grained access control via PostgreSQL Row-Level Security (RLS), TOTP-based Multi-Factor Authentication (MFA), auditable hierarchical sign-offs, and immutable requisition ledgers.
-* **Technologies**: React, Node.js, PostgreSQL, Neon, Vite, Tailwind CSS, PostgreSQL Row-Level Security, TOTP-based Multi-Factor Authentication.
-* **Deployment**: [Live Application &rarr;](https://sp-college-approval-hub.vercel.app/)
-
----
-
-### 02. KESSLERX
-> **Orbital debris and satellite monitoring for space situational awareness. Presented at Avishkar**
-
-<p align="center">
-  <a href="https://kessler-x.vercel.app/">
-    <img src="assets/projects/kesslerx.svg" width="100%" alt="KesslerX Architecture" />
-  </a>
-</p>
-
-* **Architecture**: High-performance aerospace platform providing 3D orbital visualization and conjunction evaluation for Low Earth Orbit (LEO) assets. Selected and presented at the **Avishkar Research Convention** in Technology and Data.
-* **Key Capabilities**: Real-time event streaming via WebSockets, spatiotemporal query caching using FastAPI and React Query, and interactive 3D geospatial rendering with CesiumJS.
-* **Technologies**: React, TypeScript, Redux Toolkit, React Query, CesiumJS, Tailwind CSS, FastAPI, WebSockets.
-* **Deployment**: [Live Application &rarr;](https://kessler-x.vercel.app/)
-
----
-
-### 03. INFRAGUARD AI
-> **Failure prediction and alerts for roads, bridges and pipelines**
-
-<p align="center">
-  <img src="assets/projects/infraguard.svg" width="100%" alt="InfraGuard AI Architecture" />
-</p>
-
-* **Architecture**: Structural health monitoring and predictive failure intelligence system.
-* **Key Capabilities**: Sensor telemetry ingestion, structural vibration degradation curve analysis, threshold anomaly classification, and automated preventive maintenance dispatch.
-* **Technologies**: React, Python, REST APIs.
-
----
 
 ### Additional Projects
 

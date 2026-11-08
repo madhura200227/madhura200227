@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="32" viewBox="0 0 200 32">
   <rect x="1" y="1" width="198" height="30" rx="15" fill="#3a0818" stroke="#C1123F" stroke-width="1.2" />
-  <text x="16" y="20" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#E8D5C5" letter-spacing="0.8">🍒 CHERRY ROYALE</text>
+  <text x="16" y="20" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="#FAF2EC" letter-spacing="0.8">🍒 CHERRY ROYALE</text>
   <path d="M 178 13 L 184 16 L 178 19" fill="none" stroke="#FF2D60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
