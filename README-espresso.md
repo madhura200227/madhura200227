@@ -203,9 +203,9 @@ Live metrics generated daily via automated GitHub Actions and official GitHub AP
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/stats/snake.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/stats/snake.svg">
-    <img src="assets/stats/snake.svg" width="100%" alt="Contribution Snake Stream" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats/snake.gif">
+    <source media="(prefers-color-scheme: light)" srcset="assets/stats/snake.gif">
+    <img src="assets/stats/snake.gif" width="100%" alt="Contribution Snake Stream" />
   </picture>
 </p>
 

@@ -566,7 +566,7 @@
         }
         const isSnake = (img && img.src.includes('snake')) || Array.from(sources).some(s => s.srcset.includes('snake'));
         if (isSnake) {
-          const newSrc = theme === 'cherry' ? 'assets/stats/snake-cherry.svg?v=' + v : 'assets/stats/snake.svg?v=' + v;
+          const newSrc = theme === 'cherry' ? 'assets/stats/snake-cherry.gif?v=' + v : 'assets/stats/snake.gif?v=' + v;
           sources.forEach(s => s.setAttribute('srcset', newSrc));
           if (img) img.setAttribute('src', newSrc);
         }
