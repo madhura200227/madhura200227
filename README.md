@@ -4,9 +4,9 @@
 <!-- 00. GITHUB THEME SELECTOR & MODE TOGGLE                   -->
 <!-- ======================================================== -->
 <p align="center">
-  <a href="https://madhura200227.github.io/madhura200227/?theme=cherry" title="Cherry Royale Mode (Active)"><img src="assets/icons/theme-cherry-active.svg" height="30" alt="Cherry Royale Mode (Active)" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README.md" title="Cherry Royale Mode (Active)"><img src="assets/icons/theme-cherry-active.svg" height="30" alt="Cherry Royale Mode (Active)" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Switch to Midnight Éspresso Mode"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README-espresso.md" title="Switch to Midnight Éspresso Mode on GitHub"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso Mode on GitHub" /></a>
   &nbsp;
   <a href="https://madhura200227.github.io/madhura200227/" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>

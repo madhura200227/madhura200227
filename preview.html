@@ -660,7 +660,7 @@
               e.preventDefault();
               setBrandMode('espresso');
             });
-          } else if (href.includes('cherry')) {
+          } else if (href.includes('cherry') || href.endsWith('/README.md')) {
             a.addEventListener('click', (e) => {
               e.preventDefault();
               setBrandMode('cherry');

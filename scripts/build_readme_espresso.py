@@ -2,19 +2,19 @@ def generate_readme_espresso():
     with open('README.md', 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 1. Swap the theme toggle header
+    # 1. Swap the theme toggle header for Option A (staying on GitHub)
     old_toggle = '''<p align="center">
-  <a href="https://madhura200227.github.io/madhura200227/?theme=cherry" title="Cherry Royale Mode (Active)"><img src="assets/icons/theme-cherry-active.svg" height="30" alt="Cherry Royale Mode (Active)" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README.md" title="Cherry Royale Mode (Active)"><img src="assets/icons/theme-cherry-active.svg" height="30" alt="Cherry Royale Mode (Active)" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Switch to Midnight Éspresso Mode"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README-espresso.md" title="Switch to Midnight Éspresso Mode on GitHub"><img src="assets/icons/theme-espresso-inactive.svg" height="30" alt="Switch to Midnight Éspresso Mode on GitHub" /></a>
   &nbsp;
   <a href="https://madhura200227.github.io/madhura200227/" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>'''
 
     new_toggle = '''<p align="center">
-  <a href="https://madhura200227.github.io/madhura200227/?theme=cherry" title="Switch to Cherry Royale Mode"><img src="assets/icons/theme-cherry-inactive.svg" height="30" alt="Switch to Cherry Royale" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README.md" title="Switch to Cherry Royale Mode on GitHub"><img src="assets/icons/theme-cherry-inactive.svg" height="30" alt="Switch to Cherry Royale Mode on GitHub" /></a>
   &nbsp;
-  <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
+  <a href="https://github.com/madhura200227/madhura200227/blob/main/README-espresso.md" title="Midnight Éspresso Mode (Active)"><img src="assets/icons/theme-espresso-active.svg" height="30" alt="Midnight Éspresso Mode (Active)" /></a>
   &nbsp;
   <a href="https://madhura200227.github.io/madhura200227/?theme=espresso" title="Launch Interactive Live Showcase"><img src="assets/icons/theme-live-engine.svg" height="30" alt="Live Interactive Showcase" /></a>
 </p>'''
@@ -80,7 +80,7 @@ def generate_readme_espresso():
     with open('README-espresso.md', 'w', encoding='utf-8') as f:
         f.write(espresso_content)
 
-    print('Regenerated README-espresso.md cleanly!')
+    print('Regenerated README-espresso.md with Option A GitHub navigation!')
 
 if __name__ == '__main__':
     generate_readme_espresso()
