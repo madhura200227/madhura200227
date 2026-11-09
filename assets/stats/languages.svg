@@ -1,66 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 220" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 195" width="340" height="195">
   <defs>
-    <linearGradient id="lgBg_espresso" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1b1214" />
-      <stop offset="60%" stop-color="#211817" />
-      <stop offset="100%" stop-color="#2e111a" />
+    <linearGradient id="langGrad_espresso" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181110" />
+      <stop offset="100%" stop-color="#231818" />
     </linearGradient>
   </defs>
 
-  <rect width="840" height="220" rx="12" fill="url(#lgBg_espresso)" stroke="#873D50" stroke-width="1.3" />
-  <rect x="0" y="0" width="840" height="3.5" rx="1.5" fill="#C1123F" />
+  <!-- Card Background & Border -->
+  <rect x="0.5" y="0.5" width="339" height="194" rx="10" fill="url(#langGrad_espresso)" stroke="#873D50" stroke-width="1.2" />
 
-  <path d="M 16 28 L 16 16 L 28 16" fill="none" stroke="#C1123F" stroke-width="2" />
-  <path d="M 824 28 L 824 16 L 812 16" fill="none" stroke="#C1123F" stroke-width="2" />
-  <path d="M 16 192 L 16 204 L 28 204" fill="none" stroke="#C1123F" stroke-width="2" />
-  <path d="M 824 192 L 824 204 L 812 204" fill="none" stroke="#C1123F" stroke-width="2" />
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="340" height="3" rx="1.5" fill="#C1123F" />
 
-  <g transform="translate(36, 36)">
-    <rect x="0" y="-8" width="6" height="6" fill="#C1123F">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
-    </rect>
-    <text x="14" y="-2" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="500" fill="#D99AA7" letter-spacing="1.5">CODEBASE ANALYSIS // LANGUAGE DISTRIBUTION</text>
-    <text x="0" y="28" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFF5ED">Most Used Languages</text>
+  <!-- Card Title -->
+  <g transform="translate(25, 34)">
+    <text x="0" y="3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#C1123F" letter-spacing="0.3">Most Used Languages</text>
   </g>
 
-  <!-- Segmented Language Distribution Bar -->
-  <g transform="translate(36, 88)">
-    <rect x="0" y="0" width="768" height="12" rx="6" fill="#2a141a" />
-    <rect x="0" y="0" width="280" height="12" fill="#C1123F" rx="2" />
-    <rect x="280" y="0" width="210" height="12" fill="#E61C52" rx="2" />
-    <rect x="490" y="0" width="140" height="12" fill="#873D50" rx="2" />
-    <rect x="630" y="0" width="70" height="12" fill="#D99AA7" rx="2" />
-    <rect x="700" y="0" width="70" height="12" fill="#B88979" rx="2" />
-    
+  <!-- Segmented Language Bar -->
+  <g transform="translate(25, 52)">
+    <rect x="0" y="0" width="290" height="9" rx="4.5" fill="#2a141a" />
+    <rect x="0" y="0" width="116" height="9" fill="#C1123F" rx="2" />
+      <rect x="116" y="0" width="87" height="9" fill="#E61C52" rx="2" />
+      <rect x="203" y="0" width="29" height="9" fill="#873D50" rx="2" />
+      <rect x="232" y="0" width="29" height="9" fill="#D99AA7" rx="2" />
+      <rect x="261" y="0" width="29" height="9" fill="#A01535" rx="2" />
+      
   </g>
 
-  <!-- Legend -->
-  <g transform="translate(36, 125)">
+  <!-- Two Column List of Languages -->
+  <g transform="translate(25, 82)">
+    <!-- Column 1 -->
     <g transform="translate(0, 0)">
-          <circle cx="6" cy="6" r="5" fill="#C1123F" />
-          <text x="18" y="10" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#FFF5ED">TypeScript</text>
-          <text x="130" y="10" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D99AA7">36.4%</text>
-        </g>
-    <g transform="translate(256, 0)">
-          <circle cx="6" cy="6" r="5" fill="#E61C52" />
-          <text x="18" y="10" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#FFF5ED">JavaScript</text>
-          <text x="130" y="10" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D99AA7">27.3%</text>
-        </g>
-    <g transform="translate(512, 0)">
-          <circle cx="6" cy="6" r="5" fill="#873D50" />
-          <text x="18" y="10" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#FFF5ED">Python</text>
-          <text x="130" y="10" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D99AA7">18.2%</text>
-        </g>
-    <g transform="translate(0, 28)">
-          <circle cx="6" cy="6" r="5" fill="#D99AA7" />
-          <text x="18" y="10" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#FFF5ED">HTML</text>
-          <text x="130" y="10" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D99AA7">9.1%</text>
-        </g>
-    <g transform="translate(256, 28)">
-          <circle cx="6" cy="6" r="5" fill="#B88979" />
-          <text x="18" y="10" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#FFF5ED">PLpgSQL</text>
-          <text x="130" y="10" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#D99AA7">9.1%</text>
-        </g>
-    
+      <g transform="translate(0, 0)">
+        <circle cx="5" cy="5" r="4.5" fill="#C1123F" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">TypeScript</text>
+        <text x="100" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">40.0%</text>
+      </g>
+      <g transform="translate(0, 23)">
+        <circle cx="5" cy="5" r="4.5" fill="#E61C52" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">JavaScript</text>
+        <text x="100" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">30.0%</text>
+      </g>
+      <g transform="translate(0, 46)">
+        <circle cx="5" cy="5" r="4.5" fill="#873D50" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">Python</text>
+        <text x="100" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">10.0%</text>
+      </g>
+      <g transform="translate(0, 69)">
+        <circle cx="5" cy="5" r="4.5" fill="#D99AA7" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">PLpgSQL</text>
+        <text x="100" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">10.0%</text>
+      </g>
+      
+    </g>
+
+    <!-- Column 2 -->
+    <g transform="translate(150, 0)">
+      <g transform="translate(0, 0)">
+        <circle cx="5" cy="5" r="4.5" fill="#A01535" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">HTML</text>
+        <text x="80" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">10.0%</text>
+      </g>
+      <g transform="translate(0, 23)">
+        <circle cx="5" cy="5" r="4.5" fill="#650D25" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">CSS</text>
+        <text x="80" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">2.85%</text>
+      </g>
+      <g transform="translate(0, 46)">
+        <circle cx="5" cy="5" r="4.5" fill="#B88979" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">Java</text>
+        <text x="80" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">2.0%</text>
+      </g>
+      <g transform="translate(0, 69)">
+        <circle cx="5" cy="5" r="4.5" fill="#E8D5C5" />
+        <text x="16" y="9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#FFF5ED">C</text>
+        <text x="80" y="9" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#D99AA7">1.5%</text>
+      </g>
+      
+    </g>
   </g>
 </svg>

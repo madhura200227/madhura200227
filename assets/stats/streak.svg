@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">
+  <defs>
+    <linearGradient id="strkGrad_espresso" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181110" />
+      <stop offset="100%" stop-color="#231818" />
+    </linearGradient>
+    <filter id="flameGlow_espresso" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Card Background & Border -->
+  <rect x="0.5" y="0.5" width="494" height="194" rx="10" fill="url(#strkGrad_espresso)" stroke="#873D50" stroke-width="1.2" />
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="495" height="3" rx="1.5" fill="#C1123F" />
+
+  <!-- Vertical Divider 1 -->
+  <line x1="165" y1="35" x2="165" y2="160" stroke="#873D50" stroke-width="1" opacity="0.45" />
+
+  <!-- Vertical Divider 2 -->
+  <line x1="330" y1="35" x2="330" y2="160" stroke="#873D50" stroke-width="1" opacity="0.45" />
+
+  <!-- Column 1: Total Contributions -->
+  <g transform="translate(82, 0)">
+    <text x="0" y="82" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#FFF5ED" text-anchor="middle">232</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#C1123F" text-anchor="middle">Total Contributions</text>
+    <text x="0" y="145" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#D99AA7" text-anchor="middle">Apr 4, 2025 - Present</text>
+  </g>
+
+  <!-- Column 2: Current Streak (Center with Ring & Flame) -->
+  <g transform="translate(247, 0)">
+    <!-- Streak Ring -->
+    <circle cx="0" cy="72" r="34" fill="none" stroke="#2a141a" stroke-width="4.5" />
+    <circle cx="0" cy="72" r="34" fill="none" stroke="#C1123F" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="160 214" stroke-dashoffset="30" filter="url(#flameGlow_espresso)" />
+    
+    <!-- Flame Icon on top of Ring -->
+    <g transform="translate(0, 36) scale(0.65)" filter="url(#flameGlow_espresso)">
+      <path d="M 0 -18 C -4 -11, -12 -3, -12 7 C -12 14, -6 19, 0 19 C 6 19, 12 14, 12 7 C 12 0, 7 -7, 4 -10 C 4 -5, 1 -2, -2 -1 C -3 -3, -3 -8, 0 -18 Z" fill="#C1123F" />
+    </g>
+
+    <!-- Current Streak Number -->
+    <text x="0" y="80" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFF5ED" text-anchor="middle">18</text>
+    
+    <!-- Subtitle & Date Range -->
+    <text x="0" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#C1123F" text-anchor="middle">Current Streak</text>
+    <text x="0" y="152" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#D99AA7" text-anchor="middle">Oct 23 - Nov 9</text>
+  </g>
+
+  <!-- Column 3: Longest Streak -->
+  <g transform="translate(412, 0)">
+    <text x="0" y="82" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#FFF5ED" text-anchor="middle">18</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#C1123F" text-anchor="middle">Longest Streak</text>
+    <text x="0" y="145" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#D99AA7" text-anchor="middle">Oct 23 - Nov 9</text>
+  </g>
+</svg>

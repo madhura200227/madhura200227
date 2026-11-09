@@ -34,6 +34,7 @@ def generate_readme_espresso():
         ('infraguard-cherry.svg', 'infraguard.svg'),
         ('github-stats-cherry.svg', 'github-stats.svg'),
         ('languages-cherry.svg', 'languages.svg'),
+        ('streak-cherry.svg', 'streak.svg'),
         ('snake-cherry.svg', 'snake.svg'),
         ('snake-cherry.gif', 'snake.gif'),
         ('signature-cherry.svg', 'signature.svg'),
@@ -72,6 +73,7 @@ def generate_readme_espresso():
         ('badge/Selenium-4a0a1f', 'badge/Selenium-211817'),
         ('badge/BeautifulSoup-4a0a1f', 'badge/BeautifulSoup-211817'),
         ('badge/Google_Workspace-4a0a1f', 'badge/Google_Workspace-211817'),
+        ('color=ff2d60&style=flat-square', 'color=c1123f&style=flat-square'),
     ]
 
     for old, new in asset_replacements:

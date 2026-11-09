@@ -482,7 +482,7 @@
   <!-- Fixed Bottom Status Dock -->
   <div class="status-dock">
     <div class="status-dot"></div>
-    <span>Interactive Portfolio Studio &nbsp;•&nbsp; <strong>Madhura Lakade</strong> &nbsp;•&nbsp; <strong style="font-family:'Century Gothic', 'Outfit', 'Poppins', sans-serif; letter-spacing:0.5px;">@goalsgettergoddess_</strong> &nbsp;•&nbsp; <span id="dockAnimationStatus" style="color:var(--accent-cherry);">60 FPS LIVE ANIMATIONS ACTIVE</span></span>
+    <span>Interactive Portfolio Studio &nbsp;•&nbsp; <strong>Madhura Lakade</strong> &nbsp;•&nbsp; <strong style="font-family:'Century Gothic', 'Outfit', 'Poppins', sans-serif; letter-spacing:0.5px;">@goalsgettergoddess_</strong> &nbsp;•&nbsp; 👁️ <strong id="dockViewsCounter" style="color:var(--accent-cherry);">200+ VIEWS</strong> &nbsp;•&nbsp; <span id="dockAnimationStatus" style="color:var(--accent-cherry);">60 FPS LIVE ANIMATIONS ACTIVE</span></span>
   </div>
 
   <div id="toast">Live GitHub Stats Synced via Backend!</div>
@@ -546,6 +546,7 @@
         'infraguard',
         'github-stats',
         'languages',
+        'streak',
         'connect-linkedin',
         'connect-email',
         'connect-github',
@@ -575,6 +576,20 @@
       // 2. Process all <img> elements
       document.querySelectorAll('#content img').forEach(img => {
         let rawSrc = img.getAttribute('src') || '';
+
+        // Preserve full query parameters for external dynamic telemetry badges
+        if (rawSrc.includes('komarev.com/ghpvc')) {
+          let updatedBadge = rawSrc;
+          if (theme === 'espresso') {
+            updatedBadge = updatedBadge.replace('color=ff2d60', 'color=c1123f');
+          } else {
+            updatedBadge = updatedBadge.replace('color=c1123f', 'color=ff2d60');
+          }
+          img.src = updatedBadge;
+          img.setAttribute('src', updatedBadge);
+          return;
+        }
+
         let cleanSrc = rawSrc.split('?')[0];
 
         if (cleanSrc.includes('theme-cherry') || cleanSrc.includes('theme-espresso')) {
@@ -673,8 +688,23 @@
         document.getElementById('content').innerHTML = '<p style="color:#C1123F;">Error loading README.md: ' + err.message + '</p>';
       });
 
+    // Fetch live views count from backend or local telemetry
+    function updateViewsCount() {
+      fetch('/api/stats')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.views_count) {
+            const el = document.getElementById('dockViewsCounter');
+            if (el) el.innerText = `${data.views_count} VIEWS`;
+          }
+        })
+        .catch(() => {});
+    }
+    updateViewsCount();
+
     // Check backend health periodically
     setInterval(() => {
+      updateViewsCount();
       fetch('/api/status')
         .then(res => res.json())
         .then(data => {

@@ -9,6 +9,7 @@ Provides:
 
 import os
 import sys
+import re
 import json
 import time
 import subprocess
@@ -103,6 +104,17 @@ class ProfileBackendHandler(SimpleHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
             try:
+                views_count = "200+"
+                try:
+                    if os.path.exists("assets/stats/github-stats.svg"):
+                        with open("assets/stats/github-stats.svg", "r", encoding="utf-8") as svg_f:
+                            svg_c = svg_f.read()
+                            m = re.findall(r'<text x="48" y="32" class="st-val">([^<]+)</text>', svg_c)
+                            if len(m) >= 2:
+                                views_count = m[1]
+                except Exception:
+                    pass
+
                 # Real stats payload
                 stats_payload = {
                     "user": "madhura200227",
@@ -110,6 +122,7 @@ class ProfileBackendHandler(SimpleHTTPRequestHandler):
                     "followers": 4,
                     "following": 3,
                     "total_stars": 0,
+                    "views_count": views_count,
                     "languages": [
                         {"name": "TypeScript", "percentage": 40.0},
                         {"name": "JavaScript", "percentage": 30.0},
@@ -149,6 +162,8 @@ class ProfileBackendHandler(SimpleHTTPRequestHandler):
                 p1 = subprocess.run([sys.executable, "scripts/generate_stats.py"], capture_output=True, text=True, check=True)
                 # Run build_heroes.py
                 p2 = subprocess.run([sys.executable, "scripts/build_heroes.py"], capture_output=True, text=True, check=True)
+                # Run build_readme_espresso.py
+                p3 = subprocess.run([sys.executable, "scripts/build_readme_espresso.py"], capture_output=True, text=True, check=True)
 
                 self.send_response(HTTPStatus.OK)
                 self.send_header("Content-Type", "application/json")
@@ -158,6 +173,7 @@ class ProfileBackendHandler(SimpleHTTPRequestHandler):
                     "message": "Successfully regenerated all real-time stats and animated hero banners.",
                     "stats_output": p1.stdout.strip(),
                     "hero_output": p2.stdout.strip(),
+                    "readme_output": p3.stdout.strip(),
                     "timestamp": time.time()
                 }
                 self.wfile.write(json.dumps(resp, indent=2).encode('utf-8'))

@@ -31,6 +31,13 @@
   </a>
 </p>
 
+<!-- Live Profile Views Telemetry -->
+<p align="center">
+  <a href="https://github.com/madhura200227">
+    <img src="https://komarev.com/ghpvc/?username=madhura200227&label=PROFILE+VIEWS&color=c1123f&style=flat-square" alt="Madhura Lakade — Live Profile Views" />
+  </a>
+</p>
+
 <br/>
 
 <!-- Fast Quick-Connect Identity Strip -->
@@ -69,9 +76,9 @@ I care about the gap between a demo and real software. My work spans an **instit
 
 ### By the numbers
 
-| 🎓 CGPA | 🛰️ Projects | 🏆 Hackathons | 🎤 People reached | 🧰 Languages coded | 🗣️ Spoken |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| **9.2+** | **6** | **5+** | **2,000+** | **8** | **3** |
+| 👁️ Views | 🎓 CGPA | 🛰️ Projects | 🏆 Hackathons | 🎤 People reached | 🧰 Languages coded | 🗣️ Spoken |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **200+** | **9.2+** | **6** | **5+** | **2,000+** | **8** | **3** |
 
 <br/>
 
@@ -178,15 +185,21 @@ Engineering excellence extends beyond codebases. I actively engage in cybersecur
 
 Live metrics generated daily via automated GitHub Actions and official GitHub APIs.
 
+<h3 align="center">📊 Developer Cards</h3>
+
 <p align="center">
-  <a href="https://github.com/madhura200227?tab=repositories">
-    <img src="assets/stats/github-stats.svg" width="100%" alt="Madhura Lakade — Verified Profile Statistics" />
+  <a href="https://github.com/madhura200227">
+    <img src="assets/stats/github-stats.svg" width="58%" alt="Madhura's GitHub Stats" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/madhura200227">
+    <img src="assets/stats/languages.svg" width="39%" alt="Most Used Languages" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/madhura200227?tab=repositories">
-    <img src="assets/stats/languages.svg" width="100%" alt="Madhura Lakade — Codebase Language Breakdown" />
+  <a href="https://github.com/madhura200227">
+    <img src="assets/stats/streak.svg" width="58%" alt="GitHub Streak Stats" />
   </a>
 </p>
 

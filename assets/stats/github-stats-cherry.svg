@@ -1,63 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 280" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">
   <defs>
-    <linearGradient id="stBg_cherry" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2c0612" />
-      <stop offset="60%" stop-color="#3a0818" />
-      <stop offset="100%" stop-color="#4e0b20" />
+    <linearGradient id="cardGrad_cherry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#260510" />
+      <stop offset="100%" stop-color="#360816" />
     </linearGradient>
+    <filter id="glow_cherry" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
-  <style>
-    .st-meta { font-family: 'IBM Plex Mono', 'SF Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.5px; fill: #D99AA7; }
-    .st-title { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; fill: #FFF5ED; letter-spacing: 0.5px; }
-    .st-val { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; fill: #FFF5ED; }
-    .st-sub { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; fill: #E8D5C5; }
-  </style>
+  <!-- Card Background & Border -->
+  <rect x="0.5" y="0.5" width="494" height="194" rx="10" fill="url(#cardGrad_cherry)" stroke="#C1123F" stroke-width="1.2" />
 
-  <rect width="840" height="280" rx="12" fill="url(#stBg_cherry)" stroke="#C1123F" stroke-width="1.3" />
-  <rect x="0" y="0" width="840" height="3.5" rx="1.5" fill="#FF2D60" />
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="495" height="3" rx="1.5" fill="#FF2D60" />
 
-  <path d="M 16 28 L 16 16 L 28 16" fill="none" stroke="#FF2D60" stroke-width="2" />
-  <path d="M 824 28 L 824 16 L 812 16" fill="none" stroke="#FF2D60" stroke-width="2" />
-  <path d="M 16 252 L 16 264 L 28 264" fill="none" stroke="#FF2D60" stroke-width="2" />
-  <path d="M 824 252 L 824 264 L 812 264" fill="none" stroke="#FF2D60" stroke-width="2" />
-
-  <g transform="translate(36, 36)">
-    <rect x="0" y="-8" width="6" height="6" fill="#FF2D60">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
-    </rect>
-    <text x="14" y="-2" class="st-meta">PORTFOLIO METRICS // REAL-TIME GITHUB TELEMETRY</text>
-    <text x="0" y="28" class="st-title">Engineering Overview</text>
+  <!-- Card Title -->
+  <g transform="translate(25, 34)">
+    <path d="M 0 0 L 3 3 L 0 6 L -3 3 Z" fill="#FF2D60" />
+    <text x="12" y="3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#FF2D60" letter-spacing="0.3">Madhura's GitHub Stats</text>
   </g>
 
-  <!-- Metric 1: Public Repositories -->
-  <g transform="translate(36, 115)">
-    <rect x="0" y="0" width="236" height="115" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
-    <circle cx="28" cy="28" r="14" fill="#6b0c26" />
-    <path d="M 23 28 L 27 32 L 34 24" fill="none" stroke="#FFF5ED" stroke-width="2" />
-    <text x="52" y="32" class="st-val">11</text>
-    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Repositories</text>
-    <text x="20" y="92" class="st-sub">Active public codebases</text>
+  <!-- Metric 1: Total Stars Earned -->
+  <g transform="translate(25, 66)">
+    <!-- Star Icon -->
+    <path d="M 8 1 L 10.3 5.7 L 15.5 6.4 L 11.8 10 L 12.6 15.2 L 8 12.8 L 3.4 15.2 L 4.2 10 L 0.5 6.4 L 5.7 5.7 Z" fill="none" stroke="#FF2D60" stroke-width="1.4" stroke-linejoin="round" />
+    <text x="24" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#E8D5C5">Total Stars Earned:</text>
+    <text x="260" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#FFF5ED">3</text>
   </g>
 
-  <!-- Metric 2: Followers -->
-  <g transform="translate(302, 115)">
-    <rect x="0" y="0" width="236" height="115" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
-    <circle cx="28" cy="28" r="14" fill="#6b0c26" />
-    <circle cx="28" cy="25" r="5" fill="#FFF5ED" />
-    <path d="M 20 34 C 20 31, 24 30, 28 30 C 32 30, 36 31, 36 34" fill="none" stroke="#FFF5ED" stroke-width="1.8" />
-    <text x="52" y="32" class="st-val">4</text>
-    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Community</text>
-    <text x="20" y="92" class="st-sub">Followers &amp; collaborators</text>
+  <!-- Metric 2: Total Commits -->
+  <g transform="translate(25, 94)">
+    <!-- Clock / History Icon -->
+    <circle cx="8" cy="8" r="7" fill="none" stroke="#FF2D60" stroke-width="1.4" />
+    <path d="M 8 4 L 8 8 L 11 10" fill="none" stroke="#FF2D60" stroke-width="1.4" stroke-linecap="round" />
+    <text x="24" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#E8D5C5">Total Commits:</text>
+    <text x="260" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#FFF5ED">232</text>
   </g>
 
-  <!-- Metric 3: Stars & Verification -->
-  <g transform="translate(568, 115)">
-    <rect x="0" y="0" width="236" height="115" rx="8" fill="#450a1c" stroke="#C1123F" stroke-width="1" />
-    <circle cx="28" cy="28" r="14" fill="#6b0c26" />
-    <polygon points="28,21 30,26 35,26 31,29 33,34 28,31 23,34 25,29 21,26 26,26" fill="#FFF5ED" />
-    <text x="52" y="32" class="st-val">0</text>
-    <text x="20" y="72" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" fill="#FFF5ED">Stargazers</text>
-    <text x="20" y="92" class="st-sub">Earned repository stars</text>
+  <!-- Metric 3: Total PRs -->
+  <g transform="translate(25, 122)">
+    <!-- Git PR Icon -->
+    <circle cx="5" cy="5" r="2" fill="none" stroke="#FF2D60" stroke-width="1.3" />
+    <circle cx="5" cy="12" r="2" fill="none" stroke="#FF2D60" stroke-width="1.3" />
+    <circle cx="12" cy="7" r="2" fill="none" stroke="#FF2D60" stroke-width="1.3" />
+    <path d="M 5 7 L 5 10 M 12 9 C 12 11, 8 12, 7 12" fill="none" stroke="#FF2D60" stroke-width="1.3" />
+    <text x="24" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#E8D5C5">Total PRs:</text>
+    <text x="260" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#FFF5ED">18</text>
+  </g>
+
+  <!-- Metric 4: Total Issues -->
+  <g transform="translate(25, 150)">
+    <!-- Issues Exclamation Icon -->
+    <circle cx="8" cy="8" r="7" fill="none" stroke="#FF2D60" stroke-width="1.4" />
+    <line x1="8" y1="4" x2="8" y2="8.5" stroke="#FF2D60" stroke-width="1.4" stroke-linecap="round" />
+    <circle cx="8" cy="11.5" r="0.8" fill="#FF2D60" />
+    <text x="24" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#E8D5C5">Total Issues:</text>
+    <text x="260" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#FFF5ED">9</text>
+  </g>
+
+  <!-- Metric 5: Contributed to -->
+  <g transform="translate(25, 178)">
+    <!-- Book / Repo Icon -->
+    <path d="M 2 3 C 2 3, 5 2.5, 8 4 C 11 2.5, 14 3, 14 3 L 14 13 C 14 13, 11 12.5, 8 14 C 5 12.5, 2 13, 2 13 Z M 8 4 L 8 14" fill="none" stroke="#FF2D60" stroke-width="1.3" />
+    <text x="24" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#E8D5C5">Contributed to (last year):</text>
+    <text x="260" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="#FFF5ED">6</text>
+  </g>
+
+  <!-- Right Side: Circular Progress Octocat Ring -->
+  <g>
+    <!-- Background Track Circle -->
+    <circle cx="410" cy="106" r="46" fill="none" stroke="#450a1c" stroke-width="6" />
+    <!-- Active Glow Arc (75% circle) -->
+    <circle cx="410" cy="106" r="46" fill="none" stroke="#FF2D60" stroke-width="6" stroke-linecap="round" stroke-dasharray="216 289" stroke-dashoffset="60" filter="url(#glow_cherry)">
+      <animateTransform attributeName="transform" type="rotate" from="0 410 106" to="360 410 106" dur="20s" repeatCount="indefinite" />
+    </circle>
+    <!-- Inner Background Fill -->
+    <circle cx="410" cy="106" r="39" fill="#380716" />
+    <!-- Octocat Silhouette Logo -->
+    <path d="M 410 88 c -9.9 0 -18 8.1 -18 18 c 0 7.9 5.1 14.6 12.2 17 c 0.9 0.2 1.2 -0.4 1.2 -0.9 c 0 -0.4 0 -1.6 0 -3.1 c -5 1.1 -6.1 -2.4 -6.1 -2.4 c -0.8 -2.1 -2 -2.6 -2 -2.6 c -1.6 -1.1 0.1 -1.1 0.1 -1.1 c 1.8 0.1 2.8 1.9 2.8 1.9 c 1.6 2.8 4.2 2 5.2 1.5 c 0.2 -1.2 0.6 -2 1.2 -2.5 c -4 -0.5 -8.2 -2 -8.2 -8.9 c 0 -2 0.7 -3.6 1.9 -4.8 c -0.2 -0.5 -0.8 -2.3 0.2 -4.7 c 0 0 1.5 -0.5 5 1.9 c 1.4 -0.4 3 -0.6 4.5 -0.6 c 1.5 0 3.1 0.2 4.5 0.6 c 3.5 -2.4 5 -1.9 5 -1.9 c 1 2.4 0.4 4.2 0.2 4.7 c 1.2 1.2 1.9 2.8 1.9 4.8 c 0 6.9 -4.2 8.4 -8.2 8.9 c 0.7 0.6 1.3 1.7 1.3 3.5 c 0 2.5 0 4.6 0 5.2 c 0 0.5 0.3 1.1 1.3 0.9 c 7.1 -2.4 12.2 -9.1 12.2 -17 c 0 -9.9 -8.1 -18 -18 -18 Z" fill="#FFF5ED" opacity="0.95" />
   </g>
 </svg>
