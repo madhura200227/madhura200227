@@ -31,13 +31,6 @@
   </a>
 </p>
 
-<!-- Live Profile Views Telemetry -->
-<p align="center">
-  <a href="https://github.com/madhura200227">
-    <img src="https://komarev.com/ghpvc/?username=madhura200227&label=PROFILE+VIEWS&color=ff2d60&style=flat-square" alt="Madhura Lakade — Live Profile Views" />
-  </a>
-</p>
-
 <br/>
 
 <!-- Fast Quick-Connect Identity Strip -->
@@ -264,6 +257,16 @@ I welcome conversations around full-stack development, software architecture, re
 
 <p>
   <em>"Developer by passion. Creator by nature."</em>
+</p>
+
+<br/>
+
+<!-- Custom Themed Profile Views Telemetry Capsule -->
+<p align="center">
+  <a href="https://github.com/madhura200227" title="Madhura Lakade — Verified Profile Views">
+    <img src="assets/stats/profile-views-cherry.svg" height="34" alt="Madhura Lakade — Verified Profile Views" />
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=madhura200227" width="1" height="1" alt="" style="display:none;" />
 </p>
 
 </div>

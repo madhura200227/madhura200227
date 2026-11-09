@@ -427,8 +427,9 @@ if __name__ == "__main__":
     try:
         import subprocess, sys
         subprocess.run([sys.executable, "scripts/build_developer_cards.py"], check=True)
+        subprocess.run([sys.executable, "scripts/build_profile_views_badge.py"], check=True)
     except Exception as e:
-        print(f"Developer cards build notice: {e}")
+        print(f"Developer cards / badge build notice: {e}")
 
     # 2. Generate Authentic Snake Animation with Live GitHub Contributions
     try:

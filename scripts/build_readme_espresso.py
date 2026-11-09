@@ -35,6 +35,7 @@ def generate_readme_espresso():
         ('github-stats-cherry.svg', 'github-stats.svg'),
         ('languages-cherry.svg', 'languages.svg'),
         ('streak-cherry.svg', 'streak.svg'),
+        ('profile-views-cherry.svg', 'profile-views.svg'),
         ('snake-cherry.svg', 'snake.svg'),
         ('snake-cherry.gif', 'snake.gif'),
         ('signature-cherry.svg', 'signature.svg'),

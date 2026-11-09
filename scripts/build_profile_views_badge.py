@@ -78,3 +78,4 @@ if __name__ == "__main__":
         f.write(generate_profile_views_badge("espresso", count))
 
     print("Successfully built custom themed Profile Views badges!")
+
