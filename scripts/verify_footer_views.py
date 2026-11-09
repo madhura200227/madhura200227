@@ -65,3 +65,4 @@ try:
 finally:
     driver.quit()
     print("All footer views verifications completed!")
+
